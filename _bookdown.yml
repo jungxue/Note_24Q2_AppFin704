@@ -1,0 +1,5 @@
+book_filename: "Template_Study_Note"
+delete_merged_file: true
+language:
+ui:
+chapter_name: "Lecture "
