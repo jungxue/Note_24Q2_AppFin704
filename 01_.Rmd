@@ -10,15 +10,16 @@
 ## Asset Classes and Financial Instruments
 
 ![](Resources/Financialmarkets.png)
+
 ### Money Markets
 
 – Treasury bills
 – Certificates of deposits (term deposits)
-– Commercial Paper CP (short term unsecured corporate notes)
+– Commercial Paper CP (short term unsecured debts)
 – Bankers Acceptances (a postdated check)
 – Eurodollars (U.S. dollar denominated deposits at foreign banks or foreign branches of U.S. banks)
 – Repurchase Agreements (Repos or RPs) and Reverse Repos.
-– Others, e.g., Brokers ’ Calls interests charged by banks on loans made to brokerage firms), Federal Funds, The LIBOR Market, and Money Market Funds
+– Others, e.g., Brokers' Calls (interests charged by banks on loans made to brokerage firms), Federal Funds, The LIBOR Market, and Money Market Funds
 
 ### The bond market
 
@@ -35,8 +36,11 @@
 ### The equity market
 
 - Common stocks
-- Preferred stocks (behaving to bond)
+- Preferred stocks (pay preferred dividents, behaving to bond)
 - Depository receipts, (shares in a foreign company)
+  - ADR American Depository Receipt 
+  - CRD Chinese Depository receipt
+  - Reduced currency and foreign operation cost 
 
 ### Stock and bond market indexes
 
@@ -46,16 +50,17 @@
 - Why indexes?
 - Provide performance benchmarks
 - Base of derivatives
--“Smart beta"
+
+- “Smart beta"
 
 Construction Methodology:
-- Price weighted (DJIA)
+- Price weighted (DJIA) 1 share per firm
 - Market value weighted (S&P500, NASDAQ)
 - Equal weighted (simple average of returns)
 
 ### Derivative markets
 
-- A security with a payoff that depends on the prices of other securities
+- A security with a pay-off that depends on the prices of other securities
 - Call/put options
 - Futures/Forwards
 - Swaps, futures options, etc.
@@ -63,7 +68,7 @@ Construction Methodology:
 Why we need them?
 - Speculative
 - Hedging
-- Arbitraging
+- Arbitraging (to lock in price)
 
 ## Securities Markets and Trading
 
@@ -78,7 +83,14 @@ How securities are traded (in secondary markets)
 - Dealer 
 - Auctions
 
+ype of orders
+maket order
+price contingeant order
+
 Trading mechanisms
+OTC dealer
+electronic
+market maker (increase liquidity)
 --
 Over the counter dealer markets (OTC Markets)
 -
