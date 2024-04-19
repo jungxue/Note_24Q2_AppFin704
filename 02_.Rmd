@@ -1,4 +1,31 @@
-# Enter Chapter title here {#ch2}
+# Risk and Return {#ch2}
+
+Hold period Return (HPR)
+
+average (arithmetic, geometric (account for compounding), weighted average)
+
+Internal Rate of Return (IRR) when NPV = 0
+
+Annual percentage rate(APR) 
+
+Effective Annual Rate (EAR) account for compounding
+
+
+
+Expecte dreyrn formular $$E = sum pi xi$$
+standard deviation to measure the variance
+
+normal assumption? 
+
+transform return to standard normal distribution to comapre
+
+why not normal
+
+short term and long term holder
+
+fat tails (extreme cases are more likely) bubbles and crisis
+
+risk aversion
 
 ## Enter subsection 1 here
 

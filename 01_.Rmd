@@ -95,4 +95,78 @@ market maker (increase liquidity)
 Over the counter dealer markets (OTC Markets)
 -
 Electronic communication networks ( ECNs)
+
+
+margin trading
+
+why to purchase with margin?
+
+able to make more profits by borrowing money from broker, essentially multiplying market fluctuation/volatility. 
+
+short sale (borrow stocks to sell and payback when you sold it at profit)
+
+derivative market (sell, not borrowing)
+
 ## Market Participants
+
+Investemt company
+- intermediary that invest ffor investors
+- record and admin
+- professional management
+- lower trandaction cost by volume
+Net Asset Value (NAV)
+
+$$\frac{Asset - Liabilities}{share outstanding}$$
+unit investement fund (unmanaged) fixed portfolio for life
+
+Managed Investment companies 
+- open-end(publicly trader and closed ended)
+- close end funds shares sold at discount for liquidity (to sell quickly)
+
+Exchange Traded Funds (ETF)
+
+Can be continuously traded like stocks 
+
+Other Comingled Funds, Real Estate Investment Trusts, Hedged Funds
+
+Mutual Funds 65% of market
+
+- Money market
+- equity funds (income vs growth)
+- specialised
+- bond
+- index funds
+- Funds of Funds
+
+Funds can be sold directly, indirectly and through financial supermarkets
+
+
+Fee structure 
+
+- Operating expense
+- front end load
+- back end load
+- 12b-1 charges annual fee fro marketing and distribution
+
+fee structure is very important and made large apart of your profit share
+
+Taxation
+
+no tax at fund level
+long term capital gain tax rate
+high turnover rate 
+
+ETF
+- Passive investement, track index
+- lower cost
+- smart beta fund
+
+- Bid ask spread (depend on demand)
+- Index price depart from NAV
+
+mutual fund underperformed passive funds(cost of high freq trading)
+
+consistent performance, don't be obsessed with top performer, they could be winner by chance
+
+
+
