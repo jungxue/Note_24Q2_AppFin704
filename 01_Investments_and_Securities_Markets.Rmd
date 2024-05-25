@@ -1,10 +1,15 @@
-# Investments and securities markets {#ch1}
+# Investments and Securities Markets {#ch1}
 
 •describe differences among asset classes and construction of stock market indexes, and calculate profit/loss on options/futures investments.
+
 •describe how firms issue securities, and identify types of investors’ orders
+
 •compare mechanics and implications of buying on margin & short selling
+
 •cite pros/cons of investing with an investment company, and contrast open end mutual funds with other types of investment companies.
+
 •define net asset value (NAV) and measure the rate of return on a mutual fund, and classify mutual funds according to investment style.
+
 •demonstrate the impact of expenses and turnover on fund performance
 
 ## Asset Classes and Financial Instruments
@@ -13,15 +18,15 @@
 
 ### Money Markets
 
-– Treasury bills
-– Certificates of deposits (term deposits)
-– Commercial Paper CP (short term unsecured debts)
-– Bankers Acceptances (a postdated check)
-– Eurodollars (U.S. dollar denominated deposits at foreign banks or foreign branches of U.S. banks)
-– Repurchase Agreements (Repos or RPs) and Reverse Repos.
-– Others, e.g., Brokers' Calls (interests charged by banks on loans made to brokerage firms), Federal Funds, The LIBOR Market, and Money Market Funds
+- Treasury bills
+- Certificates of Deposits (Term Deposits)
+- Commercial Paper(CP) (short term < 12month unsecured debts)
+- Bankers Acceptances (a postdated check, A bank, rather than an account holder, guarantees the payment.)
+- Eurodollars (U.S. dollar denominated deposits at foreign banks or foreign branches of U.S. banks)
+- Repurchase Agreements (Repos or RPs) and Reverse Repos.
+- Others, e.g., Brokers' Calls (interests charged by banks on loans made to brokerage firms), Federal Funds, The LIBOR Market, and Money Market Funds
 
-### The bond market
+### The Bond Market
 
 - Treasury Notes/Bonds ($21 billion, $21/$51= 41% of 2020 US Bond Market)
 - Mortgages and Mortgage Backed Securities ($12.7 billion, 25%
@@ -33,51 +38,57 @@
   - Yankee bond: US dollar denominated bond sold in the U.S. by a non U.S. issuer
 - Inflation Protected Bonds (i.e., principal is adjusted per CPI)
 
-### The equity market
+### The Equity Market
 
 - Common stocks
-- Preferred stocks (pay preferred dividents, behaving to bond)
+- Preferred stocks (pay preferred dividends, behaving like bond)
 - Depository receipts, (shares in a foreign company)
   - ADR American Depository Receipt 
   - CRD Chinese Depository receipt
   - Reduced currency and foreign operation cost 
 
-### Stock and bond market indexes
+### Market Indexes
 
 - Broad based index (S&P 500 etc.)
 - Narrow based index (composed of only a few stocks, in a specific industry)
-
 - Why indexes?
 - Provide performance benchmarks
 - Base of derivatives
+- Smart beta
 
-- “Smart beta"
+The goal of **Smart beta** is to obtain alpha, lower risk or increase diversification at a cost lower than traditional active management and marginally higher than straight index investing
 
-Construction Methodology:
+Construction Methodology
+
 - Price weighted (DJIA) 1 share per firm
 - Market value weighted (S&P500, NASDAQ)
 - Equal weighted (simple average of returns)
 
-### Derivative markets
+### Derivative Markets
 
 - A security with a pay-off that depends on the prices of other securities
 - Call/put options
 - Futures/Forwards
 - Swaps, futures options, etc.
--
+
 Why we need them?
+
 - Speculative
 - Hedging
 - Arbitraging (to lock in price)
 
+**Arbitrage** describes the act of buying a security in one market and simultaneously selling it in another market at a higher price, thereby enabling investors to profit from the temporary difference in cost per share.
+
 ## Securities Markets and Trading
 
 Originators
+
 - Publicly traded companies initial public offering (IPO), and seasonal equity offerings (SEOs), - Privately held firms (private placement in which shares are sold directly to
 a small group of institutional or wealthy investors)
 - Shelf registrations (public firms can register securities and gradually sell them to the public )
 
 How securities are traded (in secondary markets)
+
 - Direct search (e.g. painting) 
 - Brokered
 - Dealer 
@@ -109,11 +120,13 @@ derivative market (sell, not borrowing)
 
 ## Market Participants
 
-Investemt company
-- intermediary that invest ffor investors
-- record and admin
+### Investment company
+
+- Intermediary that invest for investors
+- Record and admin
 - professional management
-- lower trandaction cost by volume
+- Lower transaction cost by volume
+
 Net Asset Value (NAV)
 
 $$\frac{Asset - Liabilities}{share outstanding}$$
