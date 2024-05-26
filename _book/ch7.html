@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 7 Enter Chapter title here | Study Note for 24Q2 AppFin704</title>
   <meta name="description" content="Lecture 7 Enter Chapter title here | Study Note for 24Q2 AppFin704" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 7 Enter Chapter title here | Study Note for 24Q2 AppFin704" />
   <meta property="og:type" content="book" />
@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -82,7 +146,7 @@
 <li class="chapter" data-level="1.1.1" data-path="ch1.html"><a href="ch1.html#money-markets"><i class="fa fa-check"></i><b>1.1.1</b> Money Markets</a></li>
 <li class="chapter" data-level="1.1.2" data-path="ch1.html"><a href="ch1.html#the-bond-market"><i class="fa fa-check"></i><b>1.1.2</b> The Bond Market</a></li>
 <li class="chapter" data-level="1.1.3" data-path="ch1.html"><a href="ch1.html#the-equity-market"><i class="fa fa-check"></i><b>1.1.3</b> The Equity Market</a></li>
-<li class="chapter" data-level="1.1.4" data-path="ch1.html"><a href="ch1.html#stock-and-bond-market-indexes"><i class="fa fa-check"></i><b>1.1.4</b> Stock and bond market indexes</a></li>
+<li class="chapter" data-level="1.1.4" data-path="ch1.html"><a href="ch1.html#market-indexes"><i class="fa fa-check"></i><b>1.1.4</b> Market Indexes</a></li>
 <li class="chapter" data-level="1.1.5" data-path="ch1.html"><a href="ch1.html#derivative-markets"><i class="fa fa-check"></i><b>1.1.5</b> Derivative Markets</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="ch1.html"><a href="ch1.html#securities-markets-and-trading"><i class="fa fa-check"></i><b>1.2</b> Securities Markets and Trading</a></li>
@@ -93,43 +157,83 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch2.html"><a href="ch2.html"><i class="fa fa-check"></i><b>2</b> Risk and Return</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="ch2.html"><a href="ch2.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>2.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="2.2" data-path="ch2.html"><a href="ch2.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>2.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="2.1" data-path="ch2.html"><a href="ch2.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ch2.html"><a href="ch2.html#measuring-returns"><i class="fa fa-check"></i><b>2.2</b> Measuring Returns</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ch2.html"><a href="ch2.html#arithmetic-average"><i class="fa fa-check"></i><b>2.2.1</b> Arithmetic Average</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ch2.html"><a href="ch2.html#geometric-average"><i class="fa fa-check"></i><b>2.2.2</b> Geometric Average</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ch2.html"><a href="ch2.html#dollar-weighted-average-internal-rate-of-return"><i class="fa fa-check"></i><b>2.2.3</b> Dollar-Weighted Average (Internal Rate of Return)</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ch2.html"><a href="ch2.html#annualizing-returns"><i class="fa fa-check"></i><b>2.2.4</b> Annualizing Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ch2.html"><a href="ch2.html#risk-and-risk-premiums"><i class="fa fa-check"></i><b>2.3</b> Risk and Risk Premiums</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch2.html"><a href="ch2.html#expected-return"><i class="fa fa-check"></i><b>2.3.1</b> Expected Return</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch2.html"><a href="ch2.html#standard-deviation"><i class="fa fa-check"></i><b>2.3.2</b> Standard Deviation</a></li>
+<li class="chapter" data-level="2.3.3" data-path="ch2.html"><a href="ch2.html#normal-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Normal Distribution</a></li>
+<li class="chapter" data-level="2.3.4" data-path="ch2.html"><a href="ch2.html#risk-aversion"><i class="fa fa-check"></i><b>2.3.4</b> Risk Aversion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch2.html"><a href="ch2.html#portfolio-construction"><i class="fa fa-check"></i><b>2.4</b> Portfolio Construction</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="ch2.html"><a href="ch2.html#capital-allocation"><i class="fa fa-check"></i><b>2.4.1</b> Capital Allocation:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ch2.html"><a href="ch2.html#utility"><i class="fa fa-check"></i><b>2.4.2</b> Utility</a></li>
+<li class="chapter" data-level="2.4.3" data-path="ch2.html"><a href="ch2.html#utility-function"><i class="fa fa-check"></i><b>2.4.3</b> Utility Function</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ch2.html"><a href="ch2.html#indifference-curves"><i class="fa fa-check"></i><b>2.4.4</b> Indifference Curves</a></li>
+<li class="chapter" data-level="2.4.5" data-path="ch2.html"><a href="ch2.html#capital-allocation-line"><i class="fa fa-check"></i><b>2.4.5</b> Capital Allocation Line</a></li>
+<li class="chapter" data-level="2.4.6" data-path="ch2.html"><a href="ch2.html#capital-allocation-line-cal-with-leverage"><i class="fa fa-check"></i><b>2.4.6</b> Capital Allocation Line (CAL) with Leverage</a></li>
+<li class="chapter" data-level="2.4.7" data-path="ch2.html"><a href="ch2.html#utility-maximization"><i class="fa fa-check"></i><b>2.4.7</b> Utility Maximization</a></li>
+<li class="chapter" data-level="2.4.8" data-path="ch2.html"><a href="ch2.html#personal-preferences"><i class="fa fa-check"></i><b>2.4.8</b> Personal preferences</a></li>
+<li class="chapter" data-level="2.4.9" data-path="ch2.html"><a href="ch2.html#the-capital-market-line-cml"><i class="fa fa-check"></i><b>2.4.9</b> The Capital Market Line (CML)</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> Diversification</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>3.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>3.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="3.0.1" data-path="ch3.html"><a href="ch3.html#portfolio-construction-1"><i class="fa fa-check"></i><b>3.0.1</b> Portfolio Construction</a></li>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#major-risks-of-stock-portfolio"><i class="fa fa-check"></i><b>3.1</b> Major Risks of Stock Portfolio</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#portfolio-calculations"><i class="fa fa-check"></i><b>3.2</b> Portfolio Calculations</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ch3.html"><a href="ch3.html#expected-return-1"><i class="fa fa-check"></i><b>3.2.1</b> Expected return</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch3.html"><a href="ch3.html#variance"><i class="fa fa-check"></i><b>3.2.2</b> variance</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch3.html"><a href="ch3.html#covariance"><i class="fa fa-check"></i><b>3.2.3</b> Covariance</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ch3.html"><a href="ch3.html#correlation"><i class="fa fa-check"></i><b>3.2.4</b> Correlation</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ch3.html"><a href="ch3.html#variance-calculations"><i class="fa fa-check"></i><b>3.2.5</b> Variance calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch3.html"><a href="ch3.html#risky-and-risk-free-assets"><i class="fa fa-check"></i><b>3.3</b> Risky and Risk-Free Assets</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="ch3.html"><a href="ch3.html#sharpe-ratio"><i class="fa fa-check"></i><b>3.3.1</b> Sharpe Ratio</a></li>
+<li class="chapter" data-level="3.3.2" data-path="ch3.html"><a href="ch3.html#optimal-complete-portfolio"><i class="fa fa-check"></i><b>3.3.2</b> Optimal Complete Portfolio</a></li>
+<li class="chapter" data-level="3.3.3" data-path="ch3.html"><a href="ch3.html#the-efficient-frontier"><i class="fa fa-check"></i><b>3.3.3</b> The Efficient Frontier</a></li>
+<li class="chapter" data-level="3.3.4" data-path="ch3.html"><a href="ch3.html#separation-property"><i class="fa fa-check"></i><b>3.3.4</b> Separation Property</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch4.html"><a href="ch4.html"><i class="fa fa-check"></i><b>4</b> CAPM and APT</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch4.html"><a href="ch4.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>4.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>4.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="4.1" data-path="ch4.html"><a href="ch4.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>4.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>4.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch5.html"><a href="ch5.html"><i class="fa fa-check"></i><b>5</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="ch6.html"><a href="ch6.html"><i class="fa fa-check"></i><b>6</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch7.html"><a href="ch7.html"><i class="fa fa-check"></i><b>7</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-5"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-5"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch8.html"><a href="ch8.html"><i class="fa fa-check"></i><b>8</b> Performance Attribution and Appraisal</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-6"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-6"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch9.html"><a href="ch9.html"><i class="fa fa-check"></i><b>9</b> Tax Implications and ESG Investing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-7"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-7"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-5"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-5"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="concluding-remarks.html"><a href="concluding-remarks.html"><i class="fa fa-check"></i>Concluding Remarks</a>
 <ul>
@@ -161,11 +265,11 @@
             <section class="normal" id="section-">
 <div id="ch7" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Lecture 7</span> Enter Chapter title here<a href="ch7.html#ch7" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="enter-subsection-1-here-5" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Enter subsection 1 here<a href="ch7.html#enter-subsection-1-here-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="enter-subsection-1-here-3" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Enter subsection 1 here<a href="ch7.html#enter-subsection-1-here-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="enter-subsection-2-here-5" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Enter subsection 2 here<a href="ch7.html#enter-subsection-2-here-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="enter-subsection-2-here-3" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Enter subsection 2 here<a href="ch7.html#enter-subsection-2-here-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>

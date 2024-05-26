@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 3 Diversification | Study Note for 24Q2 AppFin704</title>
   <meta name="description" content="Lecture 3 Diversification | Study Note for 24Q2 AppFin704" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 3 Diversification | Study Note for 24Q2 AppFin704" />
   <meta property="og:type" content="book" />
@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -82,7 +146,7 @@
 <li class="chapter" data-level="1.1.1" data-path="ch1.html"><a href="ch1.html#money-markets"><i class="fa fa-check"></i><b>1.1.1</b> Money Markets</a></li>
 <li class="chapter" data-level="1.1.2" data-path="ch1.html"><a href="ch1.html#the-bond-market"><i class="fa fa-check"></i><b>1.1.2</b> The Bond Market</a></li>
 <li class="chapter" data-level="1.1.3" data-path="ch1.html"><a href="ch1.html#the-equity-market"><i class="fa fa-check"></i><b>1.1.3</b> The Equity Market</a></li>
-<li class="chapter" data-level="1.1.4" data-path="ch1.html"><a href="ch1.html#stock-and-bond-market-indexes"><i class="fa fa-check"></i><b>1.1.4</b> Stock and bond market indexes</a></li>
+<li class="chapter" data-level="1.1.4" data-path="ch1.html"><a href="ch1.html#market-indexes"><i class="fa fa-check"></i><b>1.1.4</b> Market Indexes</a></li>
 <li class="chapter" data-level="1.1.5" data-path="ch1.html"><a href="ch1.html#derivative-markets"><i class="fa fa-check"></i><b>1.1.5</b> Derivative Markets</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="ch1.html"><a href="ch1.html#securities-markets-and-trading"><i class="fa fa-check"></i><b>1.2</b> Securities Markets and Trading</a></li>
@@ -93,43 +157,83 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch2.html"><a href="ch2.html"><i class="fa fa-check"></i><b>2</b> Risk and Return</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="ch2.html"><a href="ch2.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>2.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="2.2" data-path="ch2.html"><a href="ch2.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>2.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="2.1" data-path="ch2.html"><a href="ch2.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ch2.html"><a href="ch2.html#measuring-returns"><i class="fa fa-check"></i><b>2.2</b> Measuring Returns</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ch2.html"><a href="ch2.html#arithmetic-average"><i class="fa fa-check"></i><b>2.2.1</b> Arithmetic Average</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ch2.html"><a href="ch2.html#geometric-average"><i class="fa fa-check"></i><b>2.2.2</b> Geometric Average</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ch2.html"><a href="ch2.html#dollar-weighted-average-internal-rate-of-return"><i class="fa fa-check"></i><b>2.2.3</b> Dollar-Weighted Average (Internal Rate of Return)</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ch2.html"><a href="ch2.html#annualizing-returns"><i class="fa fa-check"></i><b>2.2.4</b> Annualizing Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ch2.html"><a href="ch2.html#risk-and-risk-premiums"><i class="fa fa-check"></i><b>2.3</b> Risk and Risk Premiums</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch2.html"><a href="ch2.html#expected-return"><i class="fa fa-check"></i><b>2.3.1</b> Expected Return</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch2.html"><a href="ch2.html#standard-deviation"><i class="fa fa-check"></i><b>2.3.2</b> Standard Deviation</a></li>
+<li class="chapter" data-level="2.3.3" data-path="ch2.html"><a href="ch2.html#normal-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Normal Distribution</a></li>
+<li class="chapter" data-level="2.3.4" data-path="ch2.html"><a href="ch2.html#risk-aversion"><i class="fa fa-check"></i><b>2.3.4</b> Risk Aversion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch2.html"><a href="ch2.html#portfolio-construction"><i class="fa fa-check"></i><b>2.4</b> Portfolio Construction</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="ch2.html"><a href="ch2.html#capital-allocation"><i class="fa fa-check"></i><b>2.4.1</b> Capital Allocation:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ch2.html"><a href="ch2.html#utility"><i class="fa fa-check"></i><b>2.4.2</b> Utility</a></li>
+<li class="chapter" data-level="2.4.3" data-path="ch2.html"><a href="ch2.html#utility-function"><i class="fa fa-check"></i><b>2.4.3</b> Utility Function</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ch2.html"><a href="ch2.html#indifference-curves"><i class="fa fa-check"></i><b>2.4.4</b> Indifference Curves</a></li>
+<li class="chapter" data-level="2.4.5" data-path="ch2.html"><a href="ch2.html#capital-allocation-line"><i class="fa fa-check"></i><b>2.4.5</b> Capital Allocation Line</a></li>
+<li class="chapter" data-level="2.4.6" data-path="ch2.html"><a href="ch2.html#capital-allocation-line-cal-with-leverage"><i class="fa fa-check"></i><b>2.4.6</b> Capital Allocation Line (CAL) with Leverage</a></li>
+<li class="chapter" data-level="2.4.7" data-path="ch2.html"><a href="ch2.html#utility-maximization"><i class="fa fa-check"></i><b>2.4.7</b> Utility Maximization</a></li>
+<li class="chapter" data-level="2.4.8" data-path="ch2.html"><a href="ch2.html#personal-preferences"><i class="fa fa-check"></i><b>2.4.8</b> Personal preferences</a></li>
+<li class="chapter" data-level="2.4.9" data-path="ch2.html"><a href="ch2.html#the-capital-market-line-cml"><i class="fa fa-check"></i><b>2.4.9</b> The Capital Market Line (CML)</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> Diversification</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>3.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>3.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="3.0.1" data-path="ch3.html"><a href="ch3.html#portfolio-construction-1"><i class="fa fa-check"></i><b>3.0.1</b> Portfolio Construction</a></li>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#major-risks-of-stock-portfolio"><i class="fa fa-check"></i><b>3.1</b> Major Risks of Stock Portfolio</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#portfolio-calculations"><i class="fa fa-check"></i><b>3.2</b> Portfolio Calculations</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ch3.html"><a href="ch3.html#expected-return-1"><i class="fa fa-check"></i><b>3.2.1</b> Expected return</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch3.html"><a href="ch3.html#variance"><i class="fa fa-check"></i><b>3.2.2</b> variance</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch3.html"><a href="ch3.html#covariance"><i class="fa fa-check"></i><b>3.2.3</b> Covariance</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ch3.html"><a href="ch3.html#correlation"><i class="fa fa-check"></i><b>3.2.4</b> Correlation</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ch3.html"><a href="ch3.html#variance-calculations"><i class="fa fa-check"></i><b>3.2.5</b> Variance calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch3.html"><a href="ch3.html#risky-and-risk-free-assets"><i class="fa fa-check"></i><b>3.3</b> Risky and Risk-Free Assets</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="ch3.html"><a href="ch3.html#sharpe-ratio"><i class="fa fa-check"></i><b>3.3.1</b> Sharpe Ratio</a></li>
+<li class="chapter" data-level="3.3.2" data-path="ch3.html"><a href="ch3.html#optimal-complete-portfolio"><i class="fa fa-check"></i><b>3.3.2</b> Optimal Complete Portfolio</a></li>
+<li class="chapter" data-level="3.3.3" data-path="ch3.html"><a href="ch3.html#the-efficient-frontier"><i class="fa fa-check"></i><b>3.3.3</b> The Efficient Frontier</a></li>
+<li class="chapter" data-level="3.3.4" data-path="ch3.html"><a href="ch3.html#separation-property"><i class="fa fa-check"></i><b>3.3.4</b> Separation Property</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch4.html"><a href="ch4.html"><i class="fa fa-check"></i><b>4</b> CAPM and APT</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch4.html"><a href="ch4.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>4.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>4.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="4.1" data-path="ch4.html"><a href="ch4.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>4.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>4.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch5.html"><a href="ch5.html"><i class="fa fa-check"></i><b>5</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="ch6.html"><a href="ch6.html"><i class="fa fa-check"></i><b>6</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch7.html"><a href="ch7.html"><i class="fa fa-check"></i><b>7</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-5"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-5"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch8.html"><a href="ch8.html"><i class="fa fa-check"></i><b>8</b> Performance Attribution and Appraisal</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-6"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-6"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch9.html"><a href="ch9.html"><i class="fa fa-check"></i><b>9</b> Tax Implications and ESG Investing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-7"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-7"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-5"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-5"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="concluding-remarks.html"><a href="concluding-remarks.html"><i class="fa fa-check"></i>Concluding Remarks</a>
 <ul>
@@ -161,12 +265,383 @@
             <section class="normal" id="section-">
 <div id="ch3" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Lecture 3</span> Diversification<a href="ch3.html#ch3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="enter-subsection-1-here-1" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Enter subsection 1 here<a href="ch3.html#enter-subsection-1-here-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>calculate mean, variance, and covariance using either historical data or scenario analysis.</p></li>
+<li><p>construct efficient portfolios and use the Sharpe ratio to evaluate portfolio efficiency.</p></li>
+<li><p>calculate the composition of the optimal risky portfolio.</p></li>
+</ul>
+<div id="portfolio-construction-1" class="section level3 hasAnchor" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Portfolio Construction<a href="ch3.html#portfolio-construction-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Portfolio construction generally has three steps:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Capital allocation</strong> between the risky portfolio and risk-free assets</li>
+<li><strong>Asset allocation</strong> across wide asset classes (stocks, international stocks, long-term bonds).</li>
+<li><strong>Security selection</strong>.</li>
+</ol>
 </div>
-<div id="enter-subsection-2-here-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Enter subsection 2 here<a href="ch3.html#enter-subsection-2-here-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="major-risks-of-stock-portfolio" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Major Risks of Stock Portfolio<a href="ch3.html#major-risks-of-stock-portfolio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Market Risk</strong></td>
+<td>Fluctuations in overall market affecting portfolio value.</td>
+</tr>
+<tr class="even">
+<td>Sector Risk</td>
+<td>Specific sectors or industries under-performing.</td>
+</tr>
+<tr class="odd">
+<td><strong>Company Risk</strong></td>
+<td>Individual companies facing financial difficulties or poor performance.</td>
+</tr>
+<tr class="even">
+<td>Liquidity Risk</td>
+<td>Difficulty in buying or selling assets without significant price changes.</td>
+</tr>
+<tr class="odd">
+<td>Currency Risk</td>
+<td>Exchange rate fluctuations impacting international investments.</td>
+</tr>
+<tr class="even">
+<td>Interest Rate Risk</td>
+<td>Changes in interest rates affecting bond prices and portfolio value.</td>
+</tr>
+<tr class="odd">
+<td>Political Risk</td>
+<td>Political events or policy changes impacting financial markets.</td>
+</tr>
+<tr class="even">
+<td>Regulatory Risk</td>
+<td>Changes in regulations affecting industries or companies in the portfolio.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Market risk (<strong>systematic risk</strong>): non-diversifiable risk</li>
+<li>Unique risk (<strong>non-systematic risk</strong>): firm-specific risk, diversifiable risk</li>
+</ul>
+<p><img src="Resources/sysrisk.png" /></p>
+</div>
+<div id="portfolio-calculations" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Portfolio Calculations<a href="ch3.html#portfolio-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="expected-return-1" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Expected return<a href="ch3.html#expected-return-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>expected return</strong> of the portfolio is</p>
+<p><span class="math display">\[ E(r_P) = w_1 E(r_1) + w_2 E(r_2) \]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(E(r_P)\)</span>is the expected return of the portfolio.</li>
+<li><span class="math inline">\(w_1\)</span> is the weight of asset 1 in the portfolio.</li>
+<li><span class="math inline">\(E(r_1)\)</span> is the expected return of asset 1.</li>
+<li><span class="math inline">\(w_2\)</span> is the weight of asset 2 in the portfolio.</li>
+<li><span class="math inline">\(E(r_2)\)</span> is the expected return of asset 2.</li>
+</ul>
+</div>
+<div id="variance" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> variance<a href="ch3.html#variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Variance</strong> measures how much the values of a random variable vary or spread out from the mean (average)</p>
+<p>The <strong>variance</strong> of the portfolio <span class="math inline">\(\sigma_P^2\)</span> can be calculated using the following formula:</p>
+<p><span class="math display">\[ \sigma_P^2 = w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2w_1 w_2 \rho_{12} \sigma_1 \sigma_2 \]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\sigma_P^2\)</span> is the variance of the portfolio.</li>
+<li><span class="math inline">\(w_1\)</span> is the weight of asset 1 in the portfolio.</li>
+<li><span class="math inline">\(\sigma_1^2\)</span> is the variance of returns of asset 1.</li>
+<li>$w_2 $ is the weight of asset 2 in the portfolio.</li>
+<li><span class="math inline">\(\sigma_2^2\)</span> is the variance of returns of asset 2.</li>
+<li><span class="math inline">\(\rho_{12}\)</span> is the correlation coefficient between returns of assets 1 and 2.</li>
+<li><span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span> are the standard deviations of returns of assets 1 and 2, respectively.</li>
+</ul>
+<p>The variance formula accounts for the individual variances of assets 1 and 2, as well as their <strong>covariance</strong>.</p>
+<p><span class="math display">\[Cov(r_1,r_2 )=\rho_{12} 𝜎_1 𝜎_2\]</span></p>
+<div id="case-i-1" class="section level4 hasAnchor" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Case I: $ = 1 $<a href="ch3.html#case-i-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When the correlation coefficient is 1, the formula simplifies to:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma_P^2 &amp;= (w_1 \sigma_1 + w_2 \sigma_2)^2 \\
+\sigma_P  &amp;= w_1 \sigma_1 + w_2 \sigma_2 \\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="case-ii--1" class="section level4 hasAnchor" number="3.2.2.2">
+<h4><span class="header-section-number">3.2.2.2</span> Case II: $ = -1 $<a href="ch3.html#case-ii--1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When the correlation coefficient is -1, the formula simplifies to:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma_P^2 &amp;= (w_1 \sigma_1 - w_2 \sigma_2)^2 \\
+\sigma_P  &amp;= w_1 \sigma_1 - w_2 \sigma_2 \\
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="covariance" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Covariance<a href="ch3.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>covariance</strong> between returns of assets A and B (<span class="math inline">\(Cov(r_A, r_B)\)</span>) can be calculated using the following formula:</p>
+<p><span class="math display">\[Cov(r_A, r_B) = \sum_{i=1}^{n} p(i)[r_A(i) - E(r_A)][r_B(i) - E(r_B)]\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(Cov(r_A, r_B)\)</span> is the covariance between returns of assets A and B.</li>
+<li><span class="math inline">\(p(i)\)</span> is the probability of scenario <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(r_A(i)\)</span> and <span class="math inline">\(r_B(i)\)</span> are the returns of assets A and B, respectively, in scenario <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(E(r_A)\)</span> and <span class="math inline">\(E(r_B)\)</span> are the expected returns of assets A and B, respectively.</li>
+</ul>
+<p><strong>R code</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ch3.html#cb1-1" tabindex="-1"></a>returns_A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.03</span>, <span class="fl">0.02</span>, <span class="fl">0.06</span>, <span class="fl">0.04</span>)  <span class="co"># Returns for asset A</span></span>
+<span id="cb1-2"><a href="ch3.html#cb1-2" tabindex="-1"></a>returns_B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.04</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.03</span>)  <span class="co"># Returns for asset B</span></span>
+<span id="cb1-3"><a href="ch3.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="ch3.html#cb1-4" tabindex="-1"></a><span class="co"># Expected returns of assets A and B</span></span>
+<span id="cb1-5"><a href="ch3.html#cb1-5" tabindex="-1"></a>E_r_A <span class="ot">&lt;-</span> <span class="fu">mean</span>(returns_A)</span>
+<span id="cb1-6"><a href="ch3.html#cb1-6" tabindex="-1"></a>E_r_B <span class="ot">&lt;-</span> <span class="fu">mean</span>(returns_B)</span>
+<span id="cb1-7"><a href="ch3.html#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="ch3.html#cb1-8" tabindex="-1"></a><span class="co"># Probabilities of scenarios</span></span>
+<span id="cb1-9"><a href="ch3.html#cb1-9" tabindex="-1"></a>probabilities <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.15</span>, <span class="fl">0.25</span>, <span class="fl">0.1</span>, <span class="fl">0.3</span>)</span>
+<span id="cb1-10"><a href="ch3.html#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="ch3.html#cb1-11" tabindex="-1"></a><span class="co"># Calculation of covariance</span></span>
+<span id="cb1-12"><a href="ch3.html#cb1-12" tabindex="-1"></a>covariance <span class="ot">&lt;-</span> <span class="fu">sum</span>(probabilities <span class="sc">*</span> (returns_A <span class="sc">-</span> E_r_A) <span class="sc">*</span> (returns_B <span class="sc">-</span> E_r_B))</span>
+<span id="cb1-13"><a href="ch3.html#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="ch3.html#cb1-14" tabindex="-1"></a><span class="co"># Print the covariance</span></span>
+<span id="cb1-15"><a href="ch3.html#cb1-15" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Covariance between returns of assets A and B:&quot;</span>, covariance))</span></code></pre></div>
+<pre><code>## [1] &quot;Covariance between returns of assets A and B: 0.000175&quot;</code></pre>
+</div>
+<div id="correlation" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Correlation<a href="ch3.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[{\rho_12} = \frac{Cov(r_1,r_2 )}{\sigma_1 \sigma_2}\]</span></p>
+<ul>
+<li><p>The portfolio return is not affected by correlation between returns</p></li>
+<li><p>Thus, investors should always prefer to add to their portfolios assets with low or negative correlation to diversify risks.</p></li>
+</ul>
+<p>The lower the correlation, the greater the potential benefit from diversification.</p>
+</div>
+<div id="variance-calculations" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Variance calculations<a href="ch3.html#variance-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If we have perfectly negatively correlated assets in our portfolios, then the portfolio standard deviation can be reduced to zero by choosing appropriate weights.</p>
+<p>Given:</p>
+<ul>
+<li><span class="math inline">\(w_1\)</span> = <span class="math inline">\(0.40\)</span></li>
+<li><span class="math inline">\(\sigma_1^2\)</span> = <span class="math inline">\(0.014\)</span></li>
+<li><span class="math inline">\(w_2\)</span> = <span class="math inline">\(0.60\)</span></li>
+<li><span class="math inline">\(\sigma_2^2\)</span> = <span class="math inline">\(0.04\)</span></li>
+<li><span class="math inline">\(Cov(r_1, r_2)\)</span> = <span class="math inline">\(0.0072\)</span></li>
+</ul>
+Calculate:
+<span class="math display">\[
+\begin{aligned}
+\rho        &amp;= \frac{Cov(r_1, r_2)}{\sigma_1 \times \sigma_2} \\
+            &amp;= \frac{0.007}{\sqrt{0.014} \times \sqrt{0.04}} \\
+            &amp;= 0.3 \\
+\end{aligned}
+\]</span><br />
+$$
+<span class="math display">\[\begin{aligned}           
+            
+\sigma_P^2 &amp;= w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2w_1 w_2 \rho(r_1, r_2) \sigma_1 \sigma_2 \\
+            &amp;= 0.40^2 (0.014) + 0.60^2 (0.04) + 2(0.40)(0.60)[0.3\sqrt{0.014} \times \sqrt{0.04}] \\
+            &amp;= 0.02 \\
+\sigma_P    &amp;= \sqrt{0.02} = 0.142 \\
+\end{aligned}\]</span>
+<span class="math display">\[            
+\]</span>
+<span class="math display">\[\begin{aligned}
 
+\text{Weighted}(\sigma) &amp;= 0.40\sqrt{0.014} + 0.60\sqrt{0.04} \\
+            &amp;= 0.168 \\
+            
+\end{aligned}\]</span>
+<p>$$</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Diversification Benefit}
+            &amp;= 0.168 - 0.142 \\
+            &amp;= 0.026
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ch3.html#cb3-1" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb3-2"><a href="ch3.html#cb3-2" tabindex="-1"></a>w1 <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb3-3"><a href="ch3.html#cb3-3" tabindex="-1"></a>w2 <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb3-4"><a href="ch3.html#cb3-4" tabindex="-1"></a>sigma1_squared <span class="ot">&lt;-</span> <span class="fl">0.014</span></span>
+<span id="cb3-5"><a href="ch3.html#cb3-5" tabindex="-1"></a>sigma2_squared <span class="ot">&lt;-</span> <span class="fl">0.04</span></span>
+<span id="cb3-6"><a href="ch3.html#cb3-6" tabindex="-1"></a>covariance <span class="ot">&lt;-</span> <span class="fl">0.0072</span></span>
+<span id="cb3-7"><a href="ch3.html#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="ch3.html#cb3-8" tabindex="-1"></a><span class="co"># Calculate correlation coefficient</span></span>
+<span id="cb3-9"><a href="ch3.html#cb3-9" tabindex="-1"></a>rho <span class="ot">&lt;-</span> covariance <span class="sc">/</span> <span class="fu">sqrt</span>(sigma1_squared <span class="sc">*</span> sigma2_squared)</span>
+<span id="cb3-10"><a href="ch3.html#cb3-10" tabindex="-1"></a>rho </span></code></pre></div>
+<pre><code>## [1] 0.3042555</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="ch3.html#cb5-1" tabindex="-1"></a><span class="co"># Calculate portfolio variance</span></span>
+<span id="cb5-2"><a href="ch3.html#cb5-2" tabindex="-1"></a>portfolio_variance <span class="ot">&lt;-</span> w1<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma1_squared <span class="sc">+</span> w2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma2_squared <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> w1 <span class="sc">*</span> w2 <span class="sc">*</span> covariance</span>
+<span id="cb5-3"><a href="ch3.html#cb5-3" tabindex="-1"></a>portfolio_variance</span></code></pre></div>
+<pre><code>## [1] 0.020096</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="ch3.html#cb7-1" tabindex="-1"></a><span class="co"># Calculate portfolio standard deviation</span></span>
+<span id="cb7-2"><a href="ch3.html#cb7-2" tabindex="-1"></a>portfolio_sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(portfolio_variance)</span>
+<span id="cb7-3"><a href="ch3.html#cb7-3" tabindex="-1"></a>portfolio_sd</span></code></pre></div>
+<pre><code>## [1] 0.1417604</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ch3.html#cb9-1" tabindex="-1"></a><span class="co"># Calculate weighted standard deviation</span></span>
+<span id="cb9-2"><a href="ch3.html#cb9-2" tabindex="-1"></a>weighted_sd <span class="ot">&lt;-</span> w1 <span class="sc">*</span> <span class="fu">sqrt</span>(sigma1_squared) <span class="sc">+</span> w2 <span class="sc">*</span> <span class="fu">sqrt</span>(sigma2_squared)</span>
+<span id="cb9-3"><a href="ch3.html#cb9-3" tabindex="-1"></a>weighted_sd</span></code></pre></div>
+<pre><code>## [1] 0.1673286</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ch3.html#cb11-1" tabindex="-1"></a><span class="co"># Calculate diversification benefit</span></span>
+<span id="cb11-2"><a href="ch3.html#cb11-2" tabindex="-1"></a>diversification_benefit <span class="ot">&lt;-</span> weighted_sd <span class="sc">-</span> portfolio_sd</span>
+<span id="cb11-3"><a href="ch3.html#cb11-3" tabindex="-1"></a>diversification_benefit</span></code></pre></div>
+<pre><code>## [1] 0.02556828</code></pre>
+</div>
+</div>
+<div id="risky-and-risk-free-assets" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Risky and Risk-Free Assets<a href="ch3.html#risky-and-risk-free-assets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To decide the proportion of the portfolio to be allocated between the stock and bond funds, we will introduce a risk-free asset (T-bills) to the portfolio allocation problem.</p>
+<div id="sharpe-ratio" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Sharpe Ratio<a href="ch3.html#sharpe-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The higher a fund’s Sharpe ratio (Higher Return per Unit of Risk), the better its returns have been relative to the amount of investment risk taken.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sharpe Ratio Range</th>
+<th>Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Less than 1</td>
+<td>Bad</td>
+</tr>
+<tr class="even">
+<td>1 to 1.99</td>
+<td>Adequate/Good</td>
+</tr>
+<tr class="odd">
+<td>2 to 2.99</td>
+<td>Very Good</td>
+</tr>
+</tbody>
+</table>
+<p>The objective function is to maximize:</p>
+<p><span class="math display">\[\frac{{E(r_1) - r_f}}{{\sigma_P}}\]</span></p>
+<p>where:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(r_1)    &amp;= w_1 E(r_1) + w_2 E(r_2)\\
+\sigma_P  &amp;= \sqrt{{w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2w_1 w_2 Cov(r_1, r_2)}}\\
+\text{subject to}:\\
+w_1 + w_2 &amp;= 1\\
+\end{aligned}
+\]</span></p>
+<p>To solve for <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span>, we have:</p>
+<p><span class="math display">\[
+w_1 = \frac{{(E(r_1) - r_f) \sigma_2^2 - (E(r_2) - r_f) Cov(r_1, r_2)}}{{(E(r_1) - r_f) \sigma_2^2 + (E(r_2) - r_f) \sigma_1^2 - (E(r_1) - r_f + E(r_2) - r_f) Cov(r_1, r_2)}}$
+$w_2 = 1 - w_1$
+\]</span></p>
+<p>Given:</p>
+<ul>
+<li><span class="math inline">\(w_2 = 0.60\)</span></li>
+<li><span class="math inline">\(w_1 = 0.40\)</span></li>
+</ul>
+<p>Thus,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(r_P)   &amp;= 0.40 \times 8\% + 0.60 \times 13\% = 11\% \\
+\sigma_P &amp;= \sqrt{{0.40^2 \times 0.12^2 + 0.60^2 \times 0.20^2 + 2 \times 0.4 \times 0.6 \times (0.0072)}} \\
+         &amp;= 0.142 \\
+\end{aligned}       
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+Sharpe \, ratio &amp;= \frac{{E(r_P) - r_f}}{{\sigma_P}} \\
+&amp;= \frac{{0.11 - 0.03}}{{0.142}} \\
+&amp;= 0.42
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ch3.html#cb13-1" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb13-2"><a href="ch3.html#cb13-2" tabindex="-1"></a>w_2 <span class="ot">&lt;-</span> <span class="fl">0.60</span></span>
+<span id="cb13-3"><a href="ch3.html#cb13-3" tabindex="-1"></a>w_1 <span class="ot">&lt;-</span> <span class="fl">0.40</span></span>
+<span id="cb13-4"><a href="ch3.html#cb13-4" tabindex="-1"></a>r_f <span class="ot">&lt;-</span> <span class="fl">0.03</span></span>
+<span id="cb13-5"><a href="ch3.html#cb13-5" tabindex="-1"></a>E_r_1 <span class="ot">&lt;-</span> <span class="fl">0.08</span></span>
+<span id="cb13-6"><a href="ch3.html#cb13-6" tabindex="-1"></a>E_r_2 <span class="ot">&lt;-</span> <span class="fl">0.13</span></span>
+<span id="cb13-7"><a href="ch3.html#cb13-7" tabindex="-1"></a>sigma_1 <span class="ot">&lt;-</span> <span class="fl">0.12</span></span>
+<span id="cb13-8"><a href="ch3.html#cb13-8" tabindex="-1"></a>sigma_2 <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb13-9"><a href="ch3.html#cb13-9" tabindex="-1"></a>Cov_r_1_r_2 <span class="ot">&lt;-</span> <span class="fl">0.0072</span></span>
+<span id="cb13-10"><a href="ch3.html#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="ch3.html#cb13-11" tabindex="-1"></a><span class="co"># Calculate portfolio weights</span></span>
+<span id="cb13-12"><a href="ch3.html#cb13-12" tabindex="-1"></a>w_1_calculated <span class="ot">&lt;-</span> ((E_r_1 <span class="sc">-</span> r_f) <span class="sc">*</span> sigma_2<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> (E_r_2 <span class="sc">-</span> r_f) <span class="sc">*</span> Cov_r_1_r_2) <span class="sc">/</span> ((E_r_1 <span class="sc">-</span> r_f) <span class="sc">*</span> sigma_2<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (E_r_2 <span class="sc">-</span> r_f) <span class="sc">*</span> sigma_1<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> (E_r_1 <span class="sc">-</span> r_f <span class="sc">+</span> E_r_2 <span class="sc">-</span> r_f) <span class="sc">*</span> Cov_r_1_r_2)</span>
+<span id="cb13-13"><a href="ch3.html#cb13-13" tabindex="-1"></a>w_2_calculated <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> w_1_calculated</span>
+<span id="cb13-14"><a href="ch3.html#cb13-14" tabindex="-1"></a>w_1_calculated</span></code></pre></div>
+<pre><code>## [1] 0.5423729</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="ch3.html#cb15-1" tabindex="-1"></a>w_2_calculated</span></code></pre></div>
+<pre><code>## [1] 0.4576271</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="ch3.html#cb17-1" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb17-2"><a href="ch3.html#cb17-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Calculated w_1:&quot;</span>, w_1_calculated))</span></code></pre></div>
+<pre><code>## [1] &quot;Calculated w_1: 0.542372881355932&quot;</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="ch3.html#cb19-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Calculated w_2:&quot;</span>, w_2_calculated))</span></code></pre></div>
+<pre><code>## [1] &quot;Calculated w_2: 0.457627118644068&quot;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="ch3.html#cb21-1" tabindex="-1"></a><span class="co"># Calculate portfolio expected return</span></span>
+<span id="cb21-2"><a href="ch3.html#cb21-2" tabindex="-1"></a>E_r_P <span class="ot">&lt;-</span> w_1 <span class="sc">*</span> E_r_1 <span class="sc">+</span> w_2 <span class="sc">*</span> E_r_2</span>
+<span id="cb21-3"><a href="ch3.html#cb21-3" tabindex="-1"></a>E_r_P</span></code></pre></div>
+<pre><code>## [1] 0.11</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="ch3.html#cb23-1" tabindex="-1"></a><span class="co"># Calculate portfolio standard deviation</span></span>
+<span id="cb23-2"><a href="ch3.html#cb23-2" tabindex="-1"></a>sigma_P <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(w_1<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma_1<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> w_2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma_2<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> w_1 <span class="sc">*</span> w_2 <span class="sc">*</span> Cov_r_1_r_2)</span>
+<span id="cb23-3"><a href="ch3.html#cb23-3" tabindex="-1"></a>sigma_P</span></code></pre></div>
+<pre><code>## [1] 0.1419859</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="ch3.html#cb25-1" tabindex="-1"></a><span class="co"># Calculate Sharpe ratio</span></span>
+<span id="cb25-2"><a href="ch3.html#cb25-2" tabindex="-1"></a>Sharpe_ratio <span class="ot">&lt;-</span> (E_r_P <span class="sc">-</span> r_f) <span class="sc">/</span> sigma_P</span>
+<span id="cb25-3"><a href="ch3.html#cb25-3" tabindex="-1"></a>Sharpe_ratio</span></code></pre></div>
+<pre><code>## [1] 0.5634362</code></pre>
+</div>
+<div id="optimal-complete-portfolio" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Optimal Complete Portfolio<a href="ch3.html#optimal-complete-portfolio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that we know how to find the optimal risky portfolio, we can include the individual investor’s risk aversion (risk preferences) to find the optimal complete portfolio.</p>
+<p>With the utility function:</p>
+<p><span class="math display">\[ U = E(r) - \frac{1}{2} A \sigma^2 \]</span></p>
+<p>where <span class="math inline">\(y\)</span> is the proportion of the portfolio in the risky assets (maximizing U):</p>
+<p><span class="math display">\[ y = \frac{{E(r_P) - r_f}}{{A \sigma_P^2}} \]</span></p>
+<p>If <span class="math inline">\(A = 4\)</span>, <span class="math inline">\(E(r_P) = 0.11\)</span>, and variance = <span class="math inline">\(0.142\)</span>, then:</p>
+$$
+<span class="math display">\[\begin{aligned}
+y &amp;= \frac{{E(r_P) - r_f}}{{A \sigma_P^2}} = \frac{{0.11 - 0.05}}{{4 \times 0.142^2}} \\
+  &amp;= 0.7439 \\
+
+U &amp;= 0.0697\\
+\end{aligned}\]</span>
+<p>$$</p>
+<p>The investor will put 74.39% of funds in portfolio P and the rest (25.61%) in the risk-free asset (T-bills)</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="ch3.html#cb27-1" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb27-2"><a href="ch3.html#cb27-2" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb27-3"><a href="ch3.html#cb27-3" tabindex="-1"></a>E_r_P <span class="ot">&lt;-</span> <span class="fl">0.11</span></span>
+<span id="cb27-4"><a href="ch3.html#cb27-4" tabindex="-1"></a>r_f <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb27-5"><a href="ch3.html#cb27-5" tabindex="-1"></a>variance <span class="ot">&lt;-</span> <span class="fl">0.142</span></span>
+<span id="cb27-6"><a href="ch3.html#cb27-6" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="ch3.html#cb27-7" tabindex="-1"></a><span class="co"># Calculate proportion of the portfolio in risky assets (y)</span></span>
+<span id="cb27-8"><a href="ch3.html#cb27-8" tabindex="-1"></a>y <span class="ot">&lt;-</span> (E_r_P <span class="sc">-</span> r_f) <span class="sc">/</span> (A <span class="sc">*</span> variance<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb27-9"><a href="ch3.html#cb27-9" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## [1] 0.7439</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="ch3.html#cb29-1" tabindex="-1"></a><span class="co"># Calculate utility function</span></span>
+<span id="cb29-2"><a href="ch3.html#cb29-2" tabindex="-1"></a>U <span class="ot">&lt;-</span> E_r_P <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> A <span class="sc">*</span> variance<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb29-3"><a href="ch3.html#cb29-3" tabindex="-1"></a>U</span></code></pre></div>
+<pre><code>## [1] 0.069672</code></pre>
+</div>
+<div id="the-efficient-frontier" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> The Efficient Frontier<a href="ch3.html#the-efficient-frontier" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Efficient Frontier represents a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of expected return.</p>
+<p><img src="Resources/efffrontier.png" /></p>
+<p>The analytical technique to derive efficient frontier was developed by Harry Markowitz, and is often referred to as the <strong>Markowitz Model</strong></p>
+</div>
+<div id="separation-property" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Separation Property<a href="ch3.html#separation-property" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Separation property states that the asset allocation problem can be divided into two independent steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Determination of the optimal risky portfolio: this portfolio will be same for all clients.</p></li>
+<li><p>Determination of the complete portfolio that also includes the risk-free asset.</p></li>
+</ol>
+
+</div>
 </div>
 </div>
             </section>
@@ -229,6 +704,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
