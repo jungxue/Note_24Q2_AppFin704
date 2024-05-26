@@ -1,32 +1,457 @@
 # Risk and Return {#ch2}
 
-Hold period Return (HPR)
+## Learning Objectives
 
-average (arithmetic, geometric (account for compounding), weighted average)
+This lecture aims to provide the ability to:
 
-Internal Rate of Return (IRR) when NPV = 0
+1. Compute various measures of return on multi-year investments.
+2. Determine the expected return and risk of portfolios combining risky assets and risk-free investments like Treasury bills.
+3. Use the **Sharpe ratio** for evaluating portfolio performance and guiding capital allocation.
+4. Understand the role of utility in determining optimal capital allocation to risky assets.
 
-Annual percentage rate(APR) 
+## Measuring Returns
 
-Effective Annual Rate (EAR) account for compounding
+Returns can be measured in several ways:
+
+- **Holding Period Return (HPR):** This is the return earned over the period an investment is held.
+- **Returns Over Multiple Periods:** These can be compounded over time using methods such as:
+  - arithmetic average, 
+  - geometric average (compound annual growth rate), and 
+  - dollar-weighted average (internal rate of return).
+  
+### Arithmetic Average
+
+$$ \text{Arithmetic Average} = \frac{1}{N} \sum_{i=1}^{N} r_i $$
+where $r_i$ is the return in period $i$ and $N$ is the total number of periods.
+
+### Geometric Average
+
+$$ \text{Geometric Average} = \left( \prod_{i=1}^{N} (1 + r_i) \right)^{\frac{1}{N}} - 1 $$
+
+where $r_i$ is the return in period $i$ and $N$ is the total number of periods.
+
+### Dollar-Weighted Average (Internal Rate of Return)
+The dollar-weighted average return, or internal rate of return (IRR), is the discount rate $r$ that sets the **net present value (NPV) = 0**. It is calculated by solving the following equation:
+
+$$ \text{Dollar-Weighted Average} = \sum_{t=0}^{N} \frac{C_t}{(1 + r)^t} = 0 $$
+
+Where $C_t$ is the net cash flow at time $t$, and $N$ is the total number of periods.
+
+### Annualizing Returns
+
+- **Annual Percentage Rate (APR):** Simple annualized interest rate without compounding.
+- **Effective Annual Rate (EAR):** Accounts for intra-year compounding, providing a true measure of annual return.
+
+$$
+\text{APR} = r \times n
+$$
+
+Where:
+
+- $r$ is the periodic interest rate
+- $n$ is the number of compounding periods per year
+
+$$
+\text{EAR} = \left(1 + \frac{r}{n}\right)^n - 1
+$$
+Where:
+
+- $r$ is the nominal annual interest rate
+- $n$ is the number of compounding periods per year
+
+Example: 
+
+$ 10000 Deposit, APR (annual percentage rate): 4% p.a. Compounding Quarterly.
+
+$$ 
+\begin{aligned}
+EAR &= (1+r/n)^n− 1 \\
+&=(1+(0.04)/4)^4 −1 \\
+&=0.0406 \\
+&= 4.06\% 
+\end{aligned}
+$$
+
+## Risk and Risk Premiums
+
+### Expected Return
+
+$E(R)$ Is the weighted average of all possible returns, with weights being the probabilities of each scenario.
+
+$$
+E(R) = \sum_{i=1}^{N} p_i \cdot r_i
+$$
+Where:
+
+- $E(R)$ is the expected return of the portfolio
+- $p_i$ is the probability/weight of asset $i$ in the portfolio
+- $r_i$ is the expected return of individual asset $i$
+- $N$ is the number of assets in the portfolio
+
+**Example Calculation**
+
+- Asset A: weight = 50%, expected return = 10%
+- Asset B: weight = 30%, expected return = 15%
+- Asset C: weight = 20%, expected return = 20%
+
+The expected return of the portfolio is:
+
+$$
+\begin{aligned}
+E(R) &= (0.50 \cdot 0.10) + (0.30 \cdot 0.15) + (0.20 \cdot 0.20) \\
+       &= 0.05 + 0.045 + 0.04 \\
+       &= 0.135 \\
+       &= 13.5\% \\  
+\end{aligned}
+$$
+**R Code for Calculation**
+
+```{r}
+# Define the weights and expected returns of the assets
+weights          <- c(0.50, 0.30, 0.20)
+expected_returns <- c(0.10, 0.15, 0.20)
+
+# Calculate the expected return of the portfolio
+expected_return_portfolio <- sum(weights * expected_returns)
+
+# Print the expected return as a percentage
+expected_return_percentage <- expected_return_portfolio * 100
+expected_return_percentage
+```
+
+### Standard Deviation
+
+Measures the deviation of returns from the mean. 
+
+$$
+\sigma = \sqrt{\sum_{i=1}^{N} p(i) [r(i) - E(r)]^2}
+$$
+
+Where:
+
+- $\sigma$ is the standard deviation of the expected return
+- $p(i)$ is the probability/weight of assets $i$
+- $r(i)$ is the return of individual assets $i$
+- $E(r)$ is the expected return
+- $N$ is the number of assets
+
+**Example Calculation**
+
+- asset 1: probability = 0.3, return = 0.12
+- asset 2: probability = 0.4, return = 0.04
+- asset 3: probability = 0.3, return = -0.02
+- Expected return $E(r) = 0.046$
+
+The standard deviation of the expected return is:
+
+$$
+\begin{aligned}
+\sigma &= \sqrt{0.3(0.12 - 0.046)^2 + 0.4(0.04 - 0.046)^2 + 0.3(-0.02 - 0.046)^2}\\
+       &= 0.0544\\
+       &= 5.44\%
+\end{aligned}
+$$
+**R Code for Calculation**
+
+```{r}
+# Define the probabilities and returns of the states
+probabilities <- c(0.3, 0.4, 0.3)
+returns <- c(0.12, 0.04, -0.02)
+expected_return <- 0.046
+
+# Calculate the variance
+variance <- sum(probabilities * (returns - expected_return)^2)
+
+# Calculate the standard deviation
+standard_deviation <- sqrt(variance)
+
+# Print the standard deviation as a percentage
+standard_deviation_percentage <- standard_deviation * 100
+standard_deviation_percentage
+
+```
+
+
+### Normal Distribution
+
+Stock returns are often assumed to be normally distributed. However, real return distributions may show skewness such as "fat tails."
+
+$$X∼N(μ,σ2)$$
+
+$$
+f(x | \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)
+$$
+
+Where:
+
+- $\mu$ is the mean
+- $\sigma$ is the standard deviation
+- $x$ is the variable
+
+**standard normal distribution** is the normal distribution with mean  $μ$ = 0 and standard deviation $σ$ = 1.
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right)
+$$
+
+Where:
+
+- $\mu = 0$
+- $\sigma = 1$
+- $x$ is the variable
+
+**Example Calculation**
+
+Let's calculate the probability of a value $x$ in a normal distribution with a mean $\mu = 0$ and a standard deviation $\sigma = 1$ (standard normal distribution).
+
+We will also calculate the cumulative probability (CDF) and quantiles for specific values.
+
+**R Code for Calculation**
+
+```{r}
+# Define the parameters for the normal distribution
+mu <- 0
+sigma <- 1
+
+# Define a value for x
+x <- 1
+
+# Calculate the probability density function (PDF) of the normal distribution at x
+pdf_value <- dnorm(x, mean = mu, sd = sigma)
+
+# Calculate the cumulative distribution function (CDF) of the normal distribution at x
+cdf_value <- pnorm(x, mean = mu, sd = sigma)
+
+# Calculate the quantile for a given probability
+probability <- 0.95
+quantile_value <- qnorm(probability, mean = mu, sd = sigma)
+
+# Print the results
+list(PDF = pdf_value, CDF = cdf_value, Quantile = quantile_value)
+
+```
+
+### Risk Aversion
+Risk-averse investors prefer less risk for the same expected return. They demand a risk premium for taking additional risk, quantified by the price of risk (ratio of risk premium to variance).
+
+Risk-averse investors reject investment opportunities with a **risk premium** of zero or less.
+
+**Degree of risk aversion**
+
+$$
+A = \frac{E(r_i) - E(r_f)}{\sigma_i^2}
+$$
+
+Where:
+
+- $A$ = degree of risk aversion 
+- $E(r_i)$ is the expected return of the risky asset.
+- $E(r_f)$ is the risk-free rate.
+- $\sigma_i^2$ is the variance of the return of the risky asset.
+
+**Example**
+
+For the market portfolio (e.g., S&P 500 index funds), the average degree of risk aversion of investors is:
+
+$$
+\begin{aligned}
+\bar{A} &= \frac{\text{Average}(r_M - r_f)}{\text{Sample } \sigma_M^2}\\
+ &\approx \frac{0.08}{0.04} = 2
+\end{aligned}
+$$
+
+Where:
+
+- $r_M$ is the return of the market portfolio.
+- $\sigma_M^2$ is the variance of the market return.
+
+## Portfolio Construction
+
+1. Selection of risky assets/portfolios such as stocks and bonds.
+
+2. Decision on the proportion of the portfolio to invest in risky assets versus risk-free assets.
+
+### Capital Allocation:
+
+Combining investments in risk-free and risky assets allows for varying expected returns and risks.
+
+We call the overall portfolio composed of the risk-free asset and the risky portfolio the **complete portfolio**. 
+
+### Utility
+
+**Utility:** Represents investor preferences, considering risk aversion. It helps in making decisions about different securities.This is a single measure we have the investor’s attitudes to risk and return at each level of wealth.
+
+**Influence of the trade-off decisions:**
+
+- Risk appetite (strong financial position and stable income may have higher appitite)
+- proportion of the investor’s total wealth. (psychological risk aversion) 
+- Financial Goals/liquidity needs (set when they need cash flow) 
+- Investment Horizon (longer horizon takes more risk)
+- Knowledge and Experience (Dunning Kruger effect)
+- Social/Regulatory environment and incentives
+
+### Utility Function
+
+Captures an investor's risk-return trade-offs. Utility increases with expected return and decreases with risk. More risk-averse investors have higher coefficients of risk aversion (A).
+
+There are countless utility functions. An example is:
+
+$$
+U = E(r) - \frac{1}{2} A \sigma^2
+$$
+Where:
+
+- $U$ = the utility value, 
+- $A$ = coefficient of risk aversion, 
+- $\sigma^2$ = variance
+- Utility increases with expected returns and decreases with risk. 
+- Utility of a risk-free portfolio is equal to its rate of return. 
+- More risk-averse investors will have larger values of A. 
+- Investors assign higher utility to more attractive risk-return portfolios.
 
 
 
-Expecte dreyrn formular $$E = sum pi xi$$
-standard deviation to measure the variance
+**Example:**
 
-normal assumption? 
+where:
 
-transform return to standard normal distribution to comapre
+- $A$  degree of risk aversion = $2$
+- $r_f$ risk-free rate = $4\%$
 
-why not normal
+![](Resources/utilisation.png)
 
-short term and long term holder
+### Indifference Curves
 
-fat tails (extreme cases are more likely) bubbles and crisis
+These curves connect portfolios providing the same utility level, illustrating an investor's preference for different risk-return combinations.
 
-risk aversion
+Simply above the curve Yes, below the curve no. 
 
-## Enter subsection 1 here
+![](Resources/indiffcurve.png)
 
-## Enter subsection 2 here
+### Capital Allocation Line 
+
+It’s possible to split investment funds between safe and risky assets. 
+
+1. Risk free asset: proxy = T-bills
+2. Risky asset: stock (or a portfolio) 
+
+- $r_f$ Risk-free rate = $7\%$
+- $\sigma_{r_f}$ Standard deviation of the risk-free rate = $0$
+- $E(r_p)$ Expected return of the risky portfolio = $15\%$
+- $\sigma_p$ Standard deviation of the risky portfolio = $22\%$
+
+The investor allocates $y$ proportion of their wealth in the risky portfolio and $1 - y$ in the risk-free portfolio.
+
+$$
+\begin{aligned}
+E(r_c) &= (y)E(r_p) + (1 - y)r_f \\
+E(r_c) &= y \times 15\% + (1 - y) \times 7\% \\
+E(r_c) &= 7\% + y \times (15\% - 7\%) \\
+E(r_c) &= 7\% + 8y \\
+and \\
+\sigma_c &= y \sigma_𝑝=22𝑦\\
+\end{aligned}
+$$
+
+Example:
+
+$$
+\begin{aligned}
+y        &= 0.75 \\
+r_𝑐     &= 0.07+0.08*(0.75) = 13\% \\
+\sigma_c &= y \sigma_𝑝=22𝑦\\
+\sigma_c &= 16.5\% \\
+\end{aligned}
+$$
+![](Resources/capaloocation1.png)
+
+The **Sharpe Ratio**, which measures extra return per unit of risk (gradient of line), is calculated as:
+
+$$
+\begin{aligned}
+\text{Sharpe ratio} &= \frac{E(r_p) - r_f}{ \sigma_p}\\
+&= 8/22 \\
+&= 0.36\%. 
+\end{aligned}
+$$
+
+### Capital Allocation Line (CAL) with Leverage
+
+Leverage multiplies loss and return at a cost of borrowing money from dealers. 
+
+Borrowing at the risk-free rate extends the CAL. Borrowing rates higher than the risk-free rate cause a kink in the CAL, changing the slope.
+
+$$
+\begin{aligned}
+      𝐸(r_c) &= (−0.5)∗0.09+(1.5)∗0.15\\
+              &=18\% \\
+	   \sigma_c &= (1.5)0.22 = 33\% \\
+\text{The Sharpe ratio is} \\
+	(18−9)/0.33 &= 0.27\% \\
+\end{aligned}
+$$
+![](Resources/capaloocation2.png)
+
+### Utility Maximization
+
+In portfolio theory, investors aim to maximize their utility, which balances expected return and risk. Mathematically, the utility function is:
+
+$$
+\begin{aligned}
+\text{Max}(U) &= E(r) - \frac{1}{2} A \sigma^2 \\
+&= r_f + y [E(r_p) - r_f] - \frac{1}{2} A y^2 \sigma_p^2 \\
+\text{Solve for y, we have } \\
+y^* &= \frac{E(r_p) - r_f}{A \sigma_p^2}
+\end{aligned}
+$$
+
+To find the optimal proportion $y^$ to invest in the risky portfolio, we solve for $y_*$:
+
+**R code**
+
+```{r}
+# Define parameters
+rf <- 0.06       # Risk-free rate
+Erp <- 0.18      # Expected return of the risky portfolio
+sigma_p <- 0.25  # Standard deviation of the risky portfolio
+A <- 5           # Degree of risk aversion
+
+# Calculate optimal y
+y_star <- (Erp - rf) / (A * sigma_p^2)
+y_star
+
+# The Expected Return
+
+ER = rf + (y_star*(Erp - rf))
+ER
+sigma_c = y_star*sigma_p
+sigma_c
+
+sharpe = (ER- rf)/sigma_c
+sharpe
+```
+### Personal preferences 
+
+![](Resources/capaloocation3.png)
+
+- Investors aim to choose portfolios on higher indifference curves.
+- Higher indifference curves provide a higher expected return for a given level of risk.
+- More risk-averse investors have steeper indifference curves.
+- More risk-averse investors require a greater increase in expected return for an increase in portfolio risk.
+
+### The Capital Market Line (CML)
+
+| **Aspect**                   | **Active Management**                                                | **Passive Management**                                         |
+|------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------|
+| **Pros**                     |                                                                      |                                                                |
+| Higher Return Potential      | Aims to outperform the market.                                       | Matches market returns.                                        |
+| Flexibility                  | Can quickly adjust to market changes.                                | Follows index rules.                                           |
+| Risk Management              | Can avoid certain sectors or stocks to manage risk.                  | Diversified holdings reduce specific risks.                    |
+| Exploiting Inefficiencies    | Can capitalize on market inefficiencies.                             | Benefits from overall market growth.                           |
+| Customization                | Tailors strategy to investor goals.                                  | Simple, straightforward strategy.                              |
+| **Cons**                     |                                                                      |                                                                |
+| Higher Costs                 | More fees and expenses due to frequent trading and research.         | Lower fees and expenses.                                       |
+| Performance Uncertainty      | No guarantee of outperforming the market.                            | Predictable performance, matches index.                        |
+| Increased Risk               | Higher risk from concentrated positions and market timing.           | Lower risk due to diversification.                             |
+| Tax Implications             | More frequent trading can lead to higher taxes.                      | Less frequent trading, more tax efficient.                     |
+| Dependence on Manager Skill  | Relies on the skill and judgment of the manager.                     | No reliance on manager skill.                                  |

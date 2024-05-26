@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 2 Risk and Return | Study Note for 24Q2 AppFin704</title>
   <meta name="description" content="Lecture 2 Risk and Return | Study Note for 24Q2 AppFin704" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 2 Risk and Return | Study Note for 24Q2 AppFin704" />
   <meta property="og:type" content="book" />
@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -82,7 +146,7 @@
 <li class="chapter" data-level="1.1.1" data-path="ch1.html"><a href="ch1.html#money-markets"><i class="fa fa-check"></i><b>1.1.1</b> Money Markets</a></li>
 <li class="chapter" data-level="1.1.2" data-path="ch1.html"><a href="ch1.html#the-bond-market"><i class="fa fa-check"></i><b>1.1.2</b> The Bond Market</a></li>
 <li class="chapter" data-level="1.1.3" data-path="ch1.html"><a href="ch1.html#the-equity-market"><i class="fa fa-check"></i><b>1.1.3</b> The Equity Market</a></li>
-<li class="chapter" data-level="1.1.4" data-path="ch1.html"><a href="ch1.html#stock-and-bond-market-indexes"><i class="fa fa-check"></i><b>1.1.4</b> Stock and bond market indexes</a></li>
+<li class="chapter" data-level="1.1.4" data-path="ch1.html"><a href="ch1.html#market-indexes"><i class="fa fa-check"></i><b>1.1.4</b> Market Indexes</a></li>
 <li class="chapter" data-level="1.1.5" data-path="ch1.html"><a href="ch1.html#derivative-markets"><i class="fa fa-check"></i><b>1.1.5</b> Derivative Markets</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="ch1.html"><a href="ch1.html#securities-markets-and-trading"><i class="fa fa-check"></i><b>1.2</b> Securities Markets and Trading</a></li>
@@ -93,43 +157,68 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch2.html"><a href="ch2.html"><i class="fa fa-check"></i><b>2</b> Risk and Return</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="ch2.html"><a href="ch2.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>2.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="2.2" data-path="ch2.html"><a href="ch2.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>2.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="2.1" data-path="ch2.html"><a href="ch2.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ch2.html"><a href="ch2.html#measuring-returns"><i class="fa fa-check"></i><b>2.2</b> Measuring Returns</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ch2.html"><a href="ch2.html#arithmetic-average"><i class="fa fa-check"></i><b>2.2.1</b> Arithmetic Average</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ch2.html"><a href="ch2.html#geometric-average"><i class="fa fa-check"></i><b>2.2.2</b> Geometric Average</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ch2.html"><a href="ch2.html#dollar-weighted-average-internal-rate-of-return"><i class="fa fa-check"></i><b>2.2.3</b> Dollar-Weighted Average (Internal Rate of Return)</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ch2.html"><a href="ch2.html#annualizing-returns"><i class="fa fa-check"></i><b>2.2.4</b> Annualizing Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ch2.html"><a href="ch2.html#risk-and-risk-premiums"><i class="fa fa-check"></i><b>2.3</b> Risk and Risk Premiums</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch2.html"><a href="ch2.html#expected-return"><i class="fa fa-check"></i><b>2.3.1</b> Expected Return</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch2.html"><a href="ch2.html#standard-deviation"><i class="fa fa-check"></i><b>2.3.2</b> Standard Deviation</a></li>
+<li class="chapter" data-level="2.3.3" data-path="ch2.html"><a href="ch2.html#normal-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Normal Distribution</a></li>
+<li class="chapter" data-level="2.3.4" data-path="ch2.html"><a href="ch2.html#risk-aversion"><i class="fa fa-check"></i><b>2.3.4</b> Risk Aversion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch2.html"><a href="ch2.html#portfolio-construction"><i class="fa fa-check"></i><b>2.4</b> Portfolio Construction</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="ch2.html"><a href="ch2.html#capital-allocation"><i class="fa fa-check"></i><b>2.4.1</b> Capital Allocation:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ch2.html"><a href="ch2.html#utility"><i class="fa fa-check"></i><b>2.4.2</b> Utility</a></li>
+<li class="chapter" data-level="2.4.3" data-path="ch2.html"><a href="ch2.html#utility-function"><i class="fa fa-check"></i><b>2.4.3</b> Utility Function</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ch2.html"><a href="ch2.html#indifference-curves"><i class="fa fa-check"></i><b>2.4.4</b> Indifference Curves</a></li>
+<li class="chapter" data-level="2.4.5" data-path="ch2.html"><a href="ch2.html#capital-allocation-line"><i class="fa fa-check"></i><b>2.4.5</b> Capital Allocation Line</a></li>
+<li class="chapter" data-level="2.4.6" data-path="ch2.html"><a href="ch2.html#capital-allocation-line-cal-with-leverage"><i class="fa fa-check"></i><b>2.4.6</b> Capital Allocation Line (CAL) with Leverage</a></li>
+<li class="chapter" data-level="2.4.7" data-path="ch2.html"><a href="ch2.html#utility-maximization"><i class="fa fa-check"></i><b>2.4.7</b> Utility Maximization</a></li>
+<li class="chapter" data-level="2.4.8" data-path="ch2.html"><a href="ch2.html#personal-preferences"><i class="fa fa-check"></i><b>2.4.8</b> Personal preferences</a></li>
+<li class="chapter" data-level="2.4.9" data-path="ch2.html"><a href="ch2.html#the-capital-market-line-cml"><i class="fa fa-check"></i><b>2.4.9</b> The Capital Market Line (CML)</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> Diversification</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>3.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>3.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>3.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>3.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch4.html"><a href="ch4.html"><i class="fa fa-check"></i><b>4</b> CAPM and APT</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch4.html"><a href="ch4.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>4.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>4.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="4.1" data-path="ch4.html"><a href="ch4.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>4.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>4.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch5.html"><a href="ch5.html"><i class="fa fa-check"></i><b>5</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="ch6.html"><a href="ch6.html"><i class="fa fa-check"></i><b>6</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch7.html"><a href="ch7.html"><i class="fa fa-check"></i><b>7</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-5"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-5"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch8.html"><a href="ch8.html"><i class="fa fa-check"></i><b>8</b> Performance Attribution and Appraisal</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-6"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-6"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-5"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-5"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch9.html"><a href="ch9.html"><i class="fa fa-check"></i><b>9</b> Tax Implications and ESG Investing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-7"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-7"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-6"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-6"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="concluding-remarks.html"><a href="concluding-remarks.html"><i class="fa fa-check"></i>Concluding Remarks</a>
 <ul>
@@ -161,25 +250,490 @@
             <section class="normal" id="section-">
 <div id="ch2" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Lecture 2</span> Risk and Return<a href="ch2.html#ch2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Hold period Return (HPR)</p>
-<p>average (arithmetic, geometric (account for compounding), weighted average)</p>
-<p>Internal Rate of Return (IRR) when NPV = 0</p>
-<p>Annual percentage rate(APR)</p>
-<p>Effective Annual Rate (EAR) account for compounding</p>
-<p>Expecte dreyrn formular <span class="math display">\[E = sum pi xi\]</span>
-standard deviation to measure the variance</p>
-<p>normal assumption?</p>
-<p>transform return to standard normal distribution to comapre</p>
-<p>why not normal</p>
-<p>short term and long term holder</p>
-<p>fat tails (extreme cases are more likely) bubbles and crisis</p>
-<p>risk aversion</p>
-<div id="enter-subsection-1-here" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Enter subsection 1 here<a href="ch2.html#enter-subsection-1-here" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="learning-objectives" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Learning Objectives<a href="ch2.html#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This lecture aims to provide the ability to:</p>
+<ol style="list-style-type: decimal">
+<li>Compute various measures of return on multi-year investments.</li>
+<li>Determine the expected return and risk of portfolios combining risky assets and risk-free investments like Treasury bills.</li>
+<li>Use the <strong>Sharpe ratio</strong> for evaluating portfolio performance and guiding capital allocation.</li>
+<li>Understand the role of utility in determining optimal capital allocation to risky assets.</li>
+</ol>
 </div>
-<div id="enter-subsection-2-here" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Enter subsection 2 here<a href="ch2.html#enter-subsection-2-here" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="measuring-returns" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Measuring Returns<a href="ch2.html#measuring-returns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Returns can be measured in several ways:</p>
+<ul>
+<li><strong>Holding Period Return (HPR):</strong> This is the return earned over the period an investment is held.</li>
+<li><strong>Returns Over Multiple Periods:</strong> These can be compounded over time using methods such as:
+<ul>
+<li>arithmetic average,</li>
+<li>geometric average (compound annual growth rate), and</li>
+<li>dollar-weighted average (internal rate of return).</li>
+</ul></li>
+</ul>
+<div id="arithmetic-average" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Arithmetic Average<a href="ch2.html#arithmetic-average" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[ \text{Arithmetic Average} = \frac{1}{N} \sum_{i=1}^{N} r_i \]</span>
+where <span class="math inline">\(r_i\)</span> is the return in period <span class="math inline">\(i\)</span> and <span class="math inline">\(N\)</span> is the total number of periods.</p>
+</div>
+<div id="geometric-average" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Geometric Average<a href="ch2.html#geometric-average" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[ \text{Geometric Average} = \left( \prod_{i=1}^{N} (1 + r_i) \right)^{\frac{1}{N}} - 1 \]</span></p>
+<p>where <span class="math inline">\(r_i\)</span> is the return in period <span class="math inline">\(i\)</span> and <span class="math inline">\(N\)</span> is the total number of periods.</p>
+</div>
+<div id="dollar-weighted-average-internal-rate-of-return" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Dollar-Weighted Average (Internal Rate of Return)<a href="ch2.html#dollar-weighted-average-internal-rate-of-return" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The dollar-weighted average return, or internal rate of return (IRR), is the discount rate <span class="math inline">\(r\)</span> that sets the <strong>net present value (NPV) = 0</strong>. It is calculated by solving the following equation:</p>
+<p><span class="math display">\[ \text{Dollar-Weighted Average} = \sum_{t=0}^{N} \frac{C_t}{(1 + r)^t} = 0 \]</span></p>
+<p>Where <span class="math inline">\(C_t\)</span> is the net cash flow at time <span class="math inline">\(t\)</span>, and <span class="math inline">\(N\)</span> is the total number of periods.</p>
+</div>
+<div id="annualizing-returns" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Annualizing Returns<a href="ch2.html#annualizing-returns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Annual Percentage Rate (APR):</strong> Simple annualized interest rate without compounding.</li>
+<li><strong>Effective Annual Rate (EAR):</strong> Accounts for intra-year compounding, providing a true measure of annual return.</li>
+</ul>
+<p><span class="math display">\[
+\text{APR} = r \times n
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(r\)</span> is the periodic interest rate</li>
+<li><span class="math inline">\(n\)</span> is the number of compounding periods per year</li>
+</ul>
+<p><span class="math display">\[
+\text{EAR} = \left(1 + \frac{r}{n}\right)^n - 1
+\]</span>
+Where:</p>
+<ul>
+<li><span class="math inline">\(r\)</span> is the nominal annual interest rate</li>
+<li><span class="math inline">\(n\)</span> is the number of compounding periods per year</li>
+</ul>
+<p>Example:</p>
+<p>$ 10000 Deposit, APR (annual percentage rate): 4% p.a. Compounding Quarterly.</p>
+<p><span class="math display">\[
+\begin{aligned}
+EAR &amp;= (1+r/n)^n− 1 \\
+&amp;=(1+(0.04)/4)^4 −1 \\
+&amp;=0.0406 \\
+&amp;= 4.06\%
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="risk-and-risk-premiums" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Risk and Risk Premiums<a href="ch2.html#risk-and-risk-premiums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="expected-return" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Expected Return<a href="ch2.html#expected-return" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(E(R)\)</span> Is the weighted average of all possible returns, with weights being the probabilities of each scenario.</p>
+<p><span class="math display">\[
+E(R) = \sum_{i=1}^{N} p_i \cdot r_i
+\]</span>
+Where:</p>
+<ul>
+<li><span class="math inline">\(E(R)\)</span> is the expected return of the portfolio</li>
+<li><span class="math inline">\(p_i\)</span> is the probability/weight of asset <span class="math inline">\(i\)</span> in the portfolio</li>
+<li><span class="math inline">\(r_i\)</span> is the expected return of individual asset <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(N\)</span> is the number of assets in the portfolio</li>
+</ul>
+<p><strong>Example Calculation</strong></p>
+<ul>
+<li>Asset A: weight = 50%, expected return = 10%</li>
+<li>Asset B: weight = 30%, expected return = 15%</li>
+<li>Asset C: weight = 20%, expected return = 20%</li>
+</ul>
+<p>The expected return of the portfolio is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(R) &amp;= (0.50 \cdot 0.10) + (0.30 \cdot 0.15) + (0.20 \cdot 0.20) \\
+       &amp;= 0.05 + 0.045 + 0.04 \\
+       &amp;= 0.135 \\
+       &amp;= 13.5\% \\  
+\end{aligned}
+\]</span>
+<strong>R Code for Calculation</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ch2.html#cb1-1" tabindex="-1"></a><span class="co"># Define the weights and expected returns of the assets</span></span>
+<span id="cb1-2"><a href="ch2.html#cb1-2" tabindex="-1"></a>weights          <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.50</span>, <span class="fl">0.30</span>, <span class="fl">0.20</span>)</span>
+<span id="cb1-3"><a href="ch2.html#cb1-3" tabindex="-1"></a>expected_returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.20</span>)</span>
+<span id="cb1-4"><a href="ch2.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="ch2.html#cb1-5" tabindex="-1"></a><span class="co"># Calculate the expected return of the portfolio</span></span>
+<span id="cb1-6"><a href="ch2.html#cb1-6" tabindex="-1"></a>expected_return_portfolio <span class="ot">&lt;-</span> <span class="fu">sum</span>(weights <span class="sc">*</span> expected_returns)</span>
+<span id="cb1-7"><a href="ch2.html#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="ch2.html#cb1-8" tabindex="-1"></a><span class="co"># Print the expected return as a percentage</span></span>
+<span id="cb1-9"><a href="ch2.html#cb1-9" tabindex="-1"></a>expected_return_percentage <span class="ot">&lt;-</span> expected_return_portfolio <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb1-10"><a href="ch2.html#cb1-10" tabindex="-1"></a>expected_return_percentage</span></code></pre></div>
+<pre><code>## [1] 13.5</code></pre>
+</div>
+<div id="standard-deviation" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Standard Deviation<a href="ch2.html#standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Measures the deviation of returns from the mean.</p>
+<p><span class="math display">\[
+\sigma = \sqrt{\sum_{i=1}^{N} p(i) [r(i) - E(r)]^2}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\sigma\)</span> is the standard deviation of the expected return</li>
+<li><span class="math inline">\(p(i)\)</span> is the probability/weight of assets <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(r(i)\)</span> is the return of individual assets <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(E(r)\)</span> is the expected return</li>
+<li><span class="math inline">\(N\)</span> is the number of assets</li>
+</ul>
+<p><strong>Example Calculation</strong></p>
+<ul>
+<li>asset 1: probability = 0.3, return = 0.12</li>
+<li>asset 2: probability = 0.4, return = 0.04</li>
+<li>asset 3: probability = 0.3, return = -0.02</li>
+<li>Expected return <span class="math inline">\(E(r) = 0.046\)</span></li>
+</ul>
+<p>The standard deviation of the expected return is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma &amp;= \sqrt{0.3(0.12 - 0.046)^2 + 0.4(0.04 - 0.046)^2 + 0.3(-0.02 - 0.046)^2}\\
+       &amp;= 0.0544\\
+       &amp;= 5.44\%
+\end{aligned}
+\]</span>
+<strong>R Code for Calculation</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ch2.html#cb3-1" tabindex="-1"></a><span class="co"># Define the probabilities and returns of the states</span></span>
+<span id="cb3-2"><a href="ch2.html#cb3-2" tabindex="-1"></a>probabilities <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>)</span>
+<span id="cb3-3"><a href="ch2.html#cb3-3" tabindex="-1"></a>returns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.12</span>, <span class="fl">0.04</span>, <span class="sc">-</span><span class="fl">0.02</span>)</span>
+<span id="cb3-4"><a href="ch2.html#cb3-4" tabindex="-1"></a>expected_return <span class="ot">&lt;-</span> <span class="fl">0.046</span></span>
+<span id="cb3-5"><a href="ch2.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="ch2.html#cb3-6" tabindex="-1"></a><span class="co"># Calculate the variance</span></span>
+<span id="cb3-7"><a href="ch2.html#cb3-7" tabindex="-1"></a>variance <span class="ot">&lt;-</span> <span class="fu">sum</span>(probabilities <span class="sc">*</span> (returns <span class="sc">-</span> expected_return)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-8"><a href="ch2.html#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="ch2.html#cb3-9" tabindex="-1"></a><span class="co"># Calculate the standard deviation</span></span>
+<span id="cb3-10"><a href="ch2.html#cb3-10" tabindex="-1"></a>standard_deviation <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(variance)</span>
+<span id="cb3-11"><a href="ch2.html#cb3-11" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="ch2.html#cb3-12" tabindex="-1"></a><span class="co"># Print the standard deviation as a percentage</span></span>
+<span id="cb3-13"><a href="ch2.html#cb3-13" tabindex="-1"></a>standard_deviation_percentage <span class="ot">&lt;-</span> standard_deviation <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb3-14"><a href="ch2.html#cb3-14" tabindex="-1"></a>standard_deviation_percentage</span></code></pre></div>
+<pre><code>## [1] 5.444263</code></pre>
+</div>
+<div id="normal-distribution" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Normal Distribution<a href="ch2.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Stock returns are often assumed to be normally distributed. However, real return distributions may show skewness such as “fat tails.”</p>
+<p><span class="math display">\[X∼N(μ,σ2)\]</span></p>
+<p><span class="math display">\[
+f(x | \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\mu\)</span> is the mean</li>
+<li><span class="math inline">\(\sigma\)</span> is the standard deviation</li>
+<li><span class="math inline">\(x\)</span> is the variable</li>
+</ul>
+<p><strong>standard normal distribution</strong> is the normal distribution with mean <span class="math inline">\(μ\)</span> = 0 and standard deviation <span class="math inline">\(σ\)</span> = 1.</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right)
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\mu = 0\)</span></li>
+<li><span class="math inline">\(\sigma = 1\)</span></li>
+<li><span class="math inline">\(x\)</span> is the variable</li>
+</ul>
+<p><strong>Example Calculation</strong></p>
+<p>Let’s calculate the probability of a value <span class="math inline">\(x\)</span> in a normal distribution with a mean <span class="math inline">\(\mu = 0\)</span> and a standard deviation <span class="math inline">\(\sigma = 1\)</span> (standard normal distribution).</p>
+<p>We will also calculate the cumulative probability (CDF) and quantiles for specific values.</p>
+<p><strong>R Code for Calculation</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="ch2.html#cb5-1" tabindex="-1"></a><span class="co"># Define the parameters for the normal distribution</span></span>
+<span id="cb5-2"><a href="ch2.html#cb5-2" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="ch2.html#cb5-3" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="ch2.html#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="ch2.html#cb5-5" tabindex="-1"></a><span class="co"># Define a value for x</span></span>
+<span id="cb5-6"><a href="ch2.html#cb5-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="ch2.html#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="ch2.html#cb5-8" tabindex="-1"></a><span class="co"># Calculate the probability density function (PDF) of the normal distribution at x</span></span>
+<span id="cb5-9"><a href="ch2.html#cb5-9" tabindex="-1"></a>pdf_value <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span>
+<span id="cb5-10"><a href="ch2.html#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="ch2.html#cb5-11" tabindex="-1"></a><span class="co"># Calculate the cumulative distribution function (CDF) of the normal distribution at x</span></span>
+<span id="cb5-12"><a href="ch2.html#cb5-12" tabindex="-1"></a>cdf_value <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(x, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span>
+<span id="cb5-13"><a href="ch2.html#cb5-13" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="ch2.html#cb5-14" tabindex="-1"></a><span class="co"># Calculate the quantile for a given probability</span></span>
+<span id="cb5-15"><a href="ch2.html#cb5-15" tabindex="-1"></a>probability <span class="ot">&lt;-</span> <span class="fl">0.95</span></span>
+<span id="cb5-16"><a href="ch2.html#cb5-16" tabindex="-1"></a>quantile_value <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(probability, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span>
+<span id="cb5-17"><a href="ch2.html#cb5-17" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="ch2.html#cb5-18" tabindex="-1"></a><span class="co"># Print the results</span></span>
+<span id="cb5-19"><a href="ch2.html#cb5-19" tabindex="-1"></a><span class="fu">list</span>(<span class="at">PDF =</span> pdf_value, <span class="at">CDF =</span> cdf_value, <span class="at">Quantile =</span> quantile_value)</span></code></pre></div>
+<pre><code>## $PDF
+## [1] 0.2419707
+## 
+## $CDF
+## [1] 0.8413447
+## 
+## $Quantile
+## [1] 1.644854</code></pre>
+</div>
+<div id="risk-aversion" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Risk Aversion<a href="ch2.html#risk-aversion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Risk-averse investors prefer less risk for the same expected return. They demand a risk premium for taking additional risk, quantified by the price of risk (ratio of risk premium to variance).</p>
+<p>Risk-averse investors reject investment opportunities with a <strong>risk premium</strong> of zero or less.</p>
+<p><strong>Degree of risk aversion</strong></p>
+<p><span class="math display">\[
+A = \frac{E(r_i) - E(r_f)}{\sigma_i^2}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> = degree of risk aversion</li>
+<li><span class="math inline">\(E(r_i)\)</span> is the expected return of the risky asset.</li>
+<li><span class="math inline">\(E(r_f)\)</span> is the risk-free rate.</li>
+<li><span class="math inline">\(\sigma_i^2\)</span> is the variance of the return of the risky asset.</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>For the market portfolio (e.g., S&amp;P 500 index funds), the average degree of risk aversion of investors is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{A} &amp;= \frac{\text{Average}(r_M - r_f)}{\text{Sample } \sigma_M^2}\\
+&amp;\approx \frac{0.08}{0.04} = 2
+\end{aligned}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(r_M\)</span> is the return of the market portfolio.</li>
+<li><span class="math inline">\(\sigma_M^2\)</span> is the variance of the market return.</li>
+</ul>
+</div>
+</div>
+<div id="portfolio-construction" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Portfolio Construction<a href="ch2.html#portfolio-construction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Selection of risky assets/portfolios such as stocks and bonds.</p></li>
+<li><p>Decision on the proportion of the portfolio to invest in risky assets versus risk-free assets.</p></li>
+</ol>
+<div id="capital-allocation" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Capital Allocation:<a href="ch2.html#capital-allocation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Combining investments in risk-free and risky assets allows for varying expected returns and risks.</p>
+<p>We call the overall portfolio composed of the risk-free asset and the risky portfolio the <strong>complete portfolio</strong>.</p>
+</div>
+<div id="utility" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Utility<a href="ch2.html#utility" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Utility:</strong> Represents investor preferences, considering risk aversion. It helps in making decisions about different securities.This is a single measure we have the investor’s attitudes to risk and return at each level of wealth.</p>
+<p><strong>Influence of the trade-off decisions:</strong></p>
+<ul>
+<li>Risk appetite (strong financial position and stable income may have higher appitite)</li>
+<li>proportion of the investor’s total wealth. (psychological risk aversion)</li>
+<li>Financial Goals/liquidity needs (set when they need cash flow)</li>
+<li>Investment Horizon (longer horizon takes more risk)</li>
+<li>Knowledge and Experience (Dunning Kruger effect)</li>
+<li>Social/Regulatory environment and incentives</li>
+</ul>
+</div>
+<div id="utility-function" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Utility Function<a href="ch2.html#utility-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Captures an investor’s risk-return trade-offs. Utility increases with expected return and decreases with risk. More risk-averse investors have higher coefficients of risk aversion (A).</p>
+<p>There are countless utility functions. An example is:</p>
+<p><span class="math display">\[
+U = E(r) - \frac{1}{2} A \sigma^2
+\]</span>
+Where:</p>
+<ul>
+<li><span class="math inline">\(U\)</span> = the utility value,</li>
+<li><span class="math inline">\(A\)</span> = coefficient of risk aversion,</li>
+<li><span class="math inline">\(\sigma^2\)</span> = variance</li>
+<li>Utility increases with expected returns and decreases with risk.</li>
+<li>Utility of a risk-free portfolio is equal to its rate of return.</li>
+<li>More risk-averse investors will have larger values of A.</li>
+<li>Investors assign higher utility to more attractive risk-return portfolios.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> degree of risk aversion = <span class="math inline">\(2\)</span></li>
+<li><span class="math inline">\(r_f\)</span> risk-free rate = <span class="math inline">\(4\%\)</span></li>
+</ul>
+<p><img src="Resources/utilisation.png" /></p>
+</div>
+<div id="indifference-curves" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Indifference Curves<a href="ch2.html#indifference-curves" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These curves connect portfolios providing the same utility level, illustrating an investor’s preference for different risk-return combinations.</p>
+<p>Simply above the curve Yes, below the curve no.</p>
+<p><img src="Resources/indiffcurve.png" /></p>
+</div>
+<div id="capital-allocation-line" class="section level3 hasAnchor" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> Capital Allocation Line<a href="ch2.html#capital-allocation-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s possible to split investment funds between safe and risky assets.</p>
+<ol style="list-style-type: decimal">
+<li>Risk free asset: proxy = T-bills</li>
+<li>Risky asset: stock (or a portfolio)</li>
+</ol>
+<ul>
+<li><span class="math inline">\(r_f\)</span> Risk-free rate = <span class="math inline">\(7\%\)</span></li>
+<li><span class="math inline">\(\sigma_{r_f}\)</span> Standard deviation of the risk-free rate = <span class="math inline">\(0\)</span></li>
+<li><span class="math inline">\(E(r_p)\)</span> Expected return of the risky portfolio = <span class="math inline">\(15\%\)</span></li>
+<li><span class="math inline">\(\sigma_p\)</span> Standard deviation of the risky portfolio = <span class="math inline">\(22\%\)</span></li>
+</ul>
+<p>The investor allocates <span class="math inline">\(y\)</span> proportion of their wealth in the risky portfolio and <span class="math inline">\(1 - y\)</span> in the risk-free portfolio.</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(r_c) &amp;= (y)E(r_p) + (1 - y)r_f \\
+E(r_c) &amp;= y \times 15\% + (1 - y) \times 7\% \\
+E(r_c) &amp;= 7\% + y \times (15\% - 7\%) \\
+E(r_c) &amp;= 7\% + 8y \\
+and \\
+\sigma_c &amp;= y \sigma_𝑝=22𝑦\\
+\end{aligned}
+\]</span></p>
+<p>Example:</p>
+<p><span class="math display">\[
+\begin{aligned}
+y        &amp;= 0.75 \\
+r_𝑐     &amp;= 0.07+0.08*(0.75) = 13\% \\
+\sigma_c &amp;= y \sigma_𝑝=22𝑦\\
+\sigma_c &amp;= 16.5\% \\
+\end{aligned}
+\]</span>
+<img src="Resources/capaloocation1.png" /></p>
+<p>The <strong>Sharpe Ratio</strong>, which measures extra return per unit of risk (gradient of line), is calculated as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Sharpe ratio} &amp;= \frac{E(r_p) - r_f}{ \sigma_p}\\
+&amp;= 8/22 \\
+&amp;= 0.36\%.
+\end{aligned}
+\]</span></p>
+</div>
+<div id="capital-allocation-line-cal-with-leverage" class="section level3 hasAnchor" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> Capital Allocation Line (CAL) with Leverage<a href="ch2.html#capital-allocation-line-cal-with-leverage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Leverage multiplies loss and return at a cost of borrowing money from dealers.</p>
+<p>Borrowing at the risk-free rate extends the CAL. Borrowing rates higher than the risk-free rate cause a kink in the CAL, changing the slope.</p>
+<p><span class="math display">\[
+\begin{aligned}
+      𝐸(r_c) &amp;= (−0.5)∗0.09+(1.5)∗0.15\\
+              &amp;=18\% \\
+       \sigma_c &amp;= (1.5)0.22 = 33\% \\
+\text{The Sharpe ratio is} \\
+    (18−9)/0.33 &amp;= 0.27\% \\
+\end{aligned}
+\]</span>
+<img src="Resources/capaloocation2.png" /></p>
+</div>
+<div id="utility-maximization" class="section level3 hasAnchor" number="2.4.7">
+<h3><span class="header-section-number">2.4.7</span> Utility Maximization<a href="ch2.html#utility-maximization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In portfolio theory, investors aim to maximize their utility, which balances expected return and risk. Mathematically, the utility function is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Max}(U) &amp;= E(r) - \frac{1}{2} A \sigma^2 \\
+&amp;= r_f + y [E(r_p) - r_f] - \frac{1}{2} A y^2 \sigma_p^2 \\
+\text{Solve for y, we have } \\
+y^* &amp;= \frac{E(r_p) - r_f}{A \sigma_p^2}
+\end{aligned}
+\]</span></p>
+<p>To find the optimal proportion <span class="math inline">\(y^\)</span> to invest in the risky portfolio, we solve for <span class="math inline">\(y_*\)</span>:</p>
+<p><strong>R code</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="ch2.html#cb7-1" tabindex="-1"></a><span class="co"># Define parameters</span></span>
+<span id="cb7-2"><a href="ch2.html#cb7-2" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fl">0.06</span>       <span class="co"># Risk-free rate</span></span>
+<span id="cb7-3"><a href="ch2.html#cb7-3" tabindex="-1"></a>Erp <span class="ot">&lt;-</span> <span class="fl">0.18</span>      <span class="co"># Expected return of the risky portfolio</span></span>
+<span id="cb7-4"><a href="ch2.html#cb7-4" tabindex="-1"></a>sigma_p <span class="ot">&lt;-</span> <span class="fl">0.25</span>  <span class="co"># Standard deviation of the risky portfolio</span></span>
+<span id="cb7-5"><a href="ch2.html#cb7-5" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">5</span>           <span class="co"># Degree of risk aversion</span></span>
+<span id="cb7-6"><a href="ch2.html#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="ch2.html#cb7-7" tabindex="-1"></a><span class="co"># Calculate optimal y</span></span>
+<span id="cb7-8"><a href="ch2.html#cb7-8" tabindex="-1"></a>y_star <span class="ot">&lt;-</span> (Erp <span class="sc">-</span> rf) <span class="sc">/</span> (A <span class="sc">*</span> sigma_p<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb7-9"><a href="ch2.html#cb7-9" tabindex="-1"></a>y_star</span></code></pre></div>
+<pre><code>## [1] 0.384</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ch2.html#cb9-1" tabindex="-1"></a><span class="co"># The Expected Return</span></span>
+<span id="cb9-2"><a href="ch2.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="ch2.html#cb9-3" tabindex="-1"></a>ER <span class="ot">=</span> rf <span class="sc">+</span> (y_star<span class="sc">*</span>(Erp <span class="sc">-</span> rf))</span>
+<span id="cb9-4"><a href="ch2.html#cb9-4" tabindex="-1"></a>ER</span></code></pre></div>
+<pre><code>## [1] 0.10608</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ch2.html#cb11-1" tabindex="-1"></a>sigma_c <span class="ot">=</span> y_star<span class="sc">*</span>sigma_p</span>
+<span id="cb11-2"><a href="ch2.html#cb11-2" tabindex="-1"></a>sigma_c</span></code></pre></div>
+<pre><code>## [1] 0.096</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ch2.html#cb13-1" tabindex="-1"></a>sharpe <span class="ot">=</span> (ER<span class="sc">-</span> rf)<span class="sc">/</span>sigma_c</span>
+<span id="cb13-2"><a href="ch2.html#cb13-2" tabindex="-1"></a>sharpe</span></code></pre></div>
+<pre><code>## [1] 0.48</code></pre>
+</div>
+<div id="personal-preferences" class="section level3 hasAnchor" number="2.4.8">
+<h3><span class="header-section-number">2.4.8</span> Personal preferences<a href="ch2.html#personal-preferences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="Resources/capaloocation3.png" /></p>
+<ul>
+<li>Investors aim to choose portfolios on higher indifference curves.</li>
+<li>Higher indifference curves provide a higher expected return for a given level of risk.</li>
+<li>More risk-averse investors have steeper indifference curves.</li>
+<li>More risk-averse investors require a greater increase in expected return for an increase in portfolio risk.</li>
+</ul>
+</div>
+<div id="the-capital-market-line-cml" class="section level3 hasAnchor" number="2.4.9">
+<h3><span class="header-section-number">2.4.9</span> The Capital Market Line (CML)<a href="ch2.html#the-capital-market-line-cml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="42%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Aspect</strong></th>
+<th><strong>Active Management</strong></th>
+<th><strong>Passive Management</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pros</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Higher Return Potential</td>
+<td>Aims to outperform the market.</td>
+<td>Matches market returns.</td>
+</tr>
+<tr class="odd">
+<td>Flexibility</td>
+<td>Can quickly adjust to market changes.</td>
+<td>Follows index rules.</td>
+</tr>
+<tr class="even">
+<td>Risk Management</td>
+<td>Can avoid certain sectors or stocks to manage risk.</td>
+<td>Diversified holdings reduce specific risks.</td>
+</tr>
+<tr class="odd">
+<td>Exploiting Inefficiencies</td>
+<td>Can capitalize on market inefficiencies.</td>
+<td>Benefits from overall market growth.</td>
+</tr>
+<tr class="even">
+<td>Customization</td>
+<td>Tailors strategy to investor goals.</td>
+<td>Simple, straightforward strategy.</td>
+</tr>
+<tr class="odd">
+<td><strong>Cons</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Higher Costs</td>
+<td>More fees and expenses due to frequent trading and research.</td>
+<td>Lower fees and expenses.</td>
+</tr>
+<tr class="odd">
+<td>Performance Uncertainty</td>
+<td>No guarantee of outperforming the market.</td>
+<td>Predictable performance, matches index.</td>
+</tr>
+<tr class="even">
+<td>Increased Risk</td>
+<td>Higher risk from concentrated positions and market timing.</td>
+<td>Lower risk due to diversification.</td>
+</tr>
+<tr class="odd">
+<td>Tax Implications</td>
+<td>More frequent trading can lead to higher taxes.</td>
+<td>Less frequent trading, more tax efficient.</td>
+</tr>
+<tr class="even">
+<td>Dependence on Manager Skill</td>
+<td>Relies on the skill and judgment of the manager.</td>
+<td>No reliance on manager skill.</td>
+</tr>
+</tbody>
+</table>
 
+</div>
 </div>
 </div>
             </section>
