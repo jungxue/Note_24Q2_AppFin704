@@ -1,12 +1,5 @@
 # Diversification {#ch3}
 
-
-- calculate mean, variance, and covariance using either historical data or scenario analysis.
-
-- construct efficient portfolios and use the Sharpe ratio to evaluate portfolio efficiency.
-
-- calculate the composition of the optimal risky portfolio.
-
 ### Portfolio Construction
 
 Portfolio construction generally has three steps: 
