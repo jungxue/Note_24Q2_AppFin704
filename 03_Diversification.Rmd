@@ -339,6 +339,9 @@ U
 
 The Efficient Frontier represents a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of expected return.
 
+
+![](Resources/efffrontier2.png)
+
 ![](Resources/efffrontier.png)
 
 The analytical technique to derive efficient frontier was developed by Harry Markowitz, and is often referred to as the **Markowitz Model**

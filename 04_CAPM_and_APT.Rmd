@@ -7,8 +7,6 @@
 
 ## The Capital Asset Pricing Model (CAPM)
 
-### CAPM Assumptions
-
 The Markowitz portfolio selection model assumes all investors are rational, i.e., mean-variance optimizers.
 
 CAPM assumes:
@@ -19,9 +17,10 @@ CAPM assumes:
 - Information is costless and available to all investors.
 - Investors interpret information identically.
 
-### Equilibrium Conditions
+### CAPM Equation
 
-- The market portfolio defines the optimal Capital Allocation Line (CAL).
+- The market portfolio defines the optimal Capital Allocation Line (CAL). In theory everyone tries to reach it. 
+
 - Risk premium on the market portfolio is proportional to its risk and average risk aversion.
 
 
@@ -40,7 +39,24 @@ Investors expect to be compensated for the risk and the time value of money.
 
 For example, in NZ, BKMB is the risk free rate(note it is technically not) and additional basis point on top is the premium. 
 
+$$
+E(r_M) - r_f = \bar{A} \sigma_M^2
+$$
+
+$$
+E(r_i) - r_f = \beta_i [E(r_M) - r_f]
+$$
+
+Here, $\bar{A}$ is the average level of risk aversion across investors (weighted average, by wealth).
+
+and 
+
+$$
+\beta_i = \frac{\text{cov}(r_i, r_M)}{\sigma_M^2} = \frac{\rho_{i,M} \sigma_i}{\sigma_M}
+$$
+
 The CAPM calculates the expected return of an investment by adding the risk-free rate to the **beta**-adjusted market risk premium, where beta measures the investment's sensitivity to market risk and **alpha** represents the excess return not explained by beta.
+
 ### Security Market Line (SML)
 - Graphs individual asset risk premiums as a function of asset risk (beta).
 - Provides a benchmark for evaluating portfolio performance.
@@ -55,11 +71,12 @@ The CAPM calculates the expected return of an investment by adding the risk-free
 - Market capitalization and book-to-market ratios predict returns better than beta.
 - Other anomalies include momentum effects.
 
-## Multifactor Models
+### Multifactor Models
 - Allow for multiple systematic risk factors (e.g., GDP, inflation).
 - Estimate a beta for each factor using multiple regression.
 
-### Example: Fama-French Three-Factor Model
+Example: Fama-French Three-Factor Model
+
 - Factors: Market risk, firm size, and book-to-market ratio.
 
 $$
@@ -68,18 +85,67 @@ $$
 
 - $\beta_{iM}$, $\beta_{iS}$, and $\beta_{iH}$ are the betas for the market, size, and value factors.
 
+## Comparison of CML and SML
+
+| Feature                 | Security Market Line (SML)                                     | Capital Market Line (CML)                                     |
+|-------------------------|----------------------------------------------------------------|----------------------------------------------------------------|
+| **Definition**          | Relationship between expected return and beta (systematic risk)| Risk-return trade-off for efficient portfolios                |
+| **Equation**            | \(E(r_i) = r_f + \beta_i (E(r_M) - r_f)\)                      | \(E(r_P) = r_f + \frac{E(r_M) - r_f}{\sigma_M} \sigma_P\)      |
+| **Risk Measure**        | Beta (systematic risk)                                         | Standard deviation (total risk)                                |
+| **Applicability**       | Individual securities                                          | Efficient portfolios                                           |
+| **Correct Pricing**     | Securities lie on the SML                                      | Portfolios lie on the CML                                      |
+| **Slope**               | Market risk premium \((E(r_M) - r_f)\)                         | Sharpe ratio of the market \(\left(\frac{E(r_M) - r_f}{\sigma_M}\right)\) |
+
 ## Arbitrage Pricing Theory (APT)
+
+If two portfolios are mispriced, the investor could short the high-priced portfolio and buy the low-priced portfolio.
+
+Arbitrage opportunities last for very short periods .
 
 ### Assumptions
 - Returns can be described by a factor model.
-- No arbitrage opportunities.
+- **No arbitrage opportunities.**
 - Large number of securities to form diversified portfolios.
+
+Like the CAPM, the APT also uses an SML for expected return and risk
 
 ### Key Concepts
 - Systematic (factor) risk remains in diversified portfolios.
 - Risk premium depends only on systematic risk.
 
 ### APT Model
+
+**Portfolio A**
+Portfolio A is a well-diversified portfolio with a beta ($\beta_P$) of 0.7. Its excess return equation is:
+
+$$
+\begin{align}
+r_P - r_f &= \alpha_P + \beta_P (r_M - r_f) \\
+          &= \alpha_P + 0.7(r_M - r_f)
+\end{align}
+$$
+
+**Portfolio B**
+Portfolio B includes the market index and T-bills with weights of 0.7 and 0.3 respectively. Its return equation is:
+
+$$
+\begin{align}
+r_p &= 0.3r_f + 0.7r_M \\
+    &= r_f + 0.7(r_M - r_f)
+\end{align}
+$$
+
+By shorting \$1 of Portfolio A and buying \$1 of Portfolio B, you create a zero investment, zero beta portfolio. The proceeds would be riskless.
+
+$$
+\begin{align}
+\text{Proceeds} &= \text{Return from Portfolio B} - \text{Return from Portfolio A} \\
+                &= r_B - r_P \\
+                &= \left( r_f + 0.7(r_M - r_f) \right) - \left( r_f + \alpha_P + 0.7(r_M - r_f) \right) \\
+                &= -\alpha_P
+\end{align}
+$$
+
 - For a well-diversified portfolio $A$:
 
 $$
@@ -89,6 +155,8 @@ $$
 - $\beta_{Aj}$ is the sensitivity of portfolio $A$ to factor $j$.
 - $\lambda_j$ is the risk premium associated with factor $j$.
 
+$$ \lambda_j= \beta_1 [E(r_{M1}) - r_f]$$
+
 ### Multifactor Generalization
 - Accommodates multiple risk factors.
 
@@ -96,7 +164,17 @@ $$
 E(R_i) = R_f + \beta_{i1} \lambda_1 + \beta_{i2} \lambda_2 + \ldots + \beta_{ik} \lambda_k
 $$
 
-## Comparison of CAPM and APT
-- CAPM focuses on market risk and uses a single beta.
-- APT allows for multiple sources of systematic risk and uses multiple betas.
+
+### APT Pros and Cons
+
+| **Strengths**                           | **Weaknesses**                          |
+|-----------------------------------------|-----------------------------------------|
+| reasonable description of risk and return   | Complex and difficult to measure        |
+| Reflects various macroeconomic impacts  | world of winner chicken dinner, loser loses |
+| Customizable to specific markets        | Requires extensive data                 |
+| no need to measure market return directly | Dependent on accurate factor identification |
+
+### APT v.s. CAPM
+
+APT is more general in that it gets to an expected return and beta relationship without the assumption of the market portfolio
 

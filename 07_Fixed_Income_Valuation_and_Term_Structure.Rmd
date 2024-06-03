@@ -1,5 +1,121 @@
 # Enter Chapter title here {#ch7}
 
-## Enter subsection 1 here
+## Summary of Lecture 7 – Fixed Income Valuation and Term Structure
 
-## Enter subsection 2 here
+### Learning Objectives
+- Understand bond pricing fundamentals and the relationship between bond prices, yield to maturity, and coupon rates.
+- Valuation and characteristics of zero-coupon bonds and building the yield curve.
+- Valuing coupon-bearing bonds using present value of future cash flows.
+- Factors affecting yield curve shape and deriving forward rates from the yield curve.
+
+### Bond Pricing Models
+
+#### Bond Pricing Model I
+The price of a bond is the present value of expected cash flows, including coupon and principal. The discount rate is the yield to maturity ($YTM$).
+
+$$
+\begin{align}
+P_b &= \sum_{t=1}^{T} \frac{C_t}{(1 + r)^t} + \frac{F}{(1 + r)^T}
+\end{align}
+$$
+
+
+
+$$
+\text{Annualities Factor} = \frac{1}{r} \left( 1 - \frac{1}{(1 + r)^T} \right)\
+$$
+
+$$
+P_B = C_t \times \text{Annuity Factor} + \text{Par} \times \text{PV Factor}\frac{C_t}{r} \left[ 1 - \frac{1}{(1 + r)^T} \right] + \frac{\text{Par}}{(1 + r)^T}
+$$
+
+Where:
+
+- $P_b$ = price of the bond
+- $C_t$ = coupon payment
+- $F$ = face value of the bond
+- $T$ = number of periods
+- $r$ is the appropriate discount rate, required return by bondholders, or yield to maturity 
+
+```{r}
+
+calculate_present_value <- function(C_t, r, T, Par) {
+  annuity_factor <- (1 - 1 / (1 + r)^T) / r
+  pv_factor <- 1 / (1 + r)^T
+  P_B <- C_t * annuity_factor + Par * pv_factor
+  return(P_B)
+}
+
+# Example usage
+C_t <- 1000
+r <- 0.05
+T <- 10
+Par <- 10000
+
+P_B <- calculate_present_value(C_t, r, T, Par)
+P_B
+```
+
+#### Bond Pricing Model II
+
+Zero-coupon bonds involve calculating the present value of the par value, discounted by the zero-coupon rate.
+
+$$
+\begin{align}
+P &= \frac{F}{(1 + z_T)^T}
+\end{align}
+$$
+
+### Yield Curve
+The yield curve plots yields-to-maturity for coupon bonds against their terms to maturity. It's crucial to understand forward rates, zero rates, and actual rates.
+
+#### Forward Rate Calculation
+Forward rates can be derived from zero rates to determine arbitrage-free pricing.
+
+$$
+\begin{align}
+f_{n,n+1} &= \left( \frac{(1 + z_{n+1})^{n+1}}{(1 + z_n)^n} \right) - 1
+\end{align}
+$$
+
+### Term Structure of Interest Rates (TSIR)
+TSIR describes the relationship between interest rates and terms. The yield curve can be influenced by:
+
+1. **Expectations Hypothesis**: Investors' expectations about future interest rates.
+2. **Liquidity Preference Theory**: Prefers short-term bonds for liquidity purposes.
+3. **Market Segmentation Theory**: Different investors have different preferred investment horizons.
+4. **Preferred Habitat Theory**: Investors have preferred investment horizons but will deviate for adequate compensation.
+
+### Valuation of Coupon-Bearing Bonds
+To value coupon-bearing bonds, sum the present value of future cash flows (coupons and face value) discounted by the yield to maturity.
+
+$$
+\begin{align}
+P &= \sum_{t=1}^{T} \frac{C}{(1 + YTM)^t} + \frac{F}{(1 + YTM)^T}
+\end{align}
+$$
+
+### Immunization
+Immunization strategies balance exposure to interest rate movements and reinvestment risk. Duration matching is a common immunization strategy.
+
+$$
+\begin{align}
+D &= \sum_{t=1}^{T} \frac{t \cdot PV(C_t)}{P}
+\end{align}
+$$
+
+Where:
+- $D$ = duration
+- $PV(C_t)$ = present value of coupon at time $t$
+
+### Convexity
+Convexity measures the sensitivity of the duration of a bond to changes in interest rates. Bonds with higher convexity are less affected by rate changes.
+
+$$
+\begin{align}
+Convexity &= \sum_{t=1}^{T} \frac{t (t + 1) \cdot PV(C_t)}{(1 + YTM)^{t+2}}
+\end{align}
+$$
+
+### Conclusion
+Understanding bond pricing, valuation, and the factors affecting the yield curve is crucial for fixed-income investment. Key models include the pricing of zero-coupon and coupon-bearing bonds, the yield curve, term structure theories, and strategies for immunization and duration management.
