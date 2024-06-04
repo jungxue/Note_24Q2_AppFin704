@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 4 CAPM and APT | Study Note for 24Q2 AppFin704</title>
   <meta name="description" content="Lecture 4 CAPM and APT | Study Note for 24Q2 AppFin704" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 4 CAPM and APT | Study Note for 24Q2 AppFin704" />
   <meta property="og:type" content="book" />
@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -149,44 +213,113 @@
 <li class="chapter" data-level="4.1.2" data-path="ch4.html"><a href="ch4.html#security-market-line-sml"><i class="fa fa-check"></i><b>4.1.2</b> Security Market Line (SML)</a></li>
 <li class="chapter" data-level="4.1.3" data-path="ch4.html"><a href="ch4.html#capm-implementation"><i class="fa fa-check"></i><b>4.1.3</b> CAPM Implementation</a></li>
 <li class="chapter" data-level="4.1.4" data-path="ch4.html"><a href="ch4.html#violations-and-limitations-of-the-capm"><i class="fa fa-check"></i><b>4.1.4</b> Violations and Limitations of the CAPM</a></li>
+<li class="chapter" data-level="4.1.5" data-path="ch4.html"><a href="ch4.html#multifactor-models"><i class="fa fa-check"></i><b>4.1.5</b> Multifactor Models</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#multifactor-models"><i class="fa fa-check"></i><b>4.2</b> Multifactor Models</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="ch4.html"><a href="ch4.html#example-fama-french-three-factor-model"><i class="fa fa-check"></i><b>4.2.1</b> Example: Fama-French Three-Factor Model</a></li>
-</ul></li>
+<li class="chapter" data-level="4.2" data-path="ch4.html"><a href="ch4.html#comparison-of-cml-and-sml"><i class="fa fa-check"></i><b>4.2</b> Comparison of CML and SML</a></li>
 <li class="chapter" data-level="4.3" data-path="ch4.html"><a href="ch4.html#arbitrage-pricing-theory-apt"><i class="fa fa-check"></i><b>4.3</b> Arbitrage Pricing Theory (APT)</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="ch4.html"><a href="ch4.html#assumptions"><i class="fa fa-check"></i><b>4.3.1</b> Assumptions</a></li>
 <li class="chapter" data-level="4.3.2" data-path="ch4.html"><a href="ch4.html#key-concepts"><i class="fa fa-check"></i><b>4.3.2</b> Key Concepts</a></li>
 <li class="chapter" data-level="4.3.3" data-path="ch4.html"><a href="ch4.html#apt-model"><i class="fa fa-check"></i><b>4.3.3</b> APT Model</a></li>
 <li class="chapter" data-level="4.3.4" data-path="ch4.html"><a href="ch4.html#multifactor-generalization"><i class="fa fa-check"></i><b>4.3.4</b> Multifactor Generalization</a></li>
+<li class="chapter" data-level="4.3.5" data-path="ch4.html"><a href="ch4.html#apt-pros-and-cons"><i class="fa fa-check"></i><b>4.3.5</b> APT Pros and Cons</a></li>
+<li class="chapter" data-level="4.3.6" data-path="ch4.html"><a href="ch4.html#apt-v.s.-capm"><i class="fa fa-check"></i><b>4.3.6</b> APT v.s. CAPM</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="ch4.html"><a href="ch4.html#comparison-of-capm-and-apt"><i class="fa fa-check"></i><b>4.4</b> Comparison of CAPM and APT</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="ch5.html"><a href="ch5.html"><i class="fa fa-check"></i><b>5</b> Enter Chapter title here</a>
+<li class="chapter" data-level="5" data-path="ch5.html"><a href="ch5.html"><i class="fa fa-check"></i><b>5</b> Fundamental Analysis and Equity Valuation</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>5.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>5.2</b> Enter subsection 2 here</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="ch6.html"><a href="ch6.html"><i class="fa fa-check"></i><b>6</b> Enter Chapter title here</a>
+<li class="chapter" data-level="5.1" data-path="ch5.html"><a href="ch5.html#fundamental-analysis-framework"><i class="fa fa-check"></i><b>5.1</b> Fundamental Analysis Framework</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#enter-subsection-1-here-1"><i class="fa fa-check"></i><b>6.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#enter-subsection-2-here-1"><i class="fa fa-check"></i><b>6.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="5.1.1" data-path="ch5.html"><a href="ch5.html#global-economic-considerations"><i class="fa fa-check"></i><b>5.1.1</b> Global Economic Considerations</a></li>
+<li class="chapter" data-level="5.1.2" data-path="ch5.html"><a href="ch5.html#domestic-macroeconomy"><i class="fa fa-check"></i><b>5.1.2</b> Domestic Macroeconomy</a></li>
+<li class="chapter" data-level="5.1.3" data-path="ch5.html"><a href="ch5.html#business-cycle"><i class="fa fa-check"></i><b>5.1.3</b> Business Cycle</a></li>
+<li class="chapter" data-level="5.1.4" data-path="ch5.html"><a href="ch5.html#lynchs-investing-categories"><i class="fa fa-check"></i><b>5.1.4</b> Lynch’s Investing Categories</a></li>
+<li class="chapter" data-level="5.1.5" data-path="ch5.html"><a href="ch5.html#porter-19801985-determinants-of-competition"><i class="fa fa-check"></i><b>5.1.5</b> Porter (1980,1985) determinants of competition:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="ch5.html"><a href="ch5.html#equity-valuation"><i class="fa fa-check"></i><b>5.2</b> Equity Valuation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ch5.html"><a href="ch5.html#asset-pricing"><i class="fa fa-check"></i><b>5.2.1</b> Asset pricing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch5.html"><a href="ch5.html#valuation-ratios-in-finance"><i class="fa fa-check"></i><b>5.2.2</b> Valuation Ratios in Finance</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch5.html"><a href="ch5.html#pe-ratio"><i class="fa fa-check"></i><b>5.2.3</b> P/E Ratio</a></li>
+<li class="chapter" data-level="5.2.4" data-path="ch5.html"><a href="ch5.html#dividend-discount-model-ddm"><i class="fa fa-check"></i><b>5.2.4</b> Dividend Discount Model (DDM)</a></li>
+<li class="chapter" data-level="5.2.5" data-path="ch5.html"><a href="ch5.html#constant-growth-ddm"><i class="fa fa-check"></i><b>5.2.5</b> Constant Growth DDM</a></li>
+<li class="chapter" data-level="5.2.6" data-path="ch5.html"><a href="ch5.html#divident-stocks"><i class="fa fa-check"></i><b>5.2.6</b> Divident stocks</a></li>
+<li class="chapter" data-level="5.2.7" data-path="ch5.html"><a href="ch5.html#future-earnings-ddm"><i class="fa fa-check"></i><b>5.2.7</b> future earnings DDM</a></li>
+<li class="chapter" data-level="5.2.8" data-path="ch5.html"><a href="ch5.html#stock-valuation-scenarios"><i class="fa fa-check"></i><b>5.2.8</b> # Stock Valuation Scenarios</a></li>
+<li class="chapter" data-level="5.2.9" data-path="ch5.html"><a href="ch5.html#sources-of-value-creation"><i class="fa fa-check"></i><b>5.2.9</b> Sources of Value Creation</a></li>
+<li class="chapter" data-level="5.2.10" data-path="ch5.html"><a href="ch5.html#pe-ratios-and-growth-scenarios"><i class="fa fa-check"></i><b>5.2.10</b> PE Ratios and Growth Scenarios</a></li>
+<li class="chapter" data-level="5.2.11" data-path="ch5.html"><a href="ch5.html#pros-and-cons-of-a-high-pe-ratio"><i class="fa fa-check"></i><b>5.2.11</b> Pros and Cons of a High P/E Ratio</a></li>
+<li class="chapter" data-level="5.2.12" data-path="ch5.html"><a href="ch5.html#free-cash-flow-models-firm-fcff"><i class="fa fa-check"></i><b>5.2.12</b> Free Cash Flow Models Firm FCFF</a></li>
+<li class="chapter" data-level="5.2.13" data-path="ch5.html"><a href="ch5.html#free-cash-flow-models-equity-fcfe"><i class="fa fa-check"></i><b>5.2.13</b> Free Cash Flow Models Equity FCFE</a></li>
+<li class="chapter" data-level="5.2.14" data-path="ch5.html"><a href="ch5.html#summary-on-valuation-models"><i class="fa fa-check"></i><b>5.2.14</b> Summary on Valuation Models:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch6.html"><a href="ch6.html"><i class="fa fa-check"></i><b>6</b> Bond Pricing and Yields</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch6.html"><a href="ch6.html#fixed-income-securities"><i class="fa fa-check"></i><b>6.1</b> Fixed Income Securities</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="ch6.html"><a href="ch6.html#characteristics-of-security"><i class="fa fa-check"></i><b>6.1.1</b> characteristics of Security</a></li>
+<li class="chapter" data-level="6.1.2" data-path="ch6.html"><a href="ch6.html#involvement"><i class="fa fa-check"></i><b>6.1.2</b> Involvement</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="ch6.html"><a href="ch6.html#bond-types"><i class="fa fa-check"></i><b>6.2</b> Bond Types</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ch6.html"><a href="ch6.html#bond-prices"><i class="fa fa-check"></i><b>6.2.1</b> Bond Prices</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch6.html"><a href="ch6.html#bond-yield-equations"><i class="fa fa-check"></i><b>6.3</b> Bond Yield Equations</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ch6.html"><a href="ch6.html#current-yield"><i class="fa fa-check"></i><b>6.3.1</b> Current Yield</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch6.html"><a href="ch6.html#yield-to-maturity-ytm"><i class="fa fa-check"></i><b>6.3.2</b> Yield to Maturity (YTM)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ch6.html"><a href="ch6.html#yield-to-call-ytc"><i class="fa fa-check"></i><b>6.3.3</b> Yield to Call (YTC)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch6.html"><a href="ch6.html#realized-compound-return"><i class="fa fa-check"></i><b>6.4</b> Realized Compound Return</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="ch6.html"><a href="ch6.html#yield-spread"><i class="fa fa-check"></i><b>6.4.1</b> Yield Spread</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch6.html"><a href="ch6.html#bond-equivalent-yield-bey"><i class="fa fa-check"></i><b>6.4.2</b> Bond Equivalent Yield (BEY)</a></li>
+<li class="chapter" data-level="6.4.3" data-path="ch6.html"><a href="ch6.html#effective-annual-yield-eay"><i class="fa fa-check"></i><b>6.4.3</b> Effective Annual Yield (EAY)</a></li>
+<li class="chapter" data-level="6.4.4" data-path="ch6.html"><a href="ch6.html#discount-yield"><i class="fa fa-check"></i><b>6.4.4</b> Discount Yield</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch6.html"><a href="ch6.html#bond-pricing-dynamics"><i class="fa fa-check"></i><b>6.5</b> Bond Pricing Dynamics</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="ch6.html"><a href="ch6.html#prices-over-time"><i class="fa fa-check"></i><b>6.5.1</b> Prices Over Time</a></li>
+<li class="chapter" data-level="6.5.2" data-path="ch6.html"><a href="ch6.html#holding-period-return-hpr"><i class="fa fa-check"></i><b>6.5.2</b> Holding Period Return (HPR)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="ch6.html"><a href="ch6.html#risk-and-protection"><i class="fa fa-check"></i><b>6.6</b> Risk and Protection</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="ch6.html"><a href="ch6.html#default-risk"><i class="fa fa-check"></i><b>6.6.1</b> Default Risk</a></li>
+<li class="chapter" data-level="6.6.2" data-path="ch6.html"><a href="ch6.html#protection-mechanisms"><i class="fa fa-check"></i><b>6.6.2</b> Protection Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="ch6.html"><a href="ch6.html#credit-default-swaps-cds"><i class="fa fa-check"></i><b>6.7</b> Credit Default Swaps (CDS)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ch7.html"><a href="ch7.html"><i class="fa fa-check"></i><b>7</b> Enter Chapter title here</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#enter-subsection-1-here-2"><i class="fa fa-check"></i><b>7.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="7.2" data-path="ch7.html"><a href="ch7.html#enter-subsection-2-here-2"><i class="fa fa-check"></i><b>7.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="7.1" data-path="ch7.html"><a href="ch7.html#summary-of-lecture-7-fixed-income-valuation-and-term-structure"><i class="fa fa-check"></i><b>7.1</b> Summary of Lecture 7 – Fixed Income Valuation and Term Structure</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ch7.html"><a href="ch7.html#learning-objectives-1"><i class="fa fa-check"></i><b>7.1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ch7.html"><a href="ch7.html#bond-pricing-models"><i class="fa fa-check"></i><b>7.1.2</b> Bond Pricing Models</a></li>
+<li class="chapter" data-level="7.1.3" data-path="ch7.html"><a href="ch7.html#yield-curve"><i class="fa fa-check"></i><b>7.1.3</b> Yield Curve</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ch7.html"><a href="ch7.html#term-structure-of-interest-rates-tsir"><i class="fa fa-check"></i><b>7.1.4</b> Term Structure of Interest Rates (TSIR)</a></li>
+<li class="chapter" data-level="7.1.5" data-path="ch7.html"><a href="ch7.html#valuation-of-coupon-bearing-bonds"><i class="fa fa-check"></i><b>7.1.5</b> Valuation of Coupon-Bearing Bonds</a></li>
+<li class="chapter" data-level="7.1.6" data-path="ch7.html"><a href="ch7.html#immunization"><i class="fa fa-check"></i><b>7.1.6</b> Immunization</a></li>
+<li class="chapter" data-level="7.1.7" data-path="ch7.html"><a href="ch7.html#convexity"><i class="fa fa-check"></i><b>7.1.7</b> Convexity</a></li>
+<li class="chapter" data-level="7.1.8" data-path="ch7.html"><a href="ch7.html#conclusion"><i class="fa fa-check"></i><b>7.1.8</b> Conclusion</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="ch8.html"><a href="ch8.html"><i class="fa fa-check"></i><b>8</b> Performance Attribution and Appraisal</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#enter-subsection-1-here-3"><i class="fa fa-check"></i><b>8.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="8.2" data-path="ch8.html"><a href="ch8.html#enter-subsection-2-here-3"><i class="fa fa-check"></i><b>8.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="8.1" data-path="ch8.html"><a href="ch8.html#summary-of-lecture-8-performance-attribution-and-appraisal"><i class="fa fa-check"></i><b>8.1</b> Summary of Lecture 8: Performance Attribution and Appraisal</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="ch8.html"><a href="ch8.html#learning-objectives-2"><i class="fa fa-check"></i><b>8.1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch8.html"><a href="ch8.html#steps-in-performance-evaluation"><i class="fa fa-check"></i><b>8.1.2</b> Steps in Performance Evaluation</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch8.html"><a href="ch8.html#performance-measurement"><i class="fa fa-check"></i><b>8.1.3</b> Performance Measurement</a></li>
+<li class="chapter" data-level="8.1.4" data-path="ch8.html"><a href="ch8.html#performance-appraisal"><i class="fa fa-check"></i><b>8.1.4</b> Performance Appraisal</a></li>
+<li class="chapter" data-level="8.1.5" data-path="ch8.html"><a href="ch8.html#performance-appraisal-measures"><i class="fa fa-check"></i><b>8.1.5</b> Performance Appraisal Measures</a></li>
+<li class="chapter" data-level="8.1.6" data-path="ch8.html"><a href="ch8.html#conclusion-1"><i class="fa fa-check"></i><b>8.1.6</b> Conclusion</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch9.html"><a href="ch9.html"><i class="fa fa-check"></i><b>9</b> Tax Implications and ESG Investing</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here-4"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
-<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here-4"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
+<li class="chapter" data-level="9.1" data-path="ch9.html"><a href="ch9.html#enter-subsection-1-here"><i class="fa fa-check"></i><b>9.1</b> Enter subsection 1 here</a></li>
+<li class="chapter" data-level="9.2" data-path="ch9.html"><a href="ch9.html#enter-subsection-2-here"><i class="fa fa-check"></i><b>9.2</b> Enter subsection 2 here</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="concluding-remarks.html"><a href="concluding-remarks.html"><i class="fa fa-check"></i>Concluding Remarks</a>
 <ul>
@@ -289,15 +422,13 @@ E(r_i) - r_f = \beta_i [E(r_M) - r_f]
 <li>Other anomalies include momentum effects.</li>
 </ul>
 </div>
-</div>
-<div id="multifactor-models" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Multifactor Models<a href="ch4.html#multifactor-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="multifactor-models" class="section level3 hasAnchor" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Multifactor Models<a href="ch4.html#multifactor-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Allow for multiple systematic risk factors (e.g., GDP, inflation).</li>
 <li>Estimate a beta for each factor using multiple regression.</li>
 </ul>
-<div id="example-fama-french-three-factor-model" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Example: Fama-French Three-Factor Model<a href="ch4.html#example-fama-french-three-factor-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Example: Fama-French Three-Factor Model</p>
 <ul>
 <li>Factors: Market risk, firm size, and book-to-market ratio.</li>
 </ul>
@@ -309,48 +440,8 @@ E(R_i) = R_f + \beta_{iM} (E(R_M) - R_f) + \beta_{iS} (E(SMB)) + \beta_{iH} (E(H
 </ul>
 </div>
 </div>
-<div id="arbitrage-pricing-theory-apt" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Arbitrage Pricing Theory (APT)<a href="ch4.html#arbitrage-pricing-theory-apt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="assumptions" class="section level3 hasAnchor" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Assumptions<a href="ch4.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>Returns can be described by a factor model.</li>
-<li>No arbitrage opportunities.</li>
-<li>Large number of securities to form diversified portfolios.</li>
-</ul>
-</div>
-<div id="key-concepts" class="section level3 hasAnchor" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Key Concepts<a href="ch4.html#key-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>Systematic (factor) risk remains in diversified portfolios.</li>
-<li>Risk premium depends only on systematic risk.</li>
-</ul>
-</div>
-<div id="apt-model" class="section level3 hasAnchor" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> APT Model<a href="ch4.html#apt-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>For a well-diversified portfolio <span class="math inline">\(A\)</span>:</li>
-</ul>
-<p><span class="math display">\[
-E(R_A) = R_f + \sum_{j=1}^{k} \beta_{Aj} \lambda_j
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\beta_{Aj}\)</span> is the sensitivity of portfolio <span class="math inline">\(A\)</span> to factor <span class="math inline">\(j\)</span>.</li>
-<li><span class="math inline">\(\lambda_j\)</span> is the risk premium associated with factor <span class="math inline">\(j\)</span>.</li>
-</ul>
-</div>
-<div id="multifactor-generalization" class="section level3 hasAnchor" number="4.3.4">
-<h3><span class="header-section-number">4.3.4</span> Multifactor Generalization<a href="ch4.html#multifactor-generalization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>Accommodates multiple risk factors.</li>
-</ul>
-<p><span class="math display">\[
-E(R_i) = R_f + \beta_{i1} \lambda_1 + \beta_{i2} \lambda_2 + \ldots + \beta_{ik} \lambda_k
-\]</span></p>
-</div>
-</div>
-<div id="comparison-of-capm-and-apt" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> Comparison of CAPM and APT<a href="ch4.html#comparison-of-capm-and-apt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="comparison-of-cml-and-sml" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Comparison of CML and SML<a href="ch4.html#comparison-of-cml-and-sml" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <colgroup>
 <col width="16%" />
@@ -397,7 +488,113 @@ E(R_i) = R_f + \beta_{i1} \lambda_1 + \beta_{i2} \lambda_2 + \ldots + \beta_{ik}
 </tr>
 </tbody>
 </table>
+</div>
+<div id="arbitrage-pricing-theory-apt" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Arbitrage Pricing Theory (APT)<a href="ch4.html#arbitrage-pricing-theory-apt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If two portfolios are mispriced, the investor could short the high-priced portfolio and buy the low-priced portfolio.</p>
+<p>Arbitrage opportunities last for very short periods .</p>
+<div id="assumptions" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Assumptions<a href="ch4.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Returns can be described by a factor model.</li>
+<li><strong>No arbitrage opportunities.</strong></li>
+<li>Large number of securities to form diversified portfolios.</li>
+</ul>
+<p>Like the CAPM, the APT also uses an SML for expected return and risk</p>
+</div>
+<div id="key-concepts" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Key Concepts<a href="ch4.html#key-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Systematic (factor) risk remains in diversified portfolios.</li>
+<li>Risk premium depends only on systematic risk.</li>
+</ul>
+</div>
+<div id="apt-model" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> APT Model<a href="ch4.html#apt-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Portfolio A</strong>
+Portfolio A is a well-diversified portfolio with a beta (<span class="math inline">\(\beta_P\)</span>) of 0.7. Its excess return equation is:</p>
+<p><span class="math display">\[
+\begin{align}
+r_P - r_f &amp;= \alpha_P + \beta_P (r_M - r_f) \\
+          &amp;= \alpha_P + 0.7(r_M - r_f)
+\end{align}
+\]</span></p>
+<p><strong>Portfolio B</strong>
+Portfolio B includes the market index and T-bills with weights of 0.7 and 0.3 respectively. Its return equation is:</p>
+<p><span class="math display">\[
+\begin{align}
+r_p &amp;= 0.3r_f + 0.7r_M \\
+    &amp;= r_f + 0.7(r_M - r_f)
+\end{align}
+\]</span></p>
+<p>By shorting $1 of Portfolio A and buying $1 of Portfolio B, you create a zero investment, zero beta portfolio. The proceeds would be riskless.</p>
+<p><span class="math display">\[
+\begin{align}
+\text{Proceeds} &amp;= \text{Return from Portfolio B} - \text{Return from Portfolio A} \\
+                &amp;= r_B - r_P \\
+                &amp;= \left( r_f + 0.7(r_M - r_f) \right) - \left( r_f + \alpha_P + 0.7(r_M - r_f) \right) \\
+                &amp;= -\alpha_P
+\end{align}
+\]</span></p>
+<ul>
+<li>For a well-diversified portfolio <span class="math inline">\(A\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+E(R_A) = R_f + \sum_{j=1}^{k} \beta_{Aj} \lambda_j
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta_{Aj}\)</span> is the sensitivity of portfolio <span class="math inline">\(A\)</span> to factor <span class="math inline">\(j\)</span>.</li>
+<li><span class="math inline">\(\lambda_j\)</span> is the risk premium associated with factor <span class="math inline">\(j\)</span>.</li>
+</ul>
+<p><span class="math display">\[ \lambda_j= \beta_1 [E(r_{M1}) - r_f]\]</span></p>
+</div>
+<div id="multifactor-generalization" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Multifactor Generalization<a href="ch4.html#multifactor-generalization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Accommodates multiple risk factors.</li>
+</ul>
+<p><span class="math display">\[
+E(R_i) = R_f + \beta_{i1} \lambda_1 + \beta_{i2} \lambda_2 + \ldots + \beta_{ik} \lambda_k
+\]</span></p>
+</div>
+<div id="apt-pros-and-cons" class="section level3 hasAnchor" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> APT Pros and Cons<a href="ch4.html#apt-pros-and-cons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Strengths</strong></th>
+<th><strong>Weaknesses</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>reasonable description of risk and return</td>
+<td>Complex and difficult to measure</td>
+</tr>
+<tr class="even">
+<td>Reflects various macroeconomic impacts</td>
+<td>world of winner chicken dinner, loser loses</td>
+</tr>
+<tr class="odd">
+<td>Customizable to specific markets</td>
+<td>Requires extensive data</td>
+</tr>
+<tr class="even">
+<td>no need to measure market return directly</td>
+<td>Dependent on accurate factor identification</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="apt-v.s.-capm" class="section level3 hasAnchor" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> APT v.s. CAPM<a href="ch4.html#apt-v.s.-capm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>APT is more general in that it gets to an expected return and beta relationship without the assumption of the market portfolio</p>
 
+</div>
 </div>
 </div>
             </section>
