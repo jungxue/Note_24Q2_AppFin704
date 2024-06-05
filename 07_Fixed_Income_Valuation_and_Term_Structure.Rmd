@@ -58,13 +58,18 @@ P_B
 
 #### Bond Pricing Model II
 
-Zero-coupon bonds involve calculating the present value of the par value, discounted by the zero-coupon rate.
+A zero-coupon bond is a type of bond that does not pay periodic interest (coupons). Instead, it is sold at a discount to its face (par) value and pays the full face value at maturity.
 
 $$
 \begin{align}
-P &= \frac{F}{(1 + z_T)^T}
+P_0 &= \frac{F}{(1 + z_T)^T}
 \end{align}
 $$
+
+- $F$: Face value or principal
+- $P_0$: current (time 0) bond price
+- $z_{0T}$: zero-coupon rate (p.a.), or "zero rate", from time 0 to time $T$
+=-
 
 ### Yield Curve
 The yield curve plots yields-to-maturity for coupon bonds against their terms to maturity. It's crucial to understand forward rates, zero rates, and actual rates.
