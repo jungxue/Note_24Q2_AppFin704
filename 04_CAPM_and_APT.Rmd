@@ -40,7 +40,10 @@ Investors expect to be compensated for the risk and the time value of money.
 For example, in NZ, BKMB is the risk free rate(note it is technically not) and additional basis point on top is the premium. 
 
 $$
-E(r_M) - r_f = \bar{A} \sigma_M^2
+\boxed
+{
+E(R_M) - R_f = \bar{A} \sigma_M^2
+}
 $$
 
 $$
@@ -52,7 +55,14 @@ Here, $\bar{A}$ is the average level of risk aversion across investors (weighted
 and 
 
 $$
+\boxed
+{
 \beta_i = \frac{\text{cov}(r_i, r_M)}{\sigma_M^2} = \frac{\rho_{i,M} \sigma_i}{\sigma_M}
+}
+
+\\
+
+\alpha = r_i - E(r_i)  basically \epsilon 
 $$
 
 The CAPM calculates the expected return of an investment by adding the risk-free rate to the **beta**-adjusted market risk premium, where beta measures the investment's sensitivity to market risk and **alpha** represents the excess return not explained by beta.

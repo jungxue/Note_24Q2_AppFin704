@@ -296,7 +296,7 @@ P0 <- (E1 * (1 - b)) / (k - g)
 P0
 
 # Calculate the PVGO
-P0_no_growth <- E1 / k
+P0_no_growth <- (E1 * 1) / k
 PVGO <- P0 - P0_no_growth
 PVGO
 

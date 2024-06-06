@@ -464,7 +464,7 @@ $$
 \text{Max}(U) &= E(r) - \frac{1}{2} A \sigma^2 \\
 &= r_f + y [E(r_p) - r_f] - \frac{1}{2} A y^2 \sigma_p^2 \\
 \text{Solve for y, we have } \\
-y^* &= \frac{E(r_p) - r_f}{A \sigma_p^2}
+y &= \frac{E(r_p) - r_f}{A \sigma_p^2}
 \end{aligned}
 $$
 
@@ -496,10 +496,10 @@ y
 
 # The Expected Return
 
-ER = rf + (y_star*(Erp - rf))
+ER = rf + (y*(Erp - rf))
 ER
 
-sigma_c = y_star*sigma_p
+sigma_c = y*sigma_p
 sigma_c
 
 sharpe = (ER- rf)/sigma_c

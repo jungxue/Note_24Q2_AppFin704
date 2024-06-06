@@ -107,10 +107,8 @@ default-risk
 protection-mechanisms
 credit-default-swaps-cds
 ch7
-summary-of-lecture-7-fixed-income-valuation-and-term-structure
-learning-objectives-1
 bond-pricing-models
-bond-pricing-model-i
+bond-pricing-model-i-ytm
 bond-pricing-model-ii-zero-coupon-bonds
 bond-pricing-model-ii-coupon-bond
 term-structure
@@ -121,7 +119,7 @@ forward-rate-calculation
 term-structure-of-interest-rates-tsir
 ch8
 summary-of-lecture-8-performance-attribution-and-appraisal
-learning-objectives-2
+learning-objectives-1
 steps-in-performance-evaluation
 performance-measurement
 examples

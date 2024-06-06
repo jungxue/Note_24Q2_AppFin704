@@ -1,17 +1,10 @@
 
-# Enter Chapter title here {#ch7}
+# Fixed Income Valuation and Term Structure {#ch7}
 
-## Summary of Lecture 7 – Fixed Income Valuation and Term Structure
+## Bond Pricing Models
 
-### Learning Objectives
-- Understand bond pricing fundamentals and the relationship between bond prices, yield to maturity, and coupon rates.
-- Valuation and characteristics of zero-coupon bonds and building the yield curve.
-- Valuing coupon-bearing bonds using present value of future cash flows.
-- Factors affecting yield curve shape and deriving forward rates from the yield curve.
+### Bond Pricing Model I YTM
 
-### Bond Pricing Models
-
-#### Bond Pricing Model I
 The price of a bond is the present value of expected cash flows, including coupon and principal. The discount rate is the yield to maturity ($YTM$).
 
 $$
@@ -27,16 +20,16 @@ $$
 $$
 
 $$
-P_B = C_t \times \text{Annuity Factor} + \text{Par} \times \text{PV Factor}\frac{C_t}{r} \left[ 1 - \frac{1}{(1 + r)^T} \right] + \frac{\text{Par}}{(1 + r)^T}
+P_B = C_t \times \text{Annuity Factor} + \text{Par} \times \text{PV Factor}\frac{C_t}{r} \left[ 1 - \frac{1}{(1 + r)^T} \right] + \frac{\text{F}}{(1 + r)^T}
 $$
 
 Where:
 
 - $P_b$ = price of the bond
 - $C_t$ = coupon payment
-- $F$ = face value of the bond
+- $F$ = face value of the bond/ or par
 - $T$ = number of periods
-- $r$ is the appropriate discount rate, required return by bondholders, or yield to maturity 
+- $r$ is the appropriate discount rate, required return by bondholders, or yield to maturity (YTM)
 
 ```{r}
 
@@ -82,13 +75,12 @@ result <- uniroot(find_ytm, lower = 0, upper = 1)
 ytm <- result$root
 ytm
 ```
-#### Bond Pricing Model II Zero-coupon bonds
+### Bond Pricing Model II Zero-coupon bonds
 
 A zero-coupon bond is a type of bond that does not pay periodic interest (coupons). Instead, it is sold at a discount to its face (par) value and pays the full face value at maturity.
 
 $$
 \begin{align}
-<<<<<<< HEAD
 P_0 &= \frac{F}{(1 + z_{0T})^T}
 \end{align}
 $$
@@ -160,7 +152,9 @@ cat("The price of the coupon bond is: $", round(bond_price, 2), "\n")
 ```
 
 ## Term Structure
-=======
+
+$$
+\begin{align}
 P_0 &= \frac{F}{(1 + z_T)^T}
 \end{align}
 $$
@@ -236,7 +230,17 @@ T    <- 8       # Term in years for spot rate z_08
 # Calculate the forward rate f_{58}
 f_58 <- ((1 + z_08)^T / (1 + z_05)^t)^(1 / (T - t)) - 1
 f_58
+
+# forward spot rates
+S1 <- 0.03 # Example: 3% for 1 year
+S2 <- 0.04 # Example: 4% for 2 years
+
+# Calculate the 1-year forward rate 1 year from now
+F1_1 <- ( (1 + S2)^2 / (1 + S1) ) - 1
+F1_1
+
 ```
+
 ### Term Structure of Interest Rates (TSIR)
 TSIR describes the relationship between interest rates and terms. 
 

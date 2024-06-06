@@ -47,6 +47,8 @@ The fundamental question is whether the portfolio's return of x% is good or bad,
    - Measures excess return per unit of total risk.
 3. **Treynor Ratio**:
    - Measures excess return per unit of non-diversifiable risk.
+   risk prem/beta 
+   
 4. **Jensen’s Alpha**:
    - Based on CAPM, measures abnormal performance.
 5. **Information Ratio**:
