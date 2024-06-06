@@ -84,10 +84,11 @@ ytm
 ```
 #### Bond Pricing Model II Zero-coupon bonds
 
-Zero-coupon bonds involve calculating the present value of the par value, discounted by the zero-coupon rate.
+A zero-coupon bond is a type of bond that does not pay periodic interest (coupons). Instead, it is sold at a discount to its face (par) value and pays the full face value at maturity.
 
 $$
 \begin{align}
+<<<<<<< HEAD
 P_0 &= \frac{F}{(1 + z_{0T})^T}
 \end{align}
 $$
@@ -159,6 +160,16 @@ cat("The price of the coupon bond is: $", round(bond_price, 2), "\n")
 ```
 
 ## Term Structure
+=======
+P_0 &= \frac{F}{(1 + z_T)^T}
+\end{align}
+$$
+
+- $F$: Face value or principal
+- $P_0$: current (time 0) bond price
+- $z_{0T}$: zero-coupon rate (p.a.), or "zero rate", from time 0 to time $T$
+=-
+>>>>>>> 42b500cc5a1215f9bb8cc4add438cfd0cf7249e4
 
 ### Yield Curve
 
