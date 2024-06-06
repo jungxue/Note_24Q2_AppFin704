@@ -102,12 +102,10 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -119,32 +117,36 @@
 
 \title{Study Note for 24Q2 AppFin704}
 \author{Author: Jung Xue}
-\date{Last Updated: 2024-06-04}
+\date{Last Updated: 2024-06-06}
 
 \begin{document}
+\frontmatter
 \maketitle
 
-{
-\setcounter{tocdepth}{1}
-\tableofcontents
-}
+\mainmatter
 \hypertarget{ch1}{%
 \chapter{Investments and Securities Markets}\label{ch1}}
 
-•describe differences among asset classes and construction of stock market indexes, and calculate profit/loss on options/futures investments.
+•describe differences among asset classes and construction of stock
+market indexes, and calculate profit/loss on options/futures
+investments.
 
-•describe how firms issue securities, and identify types of investors' orders
+•describe how firms issue securities, and identify types of investors'
+orders
 
 •compare mechanics and implications of buying on margin \& short selling
 
-•cite pros/cons of investing with an investment company, and contrast open end mutual funds with other types of investment companies.
+•cite pros/cons of investing with an investment company, and contrast
+open end mutual funds with other types of investment companies.
 
-•define net asset value (NAV) and measure the rate of return on a mutual fund, and classify mutual funds according to investment style.
+•define net asset value (NAV) and measure the rate of return on a mutual
+fund, and classify mutual funds according to investment style.
 
 •demonstrate the impact of expenses and turnover on fund performance
 
 \hypertarget{asset-classes-and-financial-instruments}{%
-\section{Asset Classes and Financial Instruments}\label{asset-classes-and-financial-instruments}}
+\section{Asset Classes and Financial
+Instruments}\label{asset-classes-and-financial-instruments}}
 
 \includegraphics{Resources/Financialmarkets.png}
 
@@ -160,13 +162,17 @@
 \item
   Commercial Paper(CP) (short term \textless{} 12month unsecured debts)
 \item
-  Bankers Acceptances (a postdated check, A bank, rather than an account holder, guarantees the payment.)
+  Bankers Acceptances (a postdated check, A bank, rather than an account
+  holder, guarantees the payment.)
 \item
-  Eurodollars (U.S. dollar denominated deposits at foreign banks or foreign branches of U.S. banks)
+  Eurodollars (U.S. dollar denominated deposits at foreign banks or
+  foreign branches of U.S. banks)
 \item
   Repurchase Agreements (Repos or RPs) and Reverse Repos.
 \item
-  Others, e.g., Brokers' Calls (interests charged by banks on loans made to brokerage firms), Federal Funds, The LIBOR Market, and Money Market Funds
+  Others, e.g., Brokers' Calls (interests charged by banks on loans made
+  to brokerage firms), Federal Funds, The LIBOR Market, and Money Market
+  Funds
 \end{itemize}
 
 \hypertarget{the-bond-market}{%
@@ -175,13 +181,16 @@
 \begin{itemize}
 \tightlist
 \item
-  Treasury Notes/Bonds (\$21 billion, \$21/\$51= 41\% of 2020 US Bond Market)
+  Treasury Notes/Bonds (\$21 billion, \$21/\$51= 41\% of 2020 US Bond
+  Market)
 \item
   Mortgages and Mortgage Backed Securities (\$12.7 billion, 25\%
 \item
-  Corporate Bonds, including secured bonds, debentures (unsecured), callable/puttable/convertible bonds (\$10.6 billion, 21\%
+  Corporate Bonds, including secured bonds, debentures (unsecured),
+  callable/puttable/convertible bonds (\$10.6 billion, 21\%
 \item
-  Municipal Bonds (Issued by states/local, tax exempt) (\$3.95 billion, 7.8\%)
+  Municipal Bonds (Issued by states/local, tax exempt) (\$3.95 billion,
+  7.8\%)
 \item
   Federal Agency Debt, e.g., Fannie Mae, Freddie Mac ( 3.3\%)
 \item
@@ -190,9 +199,11 @@
   \begin{itemize}
   \tightlist
   \item
-    Eurobonds: Eurodollar bonds bonds denominated in a currency other than the issuer's currency
+    Eurobonds: Eurodollar bonds bonds denominated in a currency other
+    than the issuer's currency
   \item
-    Yankee bond: US dollar denominated bond sold in the U.S. by a non U.S. issuer
+    Yankee bond: US dollar denominated bond sold in the U.S. by a non
+    U.S. issuer
   \end{itemize}
 \item
   Inflation Protected Bonds (i.e., principal is adjusted per CPI)
@@ -229,7 +240,8 @@
 \item
   Broad based index (S\&P 500 etc.)
 \item
-  Narrow based index (composed of only a few stocks, in a specific industry)
+  Narrow based index (composed of only a few stocks, in a specific
+  industry)
 \item
   Why indexes?
 \item
@@ -240,7 +252,9 @@
   Smart beta
 \end{itemize}
 
-The goal of \textbf{Smart beta} is to obtain alpha, lower risk or increase diversification at a cost lower than traditional active management and marginally higher than straight index investing
+The goal of \textbf{Smart beta} is to obtain alpha, lower risk or
+increase diversification at a cost lower than traditional active
+management and marginally higher than straight index investing
 
 Construction Methodology
 
@@ -260,7 +274,8 @@ Construction Methodology
 \begin{itemize}
 \tightlist
 \item
-  A security with a pay-off that depends on the prices of other securities
+  A security with a pay-off that depends on the prices of other
+  securities
 \item
   Call/put options
 \item
@@ -281,20 +296,27 @@ Why we need them?
   Arbitraging (to lock in price)
 \end{itemize}
 
-\textbf{Arbitrage} describes the act of buying a security in one market and simultaneously selling it in another market at a higher price, thereby enabling investors to profit from the temporary difference in cost per share.
+\textbf{Arbitrage} describes the act of buying a security in one market
+and simultaneously selling it in another market at a higher price,
+thereby enabling investors to profit from the temporary difference in
+cost per share.
 
 \hypertarget{securities-markets-and-trading}{%
-\section{Securities Markets and Trading}\label{securities-markets-and-trading}}
+\section{Securities Markets and
+Trading}\label{securities-markets-and-trading}}
 
 Originators
 
 \begin{itemize}
 \tightlist
 \item
-  Publicly traded companies initial public offering (IPO), and seasonal equity offerings (SEOs), - Privately held firms (private placement in which shares are sold directly to
-  a small group of institutional or wealthy investors)
+  Publicly traded companies initial public offering (IPO), and seasonal
+  equity offerings (SEOs), - Privately held firms (private placement in
+  which shares are sold directly to a small group of institutional or
+  wealthy investors)
 \item
-  Shelf registrations (public firms can register securities and gradually sell them to the public )
+  Shelf registrations (public firms can register securities and
+  gradually sell them to the public )
 \end{itemize}
 
 How securities are traded (in secondary markets)
@@ -311,26 +333,21 @@ How securities are traded (in secondary markets)
   Auctions
 \end{itemize}
 
-ype of orders
-maket order
-price contingeant order
+ype of orders maket order price contingeant order
 
-Trading mechanisms
-OTC dealer
-electronic
-market maker (increase liquidity)
---
-Over the counter dealer markets (OTC Markets)
--
-Electronic communication networks ( ECNs)
+Trading mechanisms OTC dealer electronic market maker (increase
+liquidity) -- Over the counter dealer markets (OTC Markets) - Electronic
+communication networks ( ECNs)
 
 margin trading
 
 why to purchase with margin?
 
-able to make more profits by borrowing money from broker, essentially multiplying market fluctuation/volatility.
+able to make more profits by borrowing money from broker, essentially
+multiplying market fluctuation/volatility.
 
-short sale (borrow stocks to sell and payback when you sold it at profit)
+short sale (borrow stocks to sell and payback when you sold it at
+profit)
 
 derivative market (sell, not borrowing)
 
@@ -354,12 +371,12 @@ derivative market (sell, not borrowing)
 
 Net Asset Value (NAV)
 
-\[\frac{Asset - Liabilities}{share outstanding}\]
-unit investement fund (unmanaged) fixed portfolio for life
+\[\frac{Asset - Liabilities}{share outstanding}\] unit investement fund
+(unmanaged) fixed portfolio for life
 
-Managed Investment companies
-- open-end(publicly trader and closed ended)
-- close end funds shares sold at discount for liquidity (to sell quickly)
+Managed Investment companies - open-end(publicly trader and closed
+ended) - close end funds shares sold at discount for liquidity (to sell
+quickly)
 
 Exchange Traded Funds (ETF)
 
@@ -385,7 +402,8 @@ Mutual Funds 65\% of market
   Funds of Funds
 \end{itemize}
 
-Funds can be sold directly, indirectly and through financial supermarkets
+Funds can be sold directly, indirectly and through financial
+supermarkets
 
 Fee structure
 
@@ -401,18 +419,14 @@ Fee structure
   12b-1 charges annual fee fro marketing and distribution
 \end{itemize}
 
-fee structure is very important and made large apart of your profit share
+fee structure is very important and made large apart of your profit
+share
 
 Taxation
 
-no tax at fund level
-long term capital gain tax rate
-high turnover rate
+no tax at fund level long term capital gain tax rate high turnover rate
 
-ETF
-- Passive investement, track index
-- lower cost
-- smart beta fund
+ETF - Passive investement, track index - lower cost - smart beta fund
 
 \begin{itemize}
 \tightlist
@@ -424,7 +438,8 @@ ETF
 
 mutual fund underperformed passive funds(cost of high freq trading)
 
-consistent performance, don't be obsessed with top performer, they could be winner by chance
+consistent performance, don't be obsessed with top performer, they could
+be winner by chance
 
 \hypertarget{ch2}{%
 \chapter{Risk and Return}\label{ch2}}
@@ -440,11 +455,14 @@ This lecture aims to provide the ability to:
 \item
   Compute various measures of return on multi-year investments.
 \item
-  Determine the expected return and risk of portfolios combining risky assets and risk-free investments like Treasury bills.
+  Determine the expected return and risk of portfolios combining risky
+  assets and risk-free investments like Treasury bills.
 \item
-  Use the \textbf{Sharpe ratio} for evaluating portfolio performance and guiding capital allocation.
+  Use the \textbf{Sharpe ratio} for evaluating portfolio performance and
+  guiding capital allocation.
 \item
-  Understand the role of utility in determining optimal capital allocation to risky assets.
+  Understand the role of utility in determining optimal capital
+  allocation to risky assets.
 \end{enumerate}
 
 \hypertarget{measuring-returns}{%
@@ -455,9 +473,11 @@ Returns can be measured in several ways:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Holding Period Return (HPR):} This is the return earned over the period an investment is held.
+  \textbf{Holding Period Return (HPR):} This is the return earned over
+  the period an investment is held.
 \item
-  \textbf{Returns Over Multiple Periods:} These can be compounded over time using methods such as:
+  \textbf{Returns Over Multiple Periods:} These can be compounded over
+  time using methods such as:
 
   \begin{itemize}
   \tightlist
@@ -473,24 +493,51 @@ Returns can be measured in several ways:
 \hypertarget{arithmetic-average}{%
 \subsection{Arithmetic Average}\label{arithmetic-average}}
 
-\[ \text{Arithmetic Average} = \frac{1}{N} \sum_{i=1}^{N} r_i \]
-where \(r_i\) is the return in period \(i\) and \(N\) is the total number of periods.
+\[ \text{Arithmetic Average} = \frac{1}{N} \sum_{i=1}^{N} r_i \] where
+\(r_i\) is the return in period \(i\) and \(N\) is the total number of
+periods.
 
 \hypertarget{geometric-average}{%
 \subsection{Geometric Average}\label{geometric-average}}
 
 \[ \text{Geometric Average} = \left( \prod_{i=1}^{N} (1 + r_i) \right)^{\frac{1}{N}} - 1 \]
 
-where \(r_i\) is the return in period \(i\) and \(N\) is the total number of periods.
+where \(r_i\) is the return in period \(i\) and \(N\) is the total
+number of periods.
 
 \hypertarget{dollar-weighted-average-internal-rate-of-return}{%
-\subsection{Dollar-Weighted Average (Internal Rate of Return)}\label{dollar-weighted-average-internal-rate-of-return}}
+\subsection{Dollar-Weighted Average (Internal Rate of
+Return)}\label{dollar-weighted-average-internal-rate-of-return}}
 
-The dollar-weighted average return, or internal rate of return (IRR), is the discount rate \(r\) that sets the \textbf{net present value (NPV) = 0}. It is calculated by solving the following equation:
+The dollar-weighted average return, or internal rate of return (IRR), is
+the discount rate \(r\) that sets the \textbf{net present value (NPV) =
+0}. It is calculated by solving the following equation:
 
 \[ \text{Dollar-Weighted Average} = \sum_{t=0}^{N} \frac{C_t}{(1 + r)^t} = 0 \]
 
-Where \(C_t\) is the net cash flow at time \(t\), and \(N\) is the total number of periods.
+Where \(C_t\) is the net cash flow at time \(t\), and \(N\) is the total
+number of periods.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the cash flows and times}
+\NormalTok{cash\_flows }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1000}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DecValTok{300}\NormalTok{, }\DecValTok{400}\NormalTok{, }\DecValTok{500}\NormalTok{)}
+\NormalTok{times      }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+
+\CommentTok{\# Define the function for NPV}
+\NormalTok{npv\_function }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(r) \{}
+  \FunctionTok{sum}\NormalTok{(cash\_flows }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ r)}\SpecialCharTok{\^{}}\NormalTok{times)}
+\NormalTok{\}}
+
+\CommentTok{\# Use uniroot to find the IRR (dollar{-}weighted average return)}
+\NormalTok{irr }\OtherTok{\textless{}{-}} \FunctionTok{uniroot}\NormalTok{(npv\_function, }\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}\SpecialCharTok{$}\NormalTok{root}
+\NormalTok{irr}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1282636
+\end{verbatim}
 
 \hypertarget{annualizing-returns}{%
 \subsection{Annualizing Returns}\label{annualizing-returns}}
@@ -498,9 +545,11 @@ Where \(C_t\) is the net cash flow at time \(t\), and \(N\) is the total number 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Annual Percentage Rate (APR):} Simple annualized interest rate without compounding.
+  \textbf{Annual Percentage Rate (APR):} Simple annualized interest rate
+  without compounding.
 \item
-  \textbf{Effective Annual Rate (EAR):} Accounts for intra-year compounding, providing a true measure of annual return.
+  \textbf{Effective Annual Rate (EAR):} Accounts for intra-year
+  compounding, providing a true measure of annual return.
 \end{itemize}
 
 \[
@@ -519,8 +568,7 @@ Where:
 
 \[
 \text{EAR} = \left(1 + \frac{r}{n}\right)^n - 1
-\]
-Where:
+\] Where:
 
 \begin{itemize}
 \tightlist
@@ -532,7 +580,8 @@ Where:
 
 Example:
 
-\$ 10000 Deposit, APR (annual percentage rate): 4\% p.a. Compounding Quarterly.
+\$ 10000 Deposit, APR (annual percentage rate): 4\% p.a. Compounding
+Quarterly.
 
 \[ 
 \begin{aligned}
@@ -543,18 +592,33 @@ EAR &= (1+r/n)^n− 1 \\
 \end{aligned}
 \]
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r }\OtherTok{\textless{}{-}} \FloatTok{0.04}  \CommentTok{\# 8\% annual nominal interest rate}
+\NormalTok{mn }\OtherTok{\textless{}{-}} \DecValTok{4}  \CommentTok{\# Quarterly compounding}
+
+\CommentTok{\# Calculate the Effective Annual Rate (EAR)}
+\NormalTok{EAR }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ r }\SpecialCharTok{/}\NormalTok{ mn)}\SpecialCharTok{\^{}}\NormalTok{mn }\SpecialCharTok{{-}} \DecValTok{1}
+\NormalTok{EAR}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.04060401
+\end{verbatim}
+
 \hypertarget{risk-and-risk-premiums}{%
 \section{Risk and Risk Premiums}\label{risk-and-risk-premiums}}
 
 \hypertarget{expected-return}{%
 \subsection{Expected Return}\label{expected-return}}
 
-\(E(R)\) Is the weighted average of all possible returns, with weights being the probabilities of each scenario.
+\(E(R)\) Is the weighted average of all possible returns, with weights
+being the probabilities of each scenario.
 
 \[
 E(R) = \sum_{i=1}^{N} p_i \cdot r_i
-\]
-Where:
+\] Where:
 
 \begin{itemize}
 \tightlist
@@ -589,8 +653,7 @@ E(R) &= (0.50 \cdot 0.10) + (0.30 \cdot 0.15) + (0.20 \cdot 0.20) \\
        &= 0.135 \\
        &= 13.5\% \\  
 \end{aligned}
-\]
-\textbf{R Code for Calculation}
+\] \textbf{R Code for Calculation}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -658,8 +721,7 @@ The standard deviation of the expected return is:
        &= 0.0544\\
        &= 5.44\%
 \end{aligned}
-\]
-\textbf{R Code for Calculation}
+\] \textbf{R Code for Calculation}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -687,7 +749,8 @@ The standard deviation of the expected return is:
 \hypertarget{normal-distribution}{%
 \subsection{Normal Distribution}\label{normal-distribution}}
 
-Stock returns are often assumed to be normally distributed. However, real return distributions may show skewness such as ``fat tails.''
+Stock returns are often assumed to be normally distributed. However,
+real return distributions may show skewness such as ``fat tails.''
 
 \[X∼N(μ,σ2)\]
 
@@ -707,7 +770,8 @@ Where:
   \(x\) is the variable
 \end{itemize}
 
-\textbf{standard normal distribution} is the normal distribution with mean \(μ\) = 0 and standard deviation \(σ\) = 1.
+\textbf{standard normal distribution} is the normal distribution with
+mean \(μ\) = 0 and standard deviation \(σ\) = 1.
 
 \[
 f(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right)
@@ -727,9 +791,12 @@ Where:
 
 \textbf{Example Calculation}
 
-Let's calculate the probability of a value \(x\) in a normal distribution with a mean \(\mu = 0\) and a standard deviation \(\sigma = 1\) (standard normal distribution).
+Let's calculate the probability of a value \(x\) in a normal
+distribution with a mean \(\mu = 0\) and a standard deviation
+\(\sigma = 1\) (standard normal distribution).
 
-We will also calculate the cumulative probability (CDF) and quantiles for specific values.
+We will also calculate the cumulative probability (CDF) and quantiles
+for specific values.
 
 \textbf{R Code for Calculation}
 
@@ -744,36 +811,48 @@ We will also calculate the cumulative probability (CDF) and quantiles for specif
 
 \CommentTok{\# Calculate the probability density function (PDF) of the normal distribution at x}
 \NormalTok{pdf\_value }\OtherTok{\textless{}{-}} \FunctionTok{dnorm}\NormalTok{(x, }\AttributeTok{mean =}\NormalTok{ mu, }\AttributeTok{sd =}\NormalTok{ sigma)}
-
-\CommentTok{\# Calculate the cumulative distribution function (CDF) of the normal distribution at x}
-\NormalTok{cdf\_value }\OtherTok{\textless{}{-}} \FunctionTok{pnorm}\NormalTok{(x, }\AttributeTok{mean =}\NormalTok{ mu, }\AttributeTok{sd =}\NormalTok{ sigma)}
-
-\CommentTok{\# Calculate the quantile for a given probability}
-\NormalTok{probability }\OtherTok{\textless{}{-}} \FloatTok{0.95}
-\NormalTok{quantile\_value }\OtherTok{\textless{}{-}} \FunctionTok{qnorm}\NormalTok{(probability, }\AttributeTok{mean =}\NormalTok{ mu, }\AttributeTok{sd =}\NormalTok{ sigma)}
-
-\CommentTok{\# Print the results}
-\FunctionTok{list}\NormalTok{(}\AttributeTok{PDF =}\NormalTok{ pdf\_value, }\AttributeTok{CDF =}\NormalTok{ cdf\_value, }\AttributeTok{Quantile =}\NormalTok{ quantile\_value)}
+\NormalTok{pdf\_value}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## $PDF
 ## [1] 0.2419707
-## 
-## $CDF
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate the cumulative distribution function (CDF) of the normal distribution at x}
+\NormalTok{cdf\_value }\OtherTok{\textless{}{-}} \FunctionTok{pnorm}\NormalTok{(x, }\AttributeTok{mean =}\NormalTok{ mu, }\AttributeTok{sd =}\NormalTok{ sigma)}
+\NormalTok{cdf\_value}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
 ## [1] 0.8413447
-## 
-## $Quantile
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate the quantile for a given probability}
+\NormalTok{probability }\OtherTok{\textless{}{-}} \FloatTok{0.95}
+\NormalTok{quantile\_value }\OtherTok{\textless{}{-}} \FunctionTok{qnorm}\NormalTok{(probability, }\AttributeTok{mean =}\NormalTok{ mu, }\AttributeTok{sd =}\NormalTok{ sigma)}
+\NormalTok{quantile\_value}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
 ## [1] 1.644854
 \end{verbatim}
 
 \hypertarget{risk-aversion}{%
 \subsection{Risk Aversion}\label{risk-aversion}}
 
-Risk-averse investors prefer less risk for the same expected return. They demand a risk premium for taking additional risk, quantified by the price of risk (ratio of risk premium to variance).
+Risk-averse investors prefer less risk for the same expected return.
+They demand a risk premium for taking additional risk, quantified by the
+price of risk (ratio of risk premium to variance).
 
-Risk-averse investors reject investment opportunities with a \textbf{risk premium} of zero or less.
+Risk-averse investors reject investment opportunities with a
+\textbf{risk premium} of zero or less.
 
 \textbf{Degree of risk aversion}
 
@@ -797,7 +876,8 @@ Where:
 
 \textbf{Example}
 
-For the market portfolio (e.g., S\&P 500 index funds), the average degree of risk aversion of investors is:
+For the market portfolio (e.g., S\&P 500 index funds), the average
+degree of risk aversion of investors is:
 
 \[
 \begin{aligned}
@@ -824,29 +904,37 @@ Where:
 \item
   Selection of risky assets/portfolios such as stocks and bonds.
 \item
-  Decision on the proportion of the portfolio to invest in risky assets versus risk-free assets.
+  Decision on the proportion of the portfolio to invest in risky assets
+  versus risk-free assets.
 \end{enumerate}
 
 \hypertarget{capital-allocation}{%
 \subsection{Capital Allocation:}\label{capital-allocation}}
 
-Combining investments in risk-free and risky assets allows for varying expected returns and risks.
+Combining investments in risk-free and risky assets allows for varying
+expected returns and risks.
 
-We call the overall portfolio composed of the risk-free asset and the risky portfolio the \textbf{complete portfolio}.
+We call the overall portfolio composed of the risk-free asset and the
+risky portfolio the \textbf{complete portfolio}.
 
 \hypertarget{utility}{%
 \subsection{Utility}\label{utility}}
 
-\textbf{Utility:} Represents investor preferences, considering risk aversion. It helps in making decisions about different securities.This is a single measure we have the investor's attitudes to risk and return at each level of wealth.
+\textbf{Utility:} Represents investor preferences, considering risk
+aversion. It helps in making decisions about different securities.This
+is a single measure we have the investor's attitudes to risk and return
+at each level of wealth.
 
 \textbf{Influence of the trade-off decisions:}
 
 \begin{itemize}
 \tightlist
 \item
-  Risk appetite (strong financial position and stable income may have higher appitite)
+  Risk appetite (strong financial position and stable income may have
+  higher appitite)
 \item
-  proportion of the investor's total wealth. (psychological risk aversion)
+  proportion of the investor's total wealth. (psychological risk
+  aversion)
 \item
   Financial Goals/liquidity needs (set when they need cash flow)
 \item
@@ -860,14 +948,15 @@ We call the overall portfolio composed of the risk-free asset and the risky port
 \hypertarget{utility-function}{%
 \subsection{Utility Function}\label{utility-function}}
 
-Captures an investor's risk-return trade-offs. Utility increases with expected return and decreases with risk. More risk-averse investors have higher coefficients of risk aversion (A).
+Captures an investor's risk-return trade-offs. Utility increases with
+expected return and decreases with risk. More risk-averse investors have
+higher coefficients of risk aversion (A).
 
 There are countless utility functions. An example is:
 
 \[
 U = E(r) - \frac{1}{2} A \sigma^2
-\]
-Where:
+\] Where:
 
 \begin{itemize}
 \tightlist
@@ -884,7 +973,8 @@ Where:
 \item
   More risk-averse investors will have larger values of A.
 \item
-  Investors assign higher utility to more attractive risk-return portfolios.
+  Investors assign higher utility to more attractive risk-return
+  portfolios.
 \end{itemize}
 
 \textbf{Example:}
@@ -901,10 +991,31 @@ where:
 
 \includegraphics{Resources/utilisation.png}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the expected return, variance, and coefficient of risk aversion}
+
+\NormalTok{risk\_free\_rate }\OtherTok{=} \FloatTok{0.04}
+\NormalTok{expected\_return }\OtherTok{\textless{}{-}} \FloatTok{0.08}  \CommentTok{\# Expected return (E(r))}
+\NormalTok{variance }\OtherTok{\textless{}{-}} \FloatTok{0.06}\SpecialCharTok{\^{}}\DecValTok{2}         \CommentTok{\# Variance (σ\^{}2)}
+\NormalTok{A }\OtherTok{\textless{}{-}} \DecValTok{2}                   \CommentTok{\# Coefficient of risk aversion (A)}
+
+\CommentTok{\# Calculate the utility value (U)}
+\NormalTok{utility }\OtherTok{\textless{}{-}}\NormalTok{ expected\_return }\SpecialCharTok{{-}}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{) }\SpecialCharTok{*}\NormalTok{ A }\SpecialCharTok{*}\NormalTok{ variance}
+\NormalTok{utility}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.0764
+\end{verbatim}
+
 \hypertarget{indifference-curves}{%
 \subsection{Indifference Curves}\label{indifference-curves}}
 
-These curves connect portfolios providing the same utility level, illustrating an investor's preference for different risk-return combinations.
+These curves connect portfolios providing the same utility level,
+illustrating an investor's preference for different risk-return
+combinations.
 
 Simply above the curve Yes, below the curve no.
 
@@ -913,6 +1024,65 @@ Simply above the curve Yes, below the curve no.
 \hypertarget{capital-allocation-line}{%
 \subsection{Capital Allocation Line}\label{capital-allocation-line}}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the risk{-}free rate and the risky portfolio parameters}
+\NormalTok{risk\_free\_rate }\OtherTok{\textless{}{-}} \FloatTok{0.03}  \CommentTok{\# 3\%}
+\NormalTok{expected\_return\_risky }\OtherTok{\textless{}{-}} \FloatTok{0.12}  \CommentTok{\# 12\%}
+\NormalTok{std\_dev\_risky }\OtherTok{\textless{}{-}} \FloatTok{0.20}  \CommentTok{\# 20\%}
+
+\CommentTok{\# Define a range of standard deviations for the CAL}
+\NormalTok{std\_devs }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.25}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{)}
+
+\CommentTok{\# Calculate the expected returns for the CAL}
+\NormalTok{expected\_returns }\OtherTok{\textless{}{-}}\NormalTok{ risk\_free\_rate }\SpecialCharTok{+}\NormalTok{ ((expected\_return\_risky }\SpecialCharTok{{-}}\NormalTok{ risk\_free\_rate) }\SpecialCharTok{/}\NormalTok{ std\_dev\_risky) }\SpecialCharTok{*}\NormalTok{ std\_devs}
+
+\CommentTok{\# Create a data frame to store the results}
+\NormalTok{cal\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{std\_dev =}\NormalTok{ std\_devs, }\AttributeTok{expected\_return =}\NormalTok{ expected\_returns)}
+
+\CommentTok{\# Plot the Capital Allocation Line}
+\FunctionTok{ggplot}\NormalTok{(cal\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ std\_dev, }\AttributeTok{y =}\NormalTok{ expected\_return)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\NormalTok{, }\AttributeTok{y =}\NormalTok{ risk\_free\_rate), }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Risk{-}free rate point}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ std\_dev\_risky, }\AttributeTok{y =}\NormalTok{ expected\_return\_risky), }\AttributeTok{color =} \StringTok{"green"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Risky portfolio point}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Capital Allocation Line (CAL)"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Standard Deviation (Risk)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Expected Return"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## i Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in geom_point(aes(x = 0, y = risk_free_rate), color = "red", size = 3): All aesthetics have length 1, but the data has 26 rows.
+## i Please consider using `annotate()` or provide this layer with data containing a
+##   single row.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in geom_point(aes(x = std_dev_risky, y = expected_return_risky), : All aesthetics have length 1, but the data has 26 rows.
+## i Please consider using `annotate()` or provide this layer with data containing a
+##   single row.
+\end{verbatim}
+
+\includegraphics{Template_Study_Note_files/figure-latex/unnamed-chunk-7-1.pdf}
 It's possible to split investment funds between safe and risky assets.
 
 \begin{enumerate}
@@ -936,7 +1106,8 @@ It's possible to split investment funds between safe and risky assets.
   \(\sigma_p\) Standard deviation of the risky portfolio = \(22\%\)
 \end{itemize}
 
-The investor allocates \(y\) proportion of their wealth in the risky portfolio and \(1 - y\) in the risk-free portfolio.
+The investor allocates \(y\) proportion of their wealth in the risky
+portfolio and \(1 - y\) in the risk-free portfolio.
 
 \[
 \begin{aligned}
@@ -958,10 +1129,10 @@ r_𝑐     &= 0.07+0.08*(0.75) = 13\% \\
 \sigma_c &= y \sigma_𝑝=22𝑦\\
 \sigma_c &= 16.5\% \\
 \end{aligned}
-\]
-\includegraphics{Resources/capaloocation1.png}
+\] \includegraphics{Resources/capaloocation1.png}
 
-The \textbf{Sharpe Ratio}, which measures extra return per unit of risk (gradient of line), is calculated as:
+The \textbf{Sharpe Ratio}, which measures extra return per unit of risk
+(gradient of line), is calculated as:
 
 \[
 \begin{aligned}
@@ -972,11 +1143,14 @@ The \textbf{Sharpe Ratio}, which measures extra return per unit of risk (gradien
 \]
 
 \hypertarget{capital-allocation-line-cal-with-leverage}{%
-\subsection{Capital Allocation Line (CAL) with Leverage}\label{capital-allocation-line-cal-with-leverage}}
+\subsection{Capital Allocation Line (CAL) with
+Leverage}\label{capital-allocation-line-cal-with-leverage}}
 
-Leverage multiplies loss and return at a cost of borrowing money from dealers.
+Leverage multiplies loss and return at a cost of borrowing money from
+dealers.
 
-Borrowing at the risk-free rate extends the CAL. Borrowing rates higher than the risk-free rate cause a kink in the CAL, changing the slope.
+Borrowing at the risk-free rate extends the CAL. Borrowing rates higher
+than the risk-free rate cause a kink in the CAL, changing the slope.
 
 \[
 \begin{aligned}
@@ -986,13 +1160,14 @@ Borrowing at the risk-free rate extends the CAL. Borrowing rates higher than the
 \text{The Sharpe ratio is} \\
     (18−9)/0.33 &= 0.27\% \\
 \end{aligned}
-\]
-\includegraphics{Resources/capaloocation2.png}
+\] \includegraphics{Resources/capaloocation2.png}
 
 \hypertarget{utility-maximization}{%
 \subsection{Utility Maximization}\label{utility-maximization}}
 
-In portfolio theory, investors aim to maximize their utility, which balances expected return and risk. Mathematically, the utility function is:
+In portfolio theory, investors aim to maximize their utility, which
+balances expected return and risk. Mathematically, the utility function
+is:
 
 \[
 \begin{aligned}
@@ -1001,9 +1176,16 @@ In portfolio theory, investors aim to maximize their utility, which balances exp
 \text{Solve for y, we have } \\
 y^* &= \frac{E(r_p) - r_f}{A \sigma_p^2}
 \end{aligned}
-\]
+\] where
 
-To find the optimal proportion \(y^\) to invest in the risky portfolio, we solve for \(y_*\):
+-\(U\): Utility value. -\(E(r)\): Expected return. -\(A\): Coefficient
+of risk aversion. -\(\sigma^2\): Variance (of returns). -\(r_f\):
+Risk-free rate. -\(y\): Allocation proportion or weight in the risky
+portfolio. -\(E(r_p)\): Expected return of the risky portfolio.
+-\(\sigma_p^2\): Variance (of returns) of the risky portfolio.
+
+To find the optimal proportion \(y^\) to invest in the risky portfolio,
+we solve for \(y_*\):
 
 \textbf{R code}
 
@@ -1070,15 +1252,18 @@ To find the optimal proportion \(y^\) to invest in the risky portfolio, we solve
 \item
   Investors aim to choose portfolios on higher indifference curves.
 \item
-  Higher indifference curves provide a higher expected return for a given level of risk.
+  Higher indifference curves provide a higher expected return for a
+  given level of risk.
 \item
   More risk-averse investors have steeper indifference curves.
 \item
-  More risk-averse investors require a greater increase in expected return for an increase in portfolio risk.
+  More risk-averse investors require a greater increase in expected
+  return for an increase in portfolio risk.
 \end{itemize}
 
 \hypertarget{the-capital-market-line-cml}{%
-\subsection{The Capital Market Line (CML)}\label{the-capital-market-line-cml}}
+\subsection{The Capital Market Line
+(CML)}\label{the-capital-market-line-cml}}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1829}}
@@ -1097,17 +1282,27 @@ To find the optimal proportion \(y^\) to invest in the risky portfolio, we solve
 \bottomrule\noalign{}
 \endlastfoot
 \textbf{Pros} & & \\
-Higher Return Potential & Aims to outperform the market. & Matches market returns. \\
-Flexibility & Can quickly adjust to market changes. & Follows index rules. \\
-Risk Management & Can avoid certain sectors or stocks to manage risk. & Diversified holdings reduce specific risks. \\
-Exploiting Inefficiencies & Can capitalize on market inefficiencies. & Benefits from overall market growth. \\
-Customization & Tailors strategy to investor goals. & Simple, straightforward strategy. \\
+Higher Return Potential & Aims to outperform the market. & Matches
+market returns. \\
+Flexibility & Can quickly adjust to market changes. & Follows index
+rules. \\
+Risk Management & Can avoid certain sectors or stocks to manage risk. &
+Diversified holdings reduce specific risks. \\
+Exploiting Inefficiencies & Can capitalize on market inefficiencies. &
+Benefits from overall market growth. \\
+Customization & Tailors strategy to investor goals. & Simple,
+straightforward strategy. \\
 \textbf{Cons} & & \\
-Higher Costs & More fees and expenses due to frequent trading and research. & Lower fees and expenses. \\
-Performance Uncertainty & No guarantee of outperforming the market. & Predictable performance, matches index. \\
-Increased Risk & Higher risk from concentrated positions and market timing. & Lower risk due to diversification. \\
-Tax Implications & More frequent trading can lead to higher taxes. & Less frequent trading, more tax efficient. \\
-Dependence on Manager Skill & Relies on the skill and judgment of the manager. & No reliance on manager skill. \\
+Higher Costs & More fees and expenses due to frequent trading and
+research. & Lower fees and expenses. \\
+Performance Uncertainty & No guarantee of outperforming the market. &
+Predictable performance, matches index. \\
+Increased Risk & Higher risk from concentrated positions and market
+timing. & Lower risk due to diversification. \\
+Tax Implications & More frequent trading can lead to higher taxes. &
+Less frequent trading, more tax efficient. \\
+Dependence on Manager Skill & Relies on the skill and judgment of the
+manager. & No reliance on manager skill. \\
 \end{longtable}
 
 \hypertarget{ch3}{%
@@ -1122,15 +1317,18 @@ Portfolio construction generally has three steps:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{Capital allocation} between the risky portfolio and risk-free assets
+  \textbf{Capital allocation} between the risky portfolio and risk-free
+  assets
 \item
-  \textbf{Asset allocation} across wide asset classes (stocks, international stocks, long-term bonds).
+  \textbf{Asset allocation} across wide asset classes (stocks,
+  international stocks, long-term bonds).
 \item
   \textbf{Security selection}.
 \end{enumerate}
 
 \hypertarget{major-risks-of-stock-portfolio}{%
-\section{Major Risks of Stock Portfolio}\label{major-risks-of-stock-portfolio}}
+\section{Major Risks of Stock
+Portfolio}\label{major-risks-of-stock-portfolio}}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2687}}
@@ -1145,14 +1343,21 @@ Description
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Market Risk} & Fluctuations in overall market affecting portfolio value. \\
+\textbf{Market Risk} & Fluctuations in overall market affecting
+portfolio value. \\
 Sector Risk & Specific sectors or industries under-performing. \\
-\textbf{Company Risk} & Individual companies facing financial difficulties or poor performance. \\
-Liquidity Risk & Difficulty in buying or selling assets without significant price changes. \\
-Currency Risk & Exchange rate fluctuations impacting international investments. \\
-Interest Rate Risk & Changes in interest rates affecting bond prices and portfolio value. \\
-Political Risk & Political events or policy changes impacting financial markets. \\
-Regulatory Risk & Changes in regulations affecting industries or companies in the portfolio. \\
+\textbf{Company Risk} & Individual companies facing financial
+difficulties or poor performance. \\
+Liquidity Risk & Difficulty in buying or selling assets without
+significant price changes. \\
+Currency Risk & Exchange rate fluctuations impacting international
+investments. \\
+Interest Rate Risk & Changes in interest rates affecting bond prices and
+portfolio value. \\
+Political Risk & Political events or policy changes impacting financial
+markets. \\
+Regulatory Risk & Changes in regulations affecting industries or
+companies in the portfolio. \\
 \end{longtable}
 
 \begin{itemize}
@@ -1160,7 +1365,8 @@ Regulatory Risk & Changes in regulations affecting industries or companies in th
 \item
   Market risk (\textbf{systematic risk}): non-diversifiable risk
 \item
-  Unique risk (\textbf{non-systematic risk}): firm-specific risk, diversifiable risk
+  Unique risk (\textbf{non-systematic risk}): firm-specific risk,
+  diversifiable risk
 \end{itemize}
 
 \includegraphics{Resources/sysrisk.png}
@@ -1194,9 +1400,11 @@ Where:
 \hypertarget{variance}{%
 \subsection{variance}\label{variance}}
 
-\textbf{Variance} measures how much the values of a random variable vary or spread out from the mean (average)
+\textbf{Variance} measures how much the values of a random variable vary
+or spread out from the mean (average)
 
-The \textbf{variance} of the portfolio \(\sigma_P^2\) can be calculated using the following formula:
+The \textbf{variance} of the portfolio \(\sigma_P^2\) can be calculated
+using the following formula:
 
 \[ \sigma_P^2 = w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2w_1 w_2 \rho_{12} \sigma_1 \sigma_2 \]
 
@@ -1215,17 +1423,21 @@ Where:
 \item
   \(\sigma_2^2\) is the variance of returns of asset 2.
 \item
-  \(\rho_{12}\) is the correlation coefficient between returns of assets 1 and 2.
+  \(\rho_{12}\) is the correlation coefficient between returns of assets
+  1 and 2.
 \item
-  \(\sigma_1\) and \(\sigma_2\) are the standard deviations of returns of assets 1 and 2, respectively.
+  \(\sigma_1\) and \(\sigma_2\) are the standard deviations of returns
+  of assets 1 and 2, respectively.
 \end{itemize}
 
-The variance formula accounts for the individual variances of assets 1 and 2, as well as their \textbf{covariance}.
+The variance formula accounts for the individual variances of assets 1
+and 2, as well as their \textbf{covariance}.
 
 \[Cov(r_1,r_2 )=\rho_{12} 𝜎_1 𝜎_2\]
 
 \hypertarget{case-i-1}{%
-\subsubsection{\texorpdfstring{Case I: \$ \rho = 1 \$}{Case I: \$ = 1 \$}}\label{case-i-1}}
+\subsubsection{\texorpdfstring{Case I: \$ \rho = 1
+\$}{Case I: \$ = 1 \$}}\label{case-i-1}}
 
 When the correlation coefficient is 1, the formula simplifies to:
 
@@ -1237,7 +1449,8 @@ When the correlation coefficient is 1, the formula simplifies to:
 \]
 
 \hypertarget{case-ii--1}{%
-\subsubsection{\texorpdfstring{Case II: \$ \rho = -1 \$}{Case II: \$ = -1 \$}}\label{case-ii--1}}
+\subsubsection{\texorpdfstring{Case II: \$ \rho = -1
+\$}{Case II: \$ = -1 \$}}\label{case-ii--1}}
 
 When the correlation coefficient is -1, the formula simplifies to:
 
@@ -1251,7 +1464,8 @@ When the correlation coefficient is -1, the formula simplifies to:
 \hypertarget{covariance}{%
 \subsection{Covariance}\label{covariance}}
 
-The \textbf{covariance} between returns of assets A and B (\(Cov(r_A, r_B)\)) can be calculated using the following formula:
+The \textbf{covariance} between returns of assets A and B
+(\(Cov(r_A, r_B)\)) can be calculated using the following formula:
 
 \[Cov(r_A, r_B) = \sum_{i=1}^{n} p(i)[r_A(i) - E(r_A)][r_B(i) - E(r_B)]\]
 
@@ -1264,9 +1478,11 @@ Where:
 \item
   \(p(i)\) is the probability of scenario \(i\).
 \item
-  \(r_A(i)\) and \(r_B(i)\) are the returns of assets A and B, respectively, in scenario \(i\).
+  \(r_A(i)\) and \(r_B(i)\) are the returns of assets A and B,
+  respectively, in scenario \(i\).
 \item
-  \(E(r_A)\) and \(E(r_B)\) are the expected returns of assets A and B, respectively.
+  \(E(r_A)\) and \(E(r_B)\) are the expected returns of assets A and B,
+  respectively.
 \end{itemize}
 
 \textbf{R code}
@@ -1304,15 +1520,19 @@ Where:
 \item
   The portfolio return is not affected by correlation between returns
 \item
-  Thus, investors should always prefer to add to their portfolios assets with low or negative correlation to diversify risks.
+  Thus, investors should always prefer to add to their portfolios assets
+  with low or negative correlation to diversify risks.
 \end{itemize}
 
-The lower the correlation, the greater the potential benefit from diversification.
+The lower the correlation, the greater the potential benefit from
+diversification.
 
 \hypertarget{variance-calculations}{%
 \subsection{Variance calculations}\label{variance-calculations}}
 
-If we have perfectly negatively correlated assets in our portfolios, then the portfolio standard deviation can be reduced to zero by choosing appropriate weights.
+If we have perfectly negatively correlated assets in our portfolios,
+then the portfolio standard deviation can be reduced to zero by choosing
+appropriate weights.
 
 Given:
 
@@ -1330,8 +1550,7 @@ Given:
   \(Cov(r_1, r_2)\) = \(0.0072\)
 \end{itemize}
 
-Calculate:
-\[
+Calculate: \[
 \begin{aligned}
 \rho        &= \frac{Cov(r_1, r_2)}{\sigma_1 \times \sigma_2} \\ 
             &= \frac{0.007}{\sqrt{0.014} \times \sqrt{0.04}} \\ 
@@ -1438,12 +1657,16 @@ Calculate:
 \hypertarget{risky-and-risk-free-assets}{%
 \section{Risky and Risk-Free Assets}\label{risky-and-risk-free-assets}}
 
-To decide the proportion of the portfolio to be allocated between the stock and bond funds, we will introduce a risk-free asset (T-bills) to the portfolio allocation problem.
+To decide the proportion of the portfolio to be allocated between the
+stock and bond funds, we will introduce a risk-free asset (T-bills) to
+the portfolio allocation problem.
 
 \hypertarget{sharpe-ratio}{%
 \subsection{Sharpe Ratio}\label{sharpe-ratio}}
 
-The higher a fund's Sharpe ratio (Higher Return per Unit of Risk), the better its returns have been relative to the amount of investment risk taken.
+The higher a fund's Sharpe ratio (Higher Return per Unit of Risk), the
+better its returns have been relative to the amount of investment risk
+taken.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
@@ -1598,15 +1821,19 @@ Sharpe \, ratio &= \frac{{E(r_P) - r_f}}{{\sigma_P}} \\
 \end{verbatim}
 
 \hypertarget{optimal-complete-portfolio}{%
-\subsection{Optimal Complete Portfolio}\label{optimal-complete-portfolio}}
+\subsection{Optimal Complete
+Portfolio}\label{optimal-complete-portfolio}}
 
-Now that we know how to find the optimal risky portfolio, we can include the individual investor's risk aversion (risk preferences) to find the optimal complete portfolio.
+Now that we know how to find the optimal risky portfolio, we can include
+the individual investor's risk aversion (risk preferences) to find the
+optimal complete portfolio.
 
 With the utility function:
 
 \[ U = E(r) - \frac{1}{2} A \sigma^2 \]
 
-where \(y\) is the proportion of the portfolio in the risky assets (maximizing U):
+where \(y\) is the proportion of the portfolio in the risky assets
+(maximizing U):
 
 \[ y = \frac{{E(r_P) - r_f}}{{A \sigma_P^2}} \]
 
@@ -1623,7 +1850,8 @@ U &= 0.0697\\
 
 \$\$
 
-The investor will put 74.39\% of funds in portfolio P and the rest (25.61\%) in the risk-free asset (T-bills)
+The investor will put 74.39\% of funds in portfolio P and the rest
+(25.61\%) in the risk-free asset (T-bills)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1658,28 +1886,36 @@ The investor will put 74.39\% of funds in portfolio P and the rest (25.61\%) in 
 \hypertarget{the-efficient-frontier}{%
 \subsection{The Efficient Frontier}\label{the-efficient-frontier}}
 
-The Efficient Frontier represents a set of optimal portfolios that offer the highest expected return for a given level of risk, or the lowest risk for a given level of expected return.
+The Efficient Frontier represents a set of optimal portfolios that offer
+the highest expected return for a given level of risk, or the lowest
+risk for a given level of expected return.
 
 \includegraphics{Resources/efffrontier2.png}
 
 \includegraphics{Resources/efffrontier.png}
 
-The analytical technique to derive efficient frontier was developed by Harry Markowitz, and is often referred to as the \textbf{Markowitz Model}
+The analytical technique to derive efficient frontier was developed by
+Harry Markowitz, and is often referred to as the \textbf{Markowitz
+Model}
 
 \hypertarget{separation-property}{%
 \subsection{Separation Property}\label{separation-property}}
 
-Separation property states that the asset allocation problem can be divided into two independent steps:
+Separation property states that the asset allocation problem can be
+divided into two independent steps:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Determination of the optimal risky portfolio: this portfolio will be same for all clients.
+  Determination of the optimal risky portfolio: this portfolio will be
+  same for all clients.
 \item
-  Determination of the complete portfolio that also includes the risk-free asset.
+  Determination of the complete portfolio that also includes the
+  risk-free asset.
 \end{enumerate}
 
-Thus, fund managers can serve many customers by only offering at least one portfolio.
+Thus, fund managers can serve many customers by only offering at least
+one portfolio.
 
 The theoretical basis of the mutual fund industry
 
@@ -1695,13 +1931,16 @@ The theoretical basis of the mutual fund industry
 \item
   Specify and use a multifactor SML.
 \item
-  Use Arbitrage Pricing Theory (APT) with multiple factors to identify mis-priced securities.
+  Use Arbitrage Pricing Theory (APT) with multiple factors to identify
+  mis-priced securities.
 \end{itemize}
 
 \hypertarget{the-capital-asset-pricing-model-capm}{%
-\section{The Capital Asset Pricing Model (CAPM)}\label{the-capital-asset-pricing-model-capm}}
+\section{The Capital Asset Pricing Model
+(CAPM)}\label{the-capital-asset-pricing-model-capm}}
 
-The Markowitz portfolio selection model assumes all investors are rational, i.e., mean-variance optimizers.
+The Markowitz portfolio selection model assumes all investors are
+rational, i.e., mean-variance optimizers.
 
 CAPM assumes:
 
@@ -1724,9 +1963,11 @@ CAPM assumes:
 
 \begin{itemize}
 \item
-  The market portfolio defines the optimal Capital Allocation Line (CAL). In theory everyone tries to reach it.
+  The market portfolio defines the optimal Capital Allocation Line
+  (CAL). In theory everyone tries to reach it.
 \item
-  Risk premium on the market portfolio is proportional to its risk and average risk aversion.
+  Risk premium on the market portfolio is proportional to its risk and
+  average risk aversion.
 \end{itemize}
 
 \[
@@ -1747,9 +1988,11 @@ where:
   \(E(R_m) - R_f\) = market risk premium
 \end{itemize}
 
-Investors expect to be compensated for the risk and the time value of money.
+Investors expect to be compensated for the risk and the time value of
+money.
 
-For example, in NZ, BKMB is the risk free rate(note it is technically not) and additional basis point on top is the premium.
+For example, in NZ, BKMB is the risk free rate(note it is technically
+not) and additional basis point on top is the premium.
 
 \[
 E(r_M) - r_f = \bar{A} \sigma_M^2
@@ -1759,7 +2002,8 @@ E(r_M) - r_f = \bar{A} \sigma_M^2
 E(r_i) - r_f = \beta_i [E(r_M) - r_f]
 \]
 
-Here, \(\bar{A}\) is the average level of risk aversion across investors (weighted average, by wealth).
+Here, \(\bar{A}\) is the average level of risk aversion across investors
+(weighted average, by wealth).
 
 and
 
@@ -1767,7 +2011,10 @@ and
 \beta_i = \frac{\text{cov}(r_i, r_M)}{\sigma_M^2} = \frac{\rho_{i,M} \sigma_i}{\sigma_M}
 \]
 
-The CAPM calculates the expected return of an investment by adding the risk-free rate to the \textbf{beta}-adjusted market risk premium, where beta measures the investment's sensitivity to market risk and \textbf{alpha} represents the excess return not explained by beta.
+The CAPM calculates the expected return of an investment by adding the
+risk-free rate to the \textbf{beta}-adjusted market risk premium, where
+beta measures the investment's sensitivity to market risk and
+\textbf{alpha} represents the excess return not explained by beta.
 
 \hypertarget{security-market-line-sml}{%
 \subsection{Security Market Line (SML)}\label{security-market-line-sml}}
@@ -1775,7 +2022,8 @@ The CAPM calculates the expected return of an investment by adding the risk-free
 \begin{itemize}
 \tightlist
 \item
-  Graphs individual asset risk premiums as a function of asset risk (beta).
+  Graphs individual asset risk premiums as a function of asset risk
+  (beta).
 \item
   Provides a benchmark for evaluating portfolio performance.
 \end{itemize}
@@ -1788,20 +2036,23 @@ The CAPM calculates the expected return of an investment by adding the risk-free
 \item
   Risk-free rate: Use short-term treasury securities.
 \item
-  Beta: Covariance of stock and market returns divided by market variance.
+  Beta: Covariance of stock and market returns divided by market
+  variance.
 \item
   Market portfolio: Use a broad market index return.
 \end{itemize}
 
 \hypertarget{violations-and-limitations-of-the-capm}{%
-\subsection{Violations and Limitations of the CAPM}\label{violations-and-limitations-of-the-capm}}
+\subsection{Violations and Limitations of the
+CAPM}\label{violations-and-limitations-of-the-capm}}
 
 \begin{itemize}
 \tightlist
 \item
   Empirical tests show a weaker relation between beta and returns.
 \item
-  Market capitalization and book-to-market ratios predict returns better than beta.
+  Market capitalization and book-to-market ratios predict returns better
+  than beta.
 \item
   Other anomalies include momentum effects.
 \end{itemize}
@@ -1832,7 +2083,8 @@ E(R_i) = R_f + \beta_{iM} (E(R_M) - R_f) + \beta_{iS} (E(SMB)) + \beta_{iH} (E(H
 \begin{itemize}
 \tightlist
 \item
-  \(\beta_{iM}\), \(\beta_{iS}\), and \(\beta_{iH}\) are the betas for the market, size, and value factors.
+  \(\beta_{iM}\), \(\beta_{iS}\), and \(\beta_{iH}\) are the betas for
+  the market, size, and value factors.
 \end{itemize}
 
 \hypertarget{comparison-of-cml-and-sml}{%
@@ -1854,18 +2106,25 @@ Capital Market Line (CML)
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Definition} & Relationship between expected return and beta (systematic risk) & Risk-return trade-off for efficient portfolios \\
-\textbf{Equation} & \(E(r_i) = r_f + \beta_i (E(r_M) - r_f)\) & \(E(r_P) = r_f + \frac{E(r_M) - r_f}{\sigma_M} \sigma_P\) \\
-\textbf{Risk Measure} & Beta (systematic risk) & Standard deviation (total risk) \\
+\textbf{Definition} & Relationship between expected return and beta
+(systematic risk) & Risk-return trade-off for efficient portfolios \\
+\textbf{Equation} & \(E(r_i) = r_f + \beta_i (E(r_M) - r_f)\) &
+\(E(r_P) = r_f + \frac{E(r_M) - r_f}{\sigma_M} \sigma_P\) \\
+\textbf{Risk Measure} & Beta (systematic risk) & Standard deviation
+(total risk) \\
 \textbf{Applicability} & Individual securities & Efficient portfolios \\
-\textbf{Correct Pricing} & Securities lie on the SML & Portfolios lie on the CML \\
-\textbf{Slope} & Market risk premium \((E(r_M) - r_f)\) & Sharpe ratio of the market \(\left(\frac{E(r_M) - r_f}{\sigma_M}\right)\) \\
+\textbf{Correct Pricing} & Securities lie on the SML & Portfolios lie on
+the CML \\
+\textbf{Slope} & Market risk premium \((E(r_M) - r_f)\) & Sharpe ratio
+of the market \(\left(\frac{E(r_M) - r_f}{\sigma_M}\right)\) \\
 \end{longtable}
 
 \hypertarget{arbitrage-pricing-theory-apt}{%
-\section{Arbitrage Pricing Theory (APT)}\label{arbitrage-pricing-theory-apt}}
+\section{Arbitrage Pricing Theory
+(APT)}\label{arbitrage-pricing-theory-apt}}
 
-If two portfolios are mispriced, the investor could short the high-priced portfolio and buy the low-priced portfolio.
+If two portfolios are mispriced, the investor could short the
+high-priced portfolio and buy the low-priced portfolio.
 
 Arbitrage opportunities last for very short periods .
 
@@ -1898,8 +2157,8 @@ Like the CAPM, the APT also uses an SML for expected return and risk
 \hypertarget{apt-model}{%
 \subsection{APT Model}\label{apt-model}}
 
-\textbf{Portfolio A}
-Portfolio A is a well-diversified portfolio with a beta (\(\beta_P\)) of 0.7. Its excess return equation is:
+\textbf{Portfolio A} Portfolio A is a well-diversified portfolio with a
+beta (\(\beta_P\)) of 0.7. Its excess return equation is:
 
 \[
 \begin{align}
@@ -1908,8 +2167,8 @@ r_P - r_f &= \alpha_P + \beta_P (r_M - r_f) \\
 \end{align}
 \]
 
-\textbf{Portfolio B}
-Portfolio B includes the market index and T-bills with weights of 0.7 and 0.3 respectively. Its return equation is:
+\textbf{Portfolio B} Portfolio B includes the market index and T-bills
+with weights of 0.7 and 0.3 respectively. Its return equation is:
 
 \[
 \begin{align}
@@ -1918,7 +2177,8 @@ r_p &= 0.3r_f + 0.7r_M \\
 \end{align}
 \]
 
-By shorting \$1 of Portfolio A and buying \$1 of Portfolio B, you create a zero investment, zero beta portfolio. The proceeds would be riskless.
+By shorting \$1 of Portfolio A and buying \$1 of Portfolio B, you create
+a zero investment, zero beta portfolio. The proceeds would be riskless.
 
 \[
 \begin{align}
@@ -1950,7 +2210,8 @@ E(R_A) = R_f + \sum_{j=1}^{k} \beta_{Aj} \lambda_j
 \[ \lambda_j= \beta_1 [E(r_{M1}) - r_f]\]
 
 \hypertarget{multifactor-generalization}{%
-\subsection{Multifactor Generalization}\label{multifactor-generalization}}
+\subsection{Multifactor
+Generalization}\label{multifactor-generalization}}
 
 \begin{itemize}
 \tightlist
@@ -1978,34 +2239,42 @@ E(R_i) = R_f + \beta_{i1} \lambda_1 + \beta_{i2} \lambda_2 + \ldots + \beta_{ik}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-reasonable description of risk and return & Complex and difficult to measure \\
-Reflects various macroeconomic impacts & world of winner chicken dinner, loser loses \\
+reasonable description of risk and return & Complex and difficult to
+measure \\
+Reflects various macroeconomic impacts & world of winner chicken dinner,
+loser loses \\
 Customizable to specific markets & Requires extensive data \\
-no need to measure market return directly & Dependent on accurate factor identification \\
+no need to measure market return directly & Dependent on accurate factor
+identification \\
 \end{longtable}
 
 \hypertarget{apt-v.s.-capm}{%
 \subsection{APT v.s. CAPM}\label{apt-v.s.-capm}}
 
-APT is more general in that it gets to an expected return and beta relationship without the assumption of the market portfolio
+APT is more general in that it gets to an expected return and beta
+relationship without the assumption of the market portfolio
 
 \hypertarget{ch5}{%
 \chapter{Fundamental Analysis and Equity Valuation}\label{ch5}}
 
 \hypertarget{fundamental-analysis-framework}{%
-\section{Fundamental Analysis Framework}\label{fundamental-analysis-framework}}
+\section{Fundamental Analysis
+Framework}\label{fundamental-analysis-framework}}
 
 \hypertarget{global-economic-considerations}{%
-\subsection{Global Economic Considerations}\label{global-economic-considerations}}
+\subsection{Global Economic
+Considerations}\label{global-economic-considerations}}
 
 \begin{itemize}
 \tightlist
 \item
   Variable performance across regions
 \item
-  Stock market returns did not always align with macroeconomic expectations
+  Stock market returns did not always align with macroeconomic
+  expectations
 \item
-  Political and currency risks (e.g., Brexit, exchange rate fluctuations)\texttt{{[}1{]}}
+  Political and currency risks (e.g., Brexit, exchange rate
+  fluctuations)\texttt{{[}1{]}}
 \end{itemize}
 
 \hypertarget{domestic-macroeconomy}{%
@@ -2016,20 +2285,15 @@ APT is more general in that it gets to an expected return and beta relationship 
 \item
   Key economic variables: GDP, employment, inflation, interest rates
 \item
-  Fiscal Policy,monetary policy and its effects (e.g., budget deficits, crowding out)
+  Fiscal Policy,monetary policy and its effects (e.g., budget deficits,
+  crowding out)
 \item
   Consumer sentiment and drives
 \end{itemize}
 
-Supply shocks
-- policy changes
-- consumer sentiment
-- population change
+Supply shocks - policy changes - consumer sentiment - population change
 
-Demand shocks
-- material costs
-- technology
-- natural disasters, war etc
+Demand shocks - material costs - technology - natural disasters, war etc
 
 \textbf{Indicators}
 
@@ -2045,7 +2309,8 @@ Demand shocks
   \item
     Manufacturer's new orders
   \item
-    Yield curve: spread between 10-year T-bond yield and federal funds rate
+    Yield curve: spread between 10-year T-bond yield and federal funds
+    rate
   \end{itemize}
 \item
   Coincident
@@ -2086,10 +2351,10 @@ Industry classifications are never perfect
   key consideration for time series analysis
 \end{itemize}
 
-\textbf{Factors Affecting Sensitivity}:
-- Sales sensitivity: Essentials vs.~non-essentials
-- Operating leverage: Fixed versus variable costs
-- Financial leverage: Impacts on high vs.~low financial leverage industries
+\textbf{Factors Affecting Sensitivity}: - Sales sensitivity: Essentials
+vs.~non-essentials - Operating leverage: Fixed versus variable costs -
+Financial leverage: Impacts on high vs.~low financial leverage
+industries
 
 \hypertarget{business-growth}{%
 \subsubsection{Business Growth}\label{business-growth}}
@@ -2097,22 +2362,29 @@ Industry classifications are never perfect
 \includegraphics{Resources/businesscycle.png}
 
 \hypertarget{lynchs-investing-categories}{%
-\subsection{Lynch's Investing Categories}\label{lynchs-investing-categories}}
+\subsection{Lynch's Investing
+Categories}\label{lynchs-investing-categories}}
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Slow Growers}: Large and mature companies with modest growth rates.
+  \textbf{Slow Growers}: Large and mature companies with modest growth
+  rates.
 \item
-  \textbf{Stalwarts}: Consistent and reliable performance but usually offer moderate returns.
+  \textbf{Stalwarts}: Consistent and reliable performance but usually
+  offer moderate returns.
 \item
-  \textbf{Fast Growers}: Characterized by rapid growth and high potential returns, these companies also carry higher risks.
+  \textbf{Fast Growers}: Characterized by rapid growth and high
+  potential returns, these companies also carry higher risks.
 \item
-  \textbf{Cyclicals}: Companies whose performance is tied closely to economic cycles.
+  \textbf{Cyclicals}: Companies whose performance is tied closely to
+  economic cycles.
 \item
-  \textbf{Turnarounds}: These are companies that are currently performing poorly but have the potential for recovery.
+  \textbf{Turnarounds}: These are companies that are currently
+  performing poorly but have the potential for recovery.
 \item
-  \textbf{Asset Plays}: Companies that possess valuable assets not currently reflected in their stock price.
+  \textbf{Asset Plays}: Companies that possess valuable assets not
+  currently reflected in their stock price.
 \end{itemize}
 
 \textbf{Slow growers pros and cons :}
@@ -2131,7 +2403,8 @@ Predictable Performance & May Lack Excitement \\
 \end{longtable}
 
 \hypertarget{porter-19801985-determinants-of-competition}{%
-\subsection{Porter (1980,1985) determinants of competition:}\label{porter-19801985-determinants-of-competition}}
+\subsection{Porter (1980,1985) determinants of
+competition:}\label{porter-19801985-determinants-of-competition}}
 
 \begin{itemize}
 \tightlist
@@ -2153,7 +2426,8 @@ Predictable Performance & May Lack Excitement \\
 \hypertarget{asset-pricing}{%
 \subsection{Asset pricing}\label{asset-pricing}}
 
-The present value (\[ P_0 \]) of an asset can be calculated using the formula:
+The present value (\[ P_0 \]) of an asset can be calculated using the
+formula:
 
 \[ P_0 = \sum_{t=0}^{T} \frac{E(CF_t)}{(1+R_t)^t} \]
 
@@ -2172,7 +2446,8 @@ Where:
 \end{itemize}
 
 \hypertarget{valuation-ratios-in-finance}{%
-\subsection{Valuation Ratios in Finance}\label{valuation-ratios-in-finance}}
+\subsection{Valuation Ratios in
+Finance}\label{valuation-ratios-in-finance}}
 
 \begin{itemize}
 \tightlist
@@ -2182,20 +2457,23 @@ Where:
   Importance of comparable peer firms within industry
 \end{itemize}
 
-\textbf{P/E Ratio (Price-to-Earnings Ratio)}
-- Best for mature companies with stable earnings.
-- Compares a company's current share price to its earnings per share (EPS).
-- Indicates how much investors are willing to pay for each dollar of earnings.
+\textbf{P/E Ratio (Price-to-Earnings Ratio)} - Best for mature companies
+with stable earnings. - Compares a company's current share price to its
+earnings per share (EPS). - Indicates how much investors are willing to
+pay for each dollar of earnings.
 
-\textbf{P/B Ratio (Price-to-Book Ratio)}
-- Ideal for companies with significant tangible assets, like manufacturing or real estate firms.
-- Compares a company's market price per share to its book value per share.
-- Book value is the net asset value of the company calculated as total assets minus total liabilities.
+\textbf{P/B Ratio (Price-to-Book Ratio)} - Ideal for companies with
+significant tangible assets, like manufacturing or real estate firms. -
+Compares a company's market price per share to its book value per share.
+- Book value is the net asset value of the company calculated as total
+assets minus total liabilities.
 
-\textbf{P/S Ratio (Price-to-Sales Ratio)}
-- Suited for high-growth companies with low or negative earnings, such as start-ups or firms in industries where profitability is not immediate.
-- Compares a company's market capitalization to its total sales revenue.
-- Indicates how much investors are willing to pay per dollar of sales generated by the company.
+\textbf{P/S Ratio (Price-to-Sales Ratio)} - Suited for high-growth
+companies with low or negative earnings, such as start-ups or firms in
+industries where profitability is not immediate. - Compares a company's
+market capitalization to its total sales revenue. - Indicates how much
+investors are willing to pay per dollar of sales generated by the
+company.
 
 \hypertarget{pe-ratio}{%
 \subsection{P/E Ratio}\label{pe-ratio}}
@@ -2213,24 +2491,32 @@ Influence on P/E Ratio
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Industry/Sector & Different industries have varying profitability and growth prospects. \\
+Industry/Sector & Different industries have varying profitability and
+growth prospects. \\
 Earnings Growth & High growth typically leads to higher P/E ratios. \\
 Risk Perception & Higher risk can result in lower P/E ratios. \\
 Interest Rates & Low rates often lead to higher P/E ratios. \\
-Market Sentiment & Bullish sentiment can inflate P/E ratios, vice versa. \\
+Market Sentiment & Bullish sentiment can inflate P/E ratios, vice
+versa. \\
 Company Size & Larger companies may have higher P/E ratios. \\
 Dividend Policy & Regular dividends may lower P/E ratios. \\
-Accounting Method & Different methods can affect reported earnings and hence P/E ratios. \\
+Accounting Method & Different methods can affect reported earnings and
+hence P/E ratios. \\
 \end{longtable}
 
 \hypertarget{dividend-discount-model-ddm}{%
-\subsection{Dividend Discount Model (DDM)}\label{dividend-discount-model-ddm}}
+\subsection{Dividend Discount Model
+(DDM)}\label{dividend-discount-model-ddm}}
 
-The DDM estimates a stock's fair value by summing the present value of its future dividends.
+The DDM estimates a stock's fair value by summing the present value of
+its future dividends.
 
-If the DDM value exceeds the current stock price, it suggests the stock is undervalued; if it's lower, it may be overvalued.
+If the DDM value exceeds the current stock price, it suggests the stock
+is undervalued; if it's lower, it may be overvalued.
 
-The Generalized Dividend Discount Model (DDM) calculates the present value of all future dividends, incorporating the discount rate and growth rate.
+The Generalized Dividend Discount Model (DDM) calculates the present
+value of all future dividends, incorporating the discount rate and
+growth rate.
 
 \[
 \begin{align*}
@@ -2248,7 +2534,8 @@ V_0 &= \frac{D_1}{k}
 \end{align*}
 \]
 
-If dividends are growing at a constant rate \(g\) forever, we have the \textbf{Constant Growth Dividend Discount Model}:
+If dividends are growing at a constant rate \(g\) forever, we have the
+\textbf{Constant Growth Dividend Discount Model}:
 
 \[
 \begin{align*}
@@ -2264,9 +2551,11 @@ Where:
 \item
   \(V_0\): Present value of the stock or asset.
 \item
-  \(E(CF_t)\): Expected cash flow at time \(t\), which could represent dividends, earnings, or other cash flows.
+  \(E(CF_t)\): Expected cash flow at time \(t\), which could represent
+  dividends, earnings, or other cash flows.
 \item
-  \(R_t\): Discount rate at time \(t\), often representing the required rate of return or cost of capital.
+  \(R_t\): Discount rate at time \(t\), often representing the required
+  rate of return or cost of capital.
 \item
   \(k\): Discount rate or required rate of return.
 \item
@@ -2280,7 +2569,8 @@ Where:
 \hypertarget{constant-growth-ddm}{%
 \subsection{Constant Growth DDM}\label{constant-growth-ddm}}
 
-The constant-growth Dividend Discount Model (DDM) implies that the stock price is expected to grow at the same rate as dividends.
+The constant-growth Dividend Discount Model (DDM) implies that the stock
+price is expected to grow at the same rate as dividends.
 
 To see this:
 
@@ -2293,7 +2583,8 @@ P_1     &= P_0 (1 + g)
 \end{align*}
 \]
 
-Thus, for a stock whose market value equals intrinsic value, the expected holding period return will be:
+Thus, for a stock whose market value equals intrinsic value, the
+expected holding period return will be:
 
 \[
 \begin{align*}
@@ -2301,8 +2592,7 @@ E(r) &= \text{Dividend Yield} + \text{Capital Gain Yield} \\
      &= \frac{D_1}{P_0} + \frac{P_1 - P_0}{P_0} \\
 E(r) &= \frac{D_1}{P_0} + g
 \end{align*}
-\]
-Note: we can have Various growth pattern assumptions for dividends
+\] Note: we can have Various growth pattern assumptions for dividends
 
 \hypertarget{divident-stocks}{%
 \subsection{Divident stocks}\label{divident-stocks}}
@@ -2320,19 +2610,26 @@ Description
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Preference for High Dividends & - Some investors prefer stocks with high dividends for regular income and stability. \\
-& - Dividends can be attractive in volatile markets or during low-interest-rate periods. \\
-Dividend Trap & - High dividend yield may signal a dividend trap if it's unsustainable due to declining earnings or cash flow. \\
-& - Investing in such companies could lead to capital loss if dividends are cut. \\
-Value Destruction & - Companies paying high dividends without reinvesting in growth may lead to long-term value destruction. \\
-& - High dividends to support an overvalued stock could hinder future growth and harm shareholder value. \\
+Preference for High Dividends & - Some investors prefer stocks with high
+dividends for regular income and stability. \\
+& - Dividends can be attractive in volatile markets or during
+low-interest-rate periods. \\
+Dividend Trap & - High dividend yield may signal a dividend trap if it's
+unsustainable due to declining earnings or cash flow. \\
+& - Investing in such companies could lead to capital loss if dividends
+are cut. \\
+Value Destruction & - Companies paying high dividends without
+reinvesting in growth may lead to long-term value destruction. \\
+& - High dividends to support an overvalued stock could hinder future
+growth and harm shareholder value. \\
 & \\
 \end{longtable}
 
 \hypertarget{future-earnings-ddm}{%
 \subsection{future earnings DDM}\label{future-earnings-ddm}}
 
-Rather than the earlier dividend focus, concentrates the analyst's attention on the \textbf{core business determinants of value}
+Rather than the earlier dividend focus, concentrates the analyst's
+attention on the \textbf{core business determinants of value}
 
 Dividends = earnings - net new investment, i.e., ``\(D = E - I\)''.
 
@@ -2359,7 +2656,8 @@ where:
 \end{itemize}
 
 \hypertarget{stock-valuation-scenarios}{%
-\subsection{\# Stock Valuation Scenarios}\label{stock-valuation-scenarios}}
+\subsection{\# Stock Valuation
+Scenarios}\label{stock-valuation-scenarios}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2380,7 +2678,8 @@ If all annual earnings are distributed and there is no growth
 \item
   \textbf{Growth Opportunities Scenario:}
 
-  If we consider the present value of growth opportunities (PVGO or NPVGO), the stock price is given by:
+  If we consider the present value of growth opportunities (PVGO or
+  NPVGO), the stock price is given by:
 
   \[
   P_0 = \frac{E_1}{k} + \text{NPVGO}
@@ -2388,26 +2687,27 @@ If all annual earnings are distributed and there is no growth
 \item
   \textbf{Constant Growth Scenario:}
 
-  Assuming a constant retention ratio \(b\) and a constant growth rate \(g\), the stock price can be expressed as:
+  Assuming a constant retention ratio \(b\) and a constant growth rate
+  \(g\), the stock price can be expressed as:
 
   \[
   P_0 = \frac{E_1 (1 - b)}{k - g} = \frac{D_1}{k - g}
   \]
 \end{enumerate}
 
-Where:
-- \(P_0\): Current stock price.
-- \(E_1\): Earnings at time 1.
-- \(k\): Discount rate or required rate of return.
-- \(\text{NPVGO}\): Net present value of growth opportunities.
-- \(b\): Retention ratio (portion of earnings retained in the company). \(g = b*ROE\).
-- \(g\): Growth rate of dividends.
-- \(D_1\): Dividend at time 1 (which is \(E_1 (1 - b)\)).
+Where: - \(P_0\): Current stock price. - \(E_1\): Earnings at time 1. -
+\(k\): Discount rate or required rate of return. - \(\text{NPVGO}\): Net
+present value of growth opportunities. - \(b\): Retention ratio (portion
+of earnings retained in the company). \(g = b*ROE\). - \(g\): Growth
+rate of dividends. - \(D_1\): Dividend at time 1 (which is
+\(E_1 (1 - b)\)).
 
 \hypertarget{sources-of-value-creation}{%
 \subsection{Sources of Value Creation}\label{sources-of-value-creation}}
 
-Growth stock Co.~initially has the same earnings of \$15 as No growth Co., but reinvests 60\% of its earnings each year into new investments that yield a real rate of return of 20\% per year.
+Growth stock Co.~initially has the same earnings of \$15 as No growth
+Co., but reinvests 60\% of its earnings each year into new investments
+that yield a real rate of return of 20\% per year.
 
 \[
   \text{PV} = \frac{E_1}{k} = \frac{\$15}{0.15} = \$100
@@ -2417,7 +2717,8 @@ Growth stock Co.~initially has the same earnings of \$15 as No growth Co., but r
   \text{PVGO} = \frac{E_1 (1 - b)}{k - g} = \frac{\$15 (1 - 0.60)}{0.15 - 0.60 \times 0.20} = \$200
   \]
 
-However, \(g\) growth rate of dividend cannot be higher than \(k\) required rate of return or equation does not work.
+However, \(g\) growth rate of dividend cannot be higher than \(k\)
+required rate of return or equation does not work.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2451,7 +2752,8 @@ However, \(g\) growth rate of dividend cannot be higher than \(k\) required rate
 \end{verbatim}
 
 \hypertarget{pe-ratios-and-growth-scenarios}{%
-\subsection{PE Ratios and Growth Scenarios}\label{pe-ratios-and-growth-scenarios}}
+\subsection{PE Ratios and Growth
+Scenarios}\label{pe-ratios-and-growth-scenarios}}
 
 \textbf{No Growth Scenario}
 
@@ -2459,8 +2761,7 @@ In the no growth scenario, the stock price is given by:
 
 \[
 P_0 = \frac{E_1}{k} 
-\]
-Thus,
+\] Thus,
 
 \[
 \frac{P_0}{E_1} = \frac{1}{k}
@@ -2505,7 +2806,8 @@ Where:
 \end{itemize}
 
 \hypertarget{pros-and-cons-of-a-high-pe-ratio}{%
-\subsection{Pros and Cons of a High P/E Ratio}\label{pros-and-cons-of-a-high-pe-ratio}}
+\subsection{Pros and Cons of a High P/E
+Ratio}\label{pros-and-cons-of-a-high-pe-ratio}}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5049}}
@@ -2520,18 +2822,21 @@ Where:
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Indicates strong growth expectations & May signal overvaluation if growth expectations are unrealistic \\
-Reflects investor confidence in future performance & Higher risk if the company fails to meet growth expectations \\
-Often seen in companies with innovative products or services & Can result in lower dividend yields due to reinvestment in growth \\
+Indicates strong growth expectations & May signal overvaluation if
+growth expectations are unrealistic \\
+Reflects investor confidence in future performance & Higher risk if the
+company fails to meet growth expectations \\
+Often seen in companies with innovative products or services & Can
+result in lower dividend yields due to reinvestment in growth \\
 \end{longtable}
 
 \hypertarget{free-cash-flow-models-firm-fcff}{%
-\subsection{Free Cash Flow Models Firm FCFF}\label{free-cash-flow-models-firm-fcff}}
+\subsection{Free Cash Flow Models Firm
+FCFF}\label{free-cash-flow-models-firm-fcff}}
 
 \[
 FCFF = EBIT (1 - t_c) + \text{Depreciation} - \text{Capital Expenditures} - \text{Increase in NWC}
-\]
-\[
+\] \[
 V_T = \frac{FCFF_{T+1}}{WACC - g}
 \]
 
@@ -2555,7 +2860,8 @@ Where:
 \end{itemize}
 
 \hypertarget{free-cash-flow-models-equity-fcfe}{%
-\subsection{Free Cash Flow Models Equity FCFE}\label{free-cash-flow-models-equity-fcfe}}
+\subsection{Free Cash Flow Models Equity
+FCFE}\label{free-cash-flow-models-equity-fcfe}}
 
 \[
 FCFE = FCFF - \text{Interest Expense} \cdot (1 - t_c) + \text{Increases in Net Debt}
@@ -2578,7 +2884,8 @@ Where:
 \item
   \(t_c\): Corporate tax rate.
 \item
-  \text{Increases in Net Debt} = \text{Principal Repayments} - \text{Proceeds from Issuance of New Debt}.
+  \text{Increases in Net Debt} = \text{Principal Repayments} -
+  \text{Proceeds from Issuance of New Debt}.
 \item
   \(g\): Growth rate beyond the forecast period.
 \item
@@ -2635,12 +2942,14 @@ Where:
 \end{verbatim}
 
 \hypertarget{summary-on-valuation-models}{%
-\subsection{Summary on Valuation Models:}\label{summary-on-valuation-models}}
+\subsection{Summary on Valuation
+Models:}\label{summary-on-valuation-models}}
 
 \begin{itemize}
 \tightlist
 \item
-  Most reliable: Market value items from balance sheet (e.g., real estate, PPE)
+  Most reliable: Market value items from balance sheet (e.g., real
+  estate, PPE)
 \item
   Less reliable: Economic profit on existing assets
 \item
@@ -2654,7 +2963,8 @@ Where:
 \section{Fixed Income Securities}\label{fixed-income-securities}}
 
 \hypertarget{characteristics-of-security}{%
-\subsection{characteristics of Security}\label{characteristics-of-security}}
+\subsection{characteristics of
+Security}\label{characteristics-of-security}}
 
 \begin{itemize}
 \tightlist
@@ -2668,8 +2978,9 @@ Where:
   \textbf{Maturity}: The date when the principal is repaid.
 \end{itemize}
 
-The cash flows promised to buyers represent contractual obligations of the respective issuers.
-Unlike equity securities, shareholders hold ``residual claims'' on a firm's assets.
+The cash flows promised to buyers represent contractual obligations of
+the respective issuers. Unlike equity securities, shareholders hold
+``residual claims'' on a firm's assets.
 
 \hypertarget{involvement}{%
 \subsection{Involvement}\label{involvement}}
@@ -2732,13 +3043,21 @@ Description
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Fixed-Coupon Bonds & Regular interest payments and repayment of principal at maturity. \\
-Indexed Bonds & Par value and coupon payments are tied to a price index, such as CPI. \\
-Floating Rate Bonds & Coupon payments vary with short-term interest rates. \\
-Convertible Bonds & Can be converted into a predetermined number of shares. \\
-Callable and Puttable Bonds & \textbf{Callable}: Issuer can repay early. \textbf{Puttable}: Holder can demand early repayment. \\
-Zero-Coupon Bonds and Others & Only pay the face value at maturity. Examples include Treasury Bills. \\
-Inflation-Protected Bonds & Adjusted for inflation to protect investors from inflation risk. Example: Treasury Inflation-Protected Securities (TIPS). \\
+Fixed-Coupon Bonds & Regular interest payments and repayment of
+principal at maturity. \\
+Indexed Bonds & Par value and coupon payments are tied to a price index,
+such as CPI. \\
+Floating Rate Bonds & Coupon payments vary with short-term interest
+rates. \\
+Convertible Bonds & Can be converted into a predetermined number of
+shares. \\
+Callable and Puttable Bonds & \textbf{Callable}: Issuer can repay early.
+\textbf{Puttable}: Holder can demand early repayment. \\
+Zero-Coupon Bonds and Others & Only pay the face value at maturity.
+Examples include Treasury Bills. \\
+Inflation-Protected Bonds & Adjusted for inflation to protect investors
+from inflation risk. Example: Treasury Inflation-Protected Securities
+(TIPS). \\
 \end{longtable}
 
 \hypertarget{bond-prices}{%
@@ -2752,7 +3071,9 @@ Between payment dates, interest accrues daily on the bond
 
 \includegraphics{Resources/bondprice.png}
 
-The invoice price is the fair value of the bond by taking the present value of all future cash flows (clean price (or quoted price) + accrued interest)
+The invoice price is the fair value of the bond by taking the present
+value of all future cash flows (clean price (or quoted price) + accrued
+interest)
 
 \hypertarget{bond-yield-equations}{%
 \section{Bond Yield Equations}\label{bond-yield-equations}}
@@ -2767,14 +3088,15 @@ Current\ Yield = \frac{Annual\ Coupon\ Payment}{Current\ Market\ Price}
 \hypertarget{yield-to-maturity-ytm}{%
 \subsection{Yield to Maturity (YTM)}\label{yield-to-maturity-ytm}}
 
-YTM is the internal rate of return (IRR) of the bond, considering all coupon payments and the face value repayment at maturity.
+YTM is the internal rate of return (IRR) of the bond, considering all
+coupon payments and the face value repayment at maturity.
 
-It can also be interpreted as the compound rate of return over the life of the bond, assuming all coupons are reinvested at YTM
+It can also be interpreted as the compound rate of return over the life
+of the bond, assuming all coupons are reinvested at YTM
 
 \[
 P = \sum_{t=1}^{n} \frac{C}{(1+YTM)^t} + \frac{F}{(1+YTM)^n}
-\]
-Where:
+\] Where:
 
 \begin{itemize}
 \tightlist
@@ -2791,11 +3113,10 @@ Where:
 \hypertarget{yield-to-call-ytc}{%
 \subsection{Yield to Call (YTC)}\label{yield-to-call-ytc}}
 
-If a bond is callable, the YTC is calculated similarly to YTM but considers the call date and call price.
-\[
+If a bond is callable, the YTC is calculated similarly to YTM but
+considers the call date and call price. \[
 P = \sum_{t=1}^{t_c} \frac{C}{(1+YTC)^t} + \frac{C_p}{(1+YTC)^{t_c}}
-\]
-Where:
+\] Where:
 
 \begin{itemize}
 \tightlist
@@ -2842,30 +3163,30 @@ r = \left(\frac{1{,}210}{1{,}000}\right)^{\frac{1}{2}} - 1 = 0.10 \quad \text{or
 \hypertarget{yield-spread}{%
 \subsection{Yield Spread}\label{yield-spread}}
 
-Yield spread is the difference in yields between two different bonds, often a corporate bond and a government bond.
+Yield spread is the difference in yields between two different bonds,
+often a corporate bond and a government bond.
 
 \[
 Yield\ Spread = Yield\ of\ Corporate\ Bond - Yield\ of\ Government\ Bond
 \]
 
 \hypertarget{bond-equivalent-yield-bey}{%
-\subsection{Bond Equivalent Yield (BEY)}\label{bond-equivalent-yield-bey}}
+\subsection{Bond Equivalent Yield
+(BEY)}\label{bond-equivalent-yield-bey}}
 
 \(BEY = \frac{2 \cdot (FV - P)}{P \cdot (T)}\)
 
-Where:
-- \(FV\) = Face value
-- \(P\) = Purchase price
-- \(T\) = Time to maturity in years
+Where: - \(FV\) = Face value - \(P\) = Purchase price - \(T\) = Time to
+maturity in years
 
 \hypertarget{effective-annual-yield-eay}{%
-\subsection{Effective Annual Yield (EAY)}\label{effective-annual-yield-eay}}
+\subsection{Effective Annual Yield
+(EAY)}\label{effective-annual-yield-eay}}
 
 \[EAY = \left(1 + \frac{YTM}{n}\right)^n - 1\]
 
-Where:
-- \(YTM\) = Yield to maturity
-- \(n\) = Number of compounding periods per year
+Where: - \(YTM\) = Yield to maturity - \(n\) = Number of compounding
+periods per year
 
 \hypertarget{discount-yield}{%
 \subsection{Discount Yield}\label{discount-yield}}
@@ -2873,10 +3194,8 @@ Where:
 Often used for Treasury bills.
 \[Discount\ Yield = \frac{(F - P)}{F} \cdot \frac{360}{Days\ to\ Maturity}\]
 
-Where:
-- \(F\) = Face value
-- \(P\) = Purchase price
-- \(Days\ to\ Maturity\) = Number of days until maturity
+Where: - \(F\) = Face value - \(P\) = Purchase price -
+\(Days\ to\ Maturity\) = Number of days until maturity
 
 \hypertarget{bond-pricing-dynamics}{%
 \section{Bond Pricing Dynamics}\label{bond-pricing-dynamics}}
@@ -2890,20 +3209,21 @@ assuming the price will shift toward par.
 
 \begin{itemize}
 \item
-  \textbf{Premium Bonds}: Coupon rate exceeds YTM; price declines to par over time.
+  \textbf{Premium Bonds}: Coupon rate exceeds YTM; price declines to par
+  over time.
 \item
-  \textbf{Discount Bonds}: YTM exceeds coupon rate; price increases to par over time.
+  \textbf{Discount Bonds}: YTM exceeds coupon rate; price increases to
+  par over time.
 \end{itemize}
 
 \hypertarget{holding-period-return-hpr}{%
-\subsection{Holding Period Return (HPR)}\label{holding-period-return-hpr}}
+\subsection{Holding Period Return
+(HPR)}\label{holding-period-return-hpr}}
 
 \[
 HPR = \frac{P_1 + (D - P_0)}{P_0}
-\]
-- \(P_0\): Initial price
-- \(P_1\): Selling price
-- \(D\): Income received (e.g., dividends)
+\] - \(P_0\): Initial price - \(P_1\): Selling price - \(D\): Income
+received (e.g., dividends)
 
 Includes price change and income.
 
@@ -2957,11 +3277,13 @@ Evaluated by rating agencies like Moody's, S\&P, and Fitch.
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Sinking Funds}: Issuer periodically repurchases bonds to reduce default risk.
+  \textbf{Sinking Funds}: Issuer periodically repurchases bonds to
+  reduce default risk.
 \item
   \textbf{Subordination of Future Debt}: Restricts additional borrowing.
 \item
-  \textbf{Dividend Restrictions}: Limits on dividends to protect bondholders.
+  \textbf{Dividend Restrictions}: Limits on dividends to protect
+  bondholders.
 \item
   \textbf{Collateralized Bonds}: Safer than debentures.
 \end{itemize}
@@ -2972,9 +3294,11 @@ Evaluated by rating agencies like Moody's, S\&P, and Fitch.
 \begin{itemize}
 \tightlist
 \item
-  A CDS is a contract that transfers the credit risk of a bond to another party.
+  A CDS is a contract that transfers the credit risk of a bond to
+  another party.
 \item
-  \textbf{CDS Premium}: Depends on the probability of bankruptcy and the recovery rate.
+  \textbf{CDS Premium}: Depends on the probability of bankruptcy and the
+  recovery rate.
 \end{itemize}
 
 \[
@@ -2986,14 +3310,16 @@ CDS \ Premium &= (1 - Recovery \ Rate) \times Probability \ of \ Default
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Example}: A pension fund hedging default risk with a one-year CDS on a corporate bond.
+  \textbf{Example}: A pension fund hedging default risk with a one-year
+  CDS on a corporate bond.
 \end{itemize}
 
 \hypertarget{ch7}{%
 \chapter{Enter Chapter title here}\label{ch7}}
 
 \hypertarget{summary-of-lecture-7-fixed-income-valuation-and-term-structure}{%
-\section{Summary of Lecture 7 -- Fixed Income Valuation and Term Structure}\label{summary-of-lecture-7-fixed-income-valuation-and-term-structure}}
+\section{Summary of Lecture 7 -- Fixed Income Valuation and Term
+Structure}\label{summary-of-lecture-7-fixed-income-valuation-and-term-structure}}
 
 \hypertarget{learning-objectives-1}{%
 \subsection{Learning Objectives}\label{learning-objectives-1}}
@@ -3001,13 +3327,16 @@ CDS \ Premium &= (1 - Recovery \ Rate) \times Probability \ of \ Default
 \begin{itemize}
 \tightlist
 \item
-  Understand bond pricing fundamentals and the relationship between bond prices, yield to maturity, and coupon rates.
+  Understand bond pricing fundamentals and the relationship between bond
+  prices, yield to maturity, and coupon rates.
 \item
-  Valuation and characteristics of zero-coupon bonds and building the yield curve.
+  Valuation and characteristics of zero-coupon bonds and building the
+  yield curve.
 \item
   Valuing coupon-bearing bonds using present value of future cash flows.
 \item
-  Factors affecting yield curve shape and deriving forward rates from the yield curve.
+  Factors affecting yield curve shape and deriving forward rates from
+  the yield curve.
 \end{itemize}
 
 \hypertarget{bond-pricing-models}{%
@@ -3016,7 +3345,9 @@ CDS \ Premium &= (1 - Recovery \ Rate) \times Probability \ of \ Default
 \hypertarget{bond-pricing-model-i}{%
 \subsubsection{Bond Pricing Model I}\label{bond-pricing-model-i}}
 
-The price of a bond is the present value of expected cash flows, including coupon and principal. The discount rate is the yield to maturity (\(YTM\)).
+The price of a bond is the present value of expected cash flows,
+including coupon and principal. The discount rate is the yield to
+maturity (\(YTM\)).
 
 \[
 \begin{align}
@@ -3045,7 +3376,8 @@ Where:
 \item
   \(T\) = number of periods
 \item
-  \(r\) is the appropriate discount rate, required return by bondholders, or yield to maturity
+  \(r\) is the appropriate discount rate, required return by
+  bondholders, or yield to maturity
 \end{itemize}
 
 \begin{Shaded}
@@ -3072,111 +3404,362 @@ Where:
 ## [1] 13860.87
 \end{verbatim}
 
-\hypertarget{bond-pricing-model-ii}{%
-\subsubsection{Bond Pricing Model II}\label{bond-pricing-model-ii}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the bond characteristics}
+\NormalTok{par\_value }\OtherTok{\textless{}{-}} \DecValTok{10000000}
+\NormalTok{coupon\_rate }\OtherTok{\textless{}{-}} \FloatTok{0.08}
+\NormalTok{coupon }\OtherTok{\textless{}{-}}\NormalTok{ par\_value }\SpecialCharTok{*}\NormalTok{ coupon\_rate}
+\NormalTok{market\_price }\OtherTok{\textless{}{-}} \FloatTok{10302284.43}
+\NormalTok{n\_years }\OtherTok{\textless{}{-}} \DecValTok{3}
 
-Zero-coupon bonds involve calculating the present value of the par value, discounted by the zero-coupon rate.
+\CommentTok{\# Define the function for calculating bond price given a yield (ytm)}
+\NormalTok{bond\_price }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(ytm) \{}
+\NormalTok{  price }\OtherTok{\textless{}{-}}\NormalTok{ coupon }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ ytm) }\SpecialCharTok{+} 
+\NormalTok{           coupon }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ ytm)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+} 
+\NormalTok{           (coupon }\SpecialCharTok{+}\NormalTok{ par\_value) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ ytm)}\SpecialCharTok{\^{}}\DecValTok{3}
+  \FunctionTok{return}\NormalTok{(price)}
+\NormalTok{\}}
+
+\CommentTok{\# Define the function to find the root (market\_price {-} bond\_price)}
+\NormalTok{find\_ytm }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(ytm) \{}
+  \FunctionTok{bond\_price}\NormalTok{(ytm) }\SpecialCharTok{{-}}\NormalTok{ market\_price}
+\NormalTok{\}}
+
+\CommentTok{\# Use uniroot to solve for ytm}
+\NormalTok{result }\OtherTok{\textless{}{-}} \FunctionTok{uniroot}\NormalTok{(find\_ytm, }\AttributeTok{lower =} \DecValTok{0}\NormalTok{, }\AttributeTok{upper =} \DecValTok{1}\NormalTok{)}
+\NormalTok{ytm }\OtherTok{\textless{}{-}}\NormalTok{ result}\SpecialCharTok{$}\NormalTok{root}
+\NormalTok{ytm}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.06850382
+\end{verbatim}
+
+\hypertarget{bond-pricing-model-ii-zero-coupon-bonds}{%
+\subsubsection{Bond Pricing Model II Zero-coupon
+bonds}\label{bond-pricing-model-ii-zero-coupon-bonds}}
+
+Zero-coupon bonds involve calculating the present value of the par
+value, discounted by the zero-coupon rate.
 
 \[
 \begin{align}
-P &= \frac{F}{(1 + z_T)^T}
+P_0 &= \frac{F}{(1 + z_{0T})^T}
 \end{align}
 \]
+
+Where:
+
+\(F\)ace value or principal \(P_0\): current (time 0) bond price
+\(Z_{0T}\): zero-coupon rate (p.a.), or ``zero coupon rate'', from time
+0 to time T
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define values}
+\NormalTok{par\_value }\OtherTok{\textless{}{-}} \DecValTok{1000000}  \CommentTok{\# Par value}
+\NormalTok{P0 }\OtherTok{\textless{}{-}} \DecValTok{650000}          \CommentTok{\# Price}
+\NormalTok{T }\OtherTok{\textless{}{-}} \DecValTok{5}                \CommentTok{\# Term to maturity (years)}
+
+\CommentTok{\# Calculate implied zero{-}coupon rate}
+\NormalTok{zero\_rate }\OtherTok{\textless{}{-}}\NormalTok{ (par\_value }\SpecialCharTok{/}\NormalTok{ P0)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ T) }\SpecialCharTok{{-}} \DecValTok{1}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"The implied 5{-}year zero rate is:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(zero\_rate }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"\% p.a.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The implied 5-year zero rate is: 9 % p.a.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Comparative statics}
+\NormalTok{new\_par\_value }\OtherTok{\textless{}{-}} \DecValTok{1200000}
+\NormalTok{new\_P0 }\OtherTok{\textless{}{-}} \DecValTok{700000}
+\NormalTok{new\_T }\OtherTok{\textless{}{-}} \DecValTok{6}
+
+\CommentTok{\# New implied zero rates}
+\NormalTok{new\_zero\_rate\_par }\OtherTok{\textless{}{-}}\NormalTok{ (new\_par\_value }\SpecialCharTok{/}\NormalTok{ P0)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ T) }\SpecialCharTok{{-}} \DecValTok{1}
+\NormalTok{new\_zero\_rate\_P0  }\OtherTok{\textless{}{-}}\NormalTok{ (par\_value     }\SpecialCharTok{/}\NormalTok{ new\_P0)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ T) }\SpecialCharTok{{-}} \DecValTok{1}
+\NormalTok{new\_zero\_rate\_T   }\OtherTok{\textless{}{-}}\NormalTok{ (par\_value     }\SpecialCharTok{/}\NormalTok{ P0)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ new\_T) }\SpecialCharTok{{-}} \DecValTok{1}
+
+\CommentTok{\# Print new zero rates}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"With a new par value of"}\NormalTok{, new\_par\_value, }\StringTok{", the implied zero rate is:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(new\_zero\_rate\_par }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"\% p.a.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## With a new par value of 1200000 , the implied zero rate is: 13.05 % p.a.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"With a new price of"}\NormalTok{, new\_P0, }\StringTok{", the implied zero rate is:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(new\_zero\_rate\_P0 }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"\% p.a.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## With a new price of 7e+05 , the implied zero rate is: 7.39 % p.a.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"With a new term to maturity of"}\NormalTok{, new\_T, }\StringTok{"years, the implied zero rate is:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(new\_zero\_rate\_T }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"\% p.a.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## With a new term to maturity of 6 years, the implied zero rate is: 7.44 % p.a.
+\end{verbatim}
+
+\hypertarget{bond-pricing-model-ii-coupon-bond}{%
+\subsection{Bond Pricing Model II coupon
+bond}\label{bond-pricing-model-ii-coupon-bond}}
+
+Think of a coupon bond as a series of Zero-coupon bonds where the coupon
+is also a value like face value.
+
+\[
+P_0 = \frac{C}{(1 + z_{0,1})} + \frac{C}{(1 + z_{0,2})^2} + \frac{C}{(1 + z_{0,3})^3} + \ldots + \frac{C}{(1 + z_{0,(T-1)})^{(T-1)}} + \frac{(C + \text{Par})}{(1 + z_{0,T})^T}
+\]
+
+where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(C\) is the coupon payment.
+\item
+  \(z_{0,t}\) is the zero rate for maturity \(t\).
+\item
+  \(T\) is the total number of periods until maturity.
+\item
+  \(\text{Par}\) is the par value of the bond.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the parameters}
+\NormalTok{coupons    }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{1100}\NormalTok{)  }\CommentTok{\# Coupon payments (including final par value)}
+\NormalTok{zero\_rates }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.02}\NormalTok{, }\FloatTok{0.025}\NormalTok{, }\FloatTok{0.03}\NormalTok{, }\FloatTok{0.035}\NormalTok{, }\FloatTok{0.04}\NormalTok{)  }\CommentTok{\# Corresponding zero rates}
+\NormalTok{T }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(coupons)  }\CommentTok{\# Total number of periods}
+
+\CommentTok{\# Calculate the present value of each cash flow}
+\NormalTok{present\_values }\OtherTok{\textless{}{-}}\NormalTok{ coupons }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ zero\_rates)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{T)}
+\NormalTok{present\_values}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  98.03922  95.18144  91.51417  87.14422 904.11982
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Sum the present values to get the bond price}
+\NormalTok{bond\_price }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(present\_values)}
+
+\CommentTok{\# Print the bond price}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"The price of the coupon bond is: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(bond\_price, }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The price of the coupon bond is: $ 1276
+\end{verbatim}
+
+\hypertarget{term-structure}{%
+\section{Term Structure}\label{term-structure}}
 
 \hypertarget{yield-curve}{%
 \subsection{Yield Curve}\label{yield-curve}}
 
-The yield curve plots yields-to-maturity for coupon bonds against their terms to maturity. It's crucial to understand forward rates, zero rates, and actual rates.
+The yield curve plots yields-to-maturity for coupon bonds against their
+terms to maturity. It's crucial to understand forward rates, zero rates,
+and actual rates.
+
+\hypertarget{determinants-of-the-yield-curve-shape}{%
+\section{\#Determinants of the Yield Curve
+Shape}\label{determinants-of-the-yield-curve-shape}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Factor
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Expectations Theory & Influenced by expectations of future interest
+rates; upward if rates expected to rise. \\
+Liquidity Preference Theory & Longer-term bonds require a liquidity
+premium due to higher risk, leading to an upward slope. \\
+Market Segmentation Theory & Supply and demand in different maturity
+segments; can cause variations in yield curve shape. \\
+Inflation Expectations & Higher expected inflation leads to higher
+yields on long-term bonds. \\
+Central Bank Policies & Short-term rates influenced by monetary policy;
+can steepen or flatten the yield curve. \\
+Economic Conditions & Strong growth expectations lead to an upward
+slope; weak conditions can flatten or invert curve. \\
+\end{longtable}
+
+\hypertarget{reasons-for-differing-yields-by-maturity}{%
+\subsection{Reasons for Differing Yields by
+Maturity}\label{reasons-for-differing-yields-by-maturity}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7778}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Factor
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Interest Rate Risk & Longer-term bonds more sensitive to rate changes,
+requiring higher yields for compensation. \\
+Reinvestment Risk & Short-term bonds face risk of reinvestment at lower
+rates; higher yields needed for longer terms. \\
+Inflation Risk & Longer maturities exposed to inflation risk, eroding
+value of future cash flows. \\
+Credit Risk & Longer-term bonds face more creditworthiness uncertainty;
+higher yields compensate for this risk. \\
+Supply and Demand Dynamics & Investor preferences and liquidity needs
+affect demand and yields across maturities. \\
+\end{longtable}
 
 \hypertarget{forward-rate-calculation}{%
-\subsubsection{Forward Rate Calculation}\label{forward-rate-calculation}}
+\subsection{Forward Rate Calculation}\label{forward-rate-calculation}}
 
-Forward rates can be derived from zero rates to determine arbitrage-free pricing.
+Forward rates can be derived from zero rates to determine arbitrage-free
+pricing.
 
 \[
 \begin{align}
 f_{n,n+1} &= \left( \frac{(1 + z_{n+1})^{n+1}}{(1 + z_n)^n} \right) - 1
 \end{align}
+\] To prevent arbitrage, we require that:
+
+\[
+X (1+z_{03})^3 \cdot (1+f_{35})^2 = X (1+z_{05})^5
 \]
 
-\hypertarget{term-structure-of-interest-rates-tsir}{%
-\subsection{Term Structure of Interest Rates (TSIR)}\label{term-structure-of-interest-rates-tsir}}
+The general formula for the forward rate \(f_{tT}\) (for \(t < T\)) is:
 
-TSIR describes the relationship between interest rates and terms. The yield curve can be influenced by:
+\[
+f_{tT} = \left( \frac{(1+z_{0T})^T}{(1+z_{0t})^t} \right)^{\frac{1}{(T-t)}} - 1
+\]
+
+Where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(X\): Principal amount invested or lent.
+\item
+  \(z_{0t}\): Spot rate for a term ending at time \(t\).
+\item
+  \(z_{0T}\): Spot rate for a term ending at time \(T\).
+\item
+  \(f_{tT}\): Forward rate for the period between time \(t\) and time
+  \(T\).
+\item
+  \((1+z_{03})^3\): Accumulated value after 3 years with the spot rate
+  \(z_{03}\).
+\item
+  \((1+z_{05})^5\): Accumulated value after 5 years with the spot rate
+  \(z_{05}\).
+\item
+  \((1+f_{35})^2\): Accumulated value over 2 years with the forward rate
+  \(f_{35}\), starting at the end of year 3.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the spot rates and terms}
+\NormalTok{z\_05 }\OtherTok{\textless{}{-}} \FloatTok{0.0725}  \CommentTok{\# Spot rate for term t = 5 years}
+\NormalTok{t    }\OtherTok{\textless{}{-}} \DecValTok{5}       \CommentTok{\# Term in years for spot rate z\_05}
+\NormalTok{z\_08 }\OtherTok{\textless{}{-}} \FloatTok{0.08755} \CommentTok{\# Spot rate for term T = 8 years}
+\NormalTok{T    }\OtherTok{\textless{}{-}} \DecValTok{8}       \CommentTok{\# Term in years for spot rate z\_08}
+
+\CommentTok{\# Calculate the forward rate f\_\{58\}}
+\NormalTok{f\_58 }\OtherTok{\textless{}{-}}\NormalTok{ ((}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ z\_08)}\SpecialCharTok{\^{}}\NormalTok{T }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ z\_05)}\SpecialCharTok{\^{}}\NormalTok{t)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ (T }\SpecialCharTok{{-}}\NormalTok{ t)) }\SpecialCharTok{{-}} \DecValTok{1}
+\NormalTok{f\_58}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1131041
+\end{verbatim}
+
+\hypertarget{term-structure-of-interest-rates-tsir}{%
+\subsection{Term Structure of Interest Rates
+(TSIR)}\label{term-structure-of-interest-rates-tsir}}
+
+TSIR describes the relationship between interest rates and terms.
+
+The three most often used interest rate curves are:
+
+\begin{itemize}
+\tightlist
+\item
+  \(z\) : zero rate curves;
+\item
+  \(f\) : forward rate curves (for one-period investments); and
+\item
+  \(y\) : yield curves.
+\end{itemize}
+
+The yield curve can be influenced by:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{Expectations Hypothesis}: Investors' expectations about future interest rates.
+  \textbf{Expectations Hypothesis}: Investors' expectations about future
+  interest rates.
 \item
-  \textbf{Liquidity Preference Theory}: Prefers short-term bonds for liquidity purposes.
+  \textbf{Liquidity Preference Theory}: Prefers short-term bonds for
+  liquidity purposes.
 \item
-  \textbf{Market Segmentation Theory}: Different investors have different preferred investment horizons.
+  \textbf{Market Segmentation Theory}: Different investors have
+  different preferred investment horizons.
 \item
-  \textbf{Preferred Habitat Theory}: Investors have preferred investment horizons but will deviate for adequate compensation.
+  \textbf{Preferred Habitat Theory}: Investors have preferred investment
+  horizons but will deviate for adequate compensation.
 \end{enumerate}
-
-\hypertarget{valuation-of-coupon-bearing-bonds}{%
-\subsection{Valuation of Coupon-Bearing Bonds}\label{valuation-of-coupon-bearing-bonds}}
-
-To value coupon-bearing bonds, sum the present value of future cash flows (coupons and face value) discounted by the yield to maturity.
-
-\[
-\begin{align}
-P &= \sum_{t=1}^{T} \frac{C}{(1 + YTM)^t} + \frac{F}{(1 + YTM)^T}
-\end{align}
-\]
-
-\hypertarget{immunization}{%
-\subsection{Immunization}\label{immunization}}
-
-Immunization strategies balance exposure to interest rate movements and reinvestment risk. Duration matching is a common immunization strategy.
-
-\[
-\begin{align}
-D &= \sum_{t=1}^{T} \frac{t \cdot PV(C_t)}{P}
-\end{align}
-\]
-
-Where:
-- \(D\) = duration
-- \(PV(C_t)\) = present value of coupon at time \(t\)
-
-\hypertarget{convexity}{%
-\subsection{Convexity}\label{convexity}}
-
-Convexity measures the sensitivity of the duration of a bond to changes in interest rates. Bonds with higher convexity are less affected by rate changes.
-
-\[
-\begin{align}
-Convexity &= \sum_{t=1}^{T} \frac{t (t + 1) \cdot PV(C_t)}{(1 + YTM)^{t+2}}
-\end{align}
-\]
-
-\hypertarget{conclusion}{%
-\subsection{Conclusion}\label{conclusion}}
-
-Understanding bond pricing, valuation, and the factors affecting the yield curve is crucial for fixed-income investment. Key models include the pricing of zero-coupon and coupon-bearing bonds, the yield curve, term structure theories, and strategies for immunization and duration management.
 
 \hypertarget{ch8}{%
 \chapter{Performance Attribution and Appraisal}\label{ch8}}
 
 \hypertarget{summary-of-lecture-8-performance-attribution-and-appraisal}{%
-\section{Summary of Lecture 8: Performance Attribution and Appraisal}\label{summary-of-lecture-8-performance-attribution-and-appraisal}}
+\section{Summary of Lecture 8: Performance Attribution and
+Appraisal}\label{summary-of-lecture-8-performance-attribution-and-appraisal}}
 
 \hypertarget{learning-objectives-2}{%
 \subsection{Learning Objectives}\label{learning-objectives-2}}
 
-The lecture aims to equip students with skills to:
-- Compute raw and risk-adjusted rates of return.
-- Evaluate investment performance.
-- Apply style analysis to assess portfolio strategy.
-- Decompose portfolio returns into asset allocation and security selection components.
-- Assess market-timing ability.
+The lecture aims to equip students with skills to: - Compute raw and
+risk-adjusted rates of return. - Evaluate investment performance. -
+Apply style analysis to assess portfolio strategy. - Decompose portfolio
+returns into asset allocation and security selection components. -
+Assess market-timing ability.
 
 \hypertarget{steps-in-performance-evaluation}{%
-\subsection{Steps in Performance Evaluation}\label{steps-in-performance-evaluation}}
+\subsection{Steps in Performance
+Evaluation}\label{steps-in-performance-evaluation}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3203,17 +3786,18 @@ The lecture aims to equip students with skills to:
   \begin{itemize}
   \tightlist
   \item
-    Determine the portion of performance due to the manager's skill in selecting securities.
+    Determine the portion of performance due to the manager's skill in
+    selecting securities.
   \end{itemize}
 \end{enumerate}
 
 \hypertarget{performance-measurement}{%
 \subsection{Performance Measurement}\label{performance-measurement}}
 
-Challenges include:
-- Mismatched cash flows and measurement frequency.
-- Multiple cash inflows and outflows (e.g., dividends, distributions, new funds).
-- Choice of measurement methodology (Time-weighted vs.~Dollar-weighted).
+Challenges include: - Mismatched cash flows and measurement frequency. -
+Multiple cash inflows and outflows (e.g., dividends, distributions, new
+funds). - Choice of measurement methodology (Time-weighted
+vs.~Dollar-weighted).
 
 \hypertarget{examples}{%
 \subsubsection{Examples}\label{examples}}
@@ -3221,24 +3805,33 @@ Challenges include:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Example 1 \& 2}: Calculating rate of return for one stock held over one period without dividends.
+  \textbf{Example 1 \& 2}: Calculating rate of return for one stock held
+  over one period without dividends.
 \item
-  \textbf{Example 3 \& 4}: Calculating the rate of return in continuous time and with dividends.
+  \textbf{Example 3 \& 4}: Calculating the rate of return in continuous
+  time and with dividends.
 \item
-  \textbf{Example 5}: Holding one stock for multiple periods without dividends, calculating arithmetic and logarithmic rates of return.
+  \textbf{Example 5}: Holding one stock for multiple periods without
+  dividends, calculating arithmetic and logarithmic rates of return.
 \item
-  \textbf{Example 6}: Holding one stock for multiple periods with reinvested dividends, calculating time-weighted and dollar-weighted rates of return.
+  \textbf{Example 6}: Holding one stock for multiple periods with
+  reinvested dividends, calculating time-weighted and dollar-weighted
+  rates of return.
 \item
-  \textbf{Example 7}: Managing an open-ended fund with multiple stocks, dividends, distributions, and new fund inflows, measuring time-weighted and dollar-weighted rates of return.
+  \textbf{Example 7}: Managing an open-ended fund with multiple stocks,
+  dividends, distributions, and new fund inflows, measuring
+  time-weighted and dollar-weighted rates of return.
 \end{itemize}
 
 \hypertarget{performance-appraisal}{%
 \subsection{Performance Appraisal}\label{performance-appraisal}}
 
-The fundamental question is whether the portfolio's return of x\% is good or bad, compared to an opportunity cost with the same risk.
+The fundamental question is whether the portfolio's return of x\% is
+good or bad, compared to an opportunity cost with the same risk.
 
 \hypertarget{causes-of-abnormal-performance}{%
-\subsubsection{Causes of Abnormal Performance}\label{causes-of-abnormal-performance}}
+\subsubsection{Causes of Abnormal
+Performance}\label{causes-of-abnormal-performance}}
 
 \begin{itemize}
 \tightlist
@@ -3253,7 +3846,8 @@ The fundamental question is whether the portfolio's return of x\% is good or bad
 \end{itemize}
 
 \hypertarget{performance-appraisal-measures}{%
-\subsection{Performance Appraisal Measures}\label{performance-appraisal-measures}}
+\subsection{Performance Appraisal
+Measures}\label{performance-appraisal-measures}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3264,7 +3858,8 @@ The fundamental question is whether the portfolio's return of x\% is good or bad
   \begin{itemize}
   \tightlist
   \item
-    Compare portfolio performance to a benchmark index with the same risk.
+    Compare portfolio performance to a benchmark index with the same
+    risk.
   \end{itemize}
 \item
   \textbf{Sharpe Ratio}:
@@ -3296,7 +3891,8 @@ The fundamental question is whether the portfolio's return of x\% is good or bad
   \begin{itemize}
   \tightlist
   \item
-    Measures abnormal return per unit of risk (active return-to-risk ratio).
+    Measures abnormal return per unit of risk (active return-to-risk
+    ratio).
   \end{itemize}
 \item
   \textbf{M\^{}2 Measure}:
@@ -3304,23 +3900,270 @@ The fundamental question is whether the portfolio's return of x\% is good or bad
   \begin{itemize}
   \tightlist
   \item
-    Compares a new portfolio combining P and the risk-free asset to the market portfolio.
+    Compares a new portfolio combining P and the risk-free asset to the
+    market portfolio.
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{conclusion-1}{%
-\subsection{Conclusion}\label{conclusion-1}}
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
 
-Effective performance appraisal requires understanding and utilizing various metrics and methods to evaluate and attribute portfolio performance accurately, considering both risk and return\texttt{{[}1{]}}.
+Effective performance appraisal requires understanding and utilizing
+various metrics and methods to evaluate and attribute portfolio
+performance accurately, considering both risk and
+return\texttt{{[}1{]}}.
 
 \hypertarget{ch9}{%
 \chapter{Tax Implications and ESG Investing}\label{ch9}}
 
-\hypertarget{enter-subsection-1-here}{%
-\section{Enter subsection 1 here}\label{enter-subsection-1-here}}
+\hypertarget{esg-investing}{%
+\section{ESG Investing}\label{esg-investing}}
 
-\hypertarget{enter-subsection-2-here}{%
-\section{Enter subsection 2 here}\label{enter-subsection-2-here}}
+ESG investing incorporates environmental, social, and governance factors
+into investment decisions for sustainable, long-term returns.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Environmental Factors}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Carbon footprint
+  \item
+    Waste management
+  \item
+    Resource conservation
+  \end{itemize}
+\item
+  \textbf{Social Factors}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Labor practices
+  \item
+    Human rights
+  \item
+    Community engagement
+  \end{itemize}
+\item
+  \textbf{Governance Factors}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Leadership and executive pay
+  \item
+    Audits and internal controls
+  \item
+    Shareholder rights
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tax-implications}{%
+\section{Tax Implications}\label{tax-implications}}
+
+Taxes affect investment returns. Understanding tax implications and
+using tax-efficient strategies can enhance after-tax returns.
+
+\hypertarget{tax-advantages-of-equity}{%
+\subsection{Tax Advantages of Equity}\label{tax-advantages-of-equity}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Lower Tax Rates}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dividends and long-term capital gains taxed at lower rates than
+    ordinary income
+  \item
+    Interest income taxed as ordinary income
+  \end{itemize}
+\item
+  \textbf{Tax Deferral}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Capital gains taxes deferred until the security is sold
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tax-shelters}{%
+\subsection{Tax Shelters}\label{tax-shelters}}
+
+\hypertarget{tax-protected-retirement-plans}{%
+\subsubsection{Tax-Protected Retirement
+Plans}\label{tax-protected-retirement-plans}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Traditional Plans} (e.g., IRAs, 401(k)):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Contributions and earnings tax-deferred until withdrawal
+  \item
+    Annual contribution limit (\$6,000 for IRAs)
+  \item
+    Early withdrawal penalties (10\% before age 59½, with exceptions)
+  \end{itemize}
+\item
+  \textbf{Roth Plans}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Contributions made with after-tax income
+  \item
+    Tax-free growth and withdrawals
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{deferred-annuities}{%
+\subsubsection{Deferred Annuities}\label{deferred-annuities}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Deferred Annuities}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tax-deferred growth during accumulation phase
+  \item
+    Unlimited contributions (not tax-deductible)
+  \item
+    Comparison: IRAs have contribution limits and tax-deductible
+    contributions
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tax-efficient-strategies}{%
+\subsection{Tax-Efficient Strategies}\label{tax-efficient-strategies}}
+
+\hypertarget{convert-to-roth-iras}{%
+\subsubsection{Convert to Roth IRAs}\label{convert-to-roth-iras}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Conversion Benefits}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tax-free distributions in retirement
+  \item
+    Taxes paid on converted amount in the year of conversion
+  \item
+    Consider future tax rate expectations
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{invest-in-municipal-bonds}{%
+\subsubsection{Invest in Municipal
+Bonds}\label{invest-in-municipal-bonds}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Municipal Bonds}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Federal tax-free interest income
+  \item
+    Sometimes exempt from state taxes
+  \item
+    Lower interest rates and liquidity challenges
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tax-loss-harvesting}{%
+\subsubsection{Tax-Loss Harvesting}\label{tax-loss-harvesting}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tax-Loss Harvesting}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Offset capital gains taxes by selling investments at a loss
+  \item
+    Must wait 30 days before repurchasing the same or a similar security
+    (Wash Sale Rule)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{charitable-giving}{%
+\subsubsection{Charitable Giving}\label{charitable-giving}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Charitable Contributions}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Deduct donations from taxable income
+  \item
+    Reduce taxable estate
+  \item
+    Consult a tax expert for optimal strategies
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{trusts}{%
+\subsubsection{Trusts}\label{trusts}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Trust Benefits}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Control over timing of income distribution
+  \item
+    Reduce estate tax liabilities
+  \item
+    Income splitting among beneficiaries in lower tax brackets
+  \item
+    Avoid probate process
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{strategic-asset-location}{%
+\subsubsection{Strategic Asset
+Location}\label{strategic-asset-location}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Asset Placement}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Hold bonds in tax-deferred accounts
+  \item
+    Hold equities in taxable accounts for tax efficiency
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{concluding-remarks}{%
 \chapter*{Concluding Remarks}\label{concluding-remarks}}
@@ -3361,30 +4204,45 @@ Come up with three questions to ponder:
 \item
 \end{itemize}
 
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
 \hypertarget{how-to-use-rbookdown}{%
 \chapter*{How to use RBookDown}\label{how-to-use-rbookdown}}
 \addcontentsline{toc}{chapter}{How to use RBookDown}
 
-Firstly, you will have to read the \href{https://bookdown.org/yihui/bookdown/}{RBookDown Bible} by YiHui Xie
+Firstly, you will have to read the
+\href{https://bookdown.org/yihui/bookdown/}{RBookDown Bible} by YiHui
+Xie
 
-In essence, you write in a mixture of markdown (For basics), html (to extend on markdown) and latex language (mostly for equations) to create a simple Note.
+In essence, you write in a mixture of markdown (For basics), html (to
+extend on markdown) and latex language (mostly for equations) to create
+a simple Note.
 
 You can customise your style and theme through your own CSS.
 
-RMarkdown are mostly used to knit e-books(HTML), use TexStudio if you want a proper PDF, it is easier.
+RMarkdown are mostly used to knit e-books(HTML), use TexStudio if you
+want a proper PDF, it is easier.
 
 \textbf{Here are some useful tips to get started}
 
-1: To add a chapter, just open a R file and save as \texttt{.RMD}. Use number 0 to 99 with a hyphen \texttt{-} to order the RMD files and maybe add a Chapter name so it is easier to select from \texttt{Files} window at bottom right of the R Studio.
+1: To add a chapter, just open a R file and save as \texttt{.RMD}. Use
+number 0 to 99 with a hyphen \texttt{-} to order the RMD files and maybe
+add a Chapter name so it is easier to select from \texttt{Files} window
+at bottom right of the R Studio.
 
-2: Code chunks can generate graphical outputs, To insert pictures just use \texttt{include\_graphics} instead of \texttt{\textbackslash{}includegraphics\{\}} or \texttt{!{[}{]}()}. Width can be customised.
+2: Code chunks can generate graphical outputs, To insert pictures just
+use \texttt{include\_graphics} instead of
+\texttt{\textbackslash{}includegraphics\{\}} or \texttt{!{[}{]}()}.
+Width can be customised.
 
 \begin{verbatim}
 knitr::include_graphics(rep('images/knit-logo.png', 3))
 \end{verbatim}
 
-3: Use 1 grave accent ` to include the in line code, use 3 grave accent to include a chunk of code.
+3: Use 1 grave accent ` to include the in line code, use 3 grave accent
+to include a chunk of code.
 
-  \bibliography{references.bib}
-
+\backmatter
 \end{document}

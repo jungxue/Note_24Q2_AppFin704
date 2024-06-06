@@ -1,3 +1,4 @@
+
 # Enter Chapter title here {#ch7}
 
 ## Summary of Lecture 7 – Fixed Income Valuation and Term Structure
@@ -55,21 +56,136 @@ Par <- 10000
 P_B <- calculate_present_value(C_t, r, T, Par)
 P_B
 ```
+```{r}
+# Define the bond characteristics
+par_value <- 10000000
+coupon_rate <- 0.08
+coupon <- par_value * coupon_rate
+market_price <- 10302284.43
+n_years <- 3
 
-#### Bond Pricing Model II
+# Define the function for calculating bond price given a yield (ytm)
+bond_price <- function(ytm) {
+  price <- coupon / (1 + ytm) + 
+           coupon / (1 + ytm)^2 + 
+           (coupon + par_value) / (1 + ytm)^3
+  return(price)
+}
+
+# Define the function to find the root (market_price - bond_price)
+find_ytm <- function(ytm) {
+  bond_price(ytm) - market_price
+}
+
+# Use uniroot to solve for ytm
+result <- uniroot(find_ytm, lower = 0, upper = 1)
+ytm <- result$root
+ytm
+```
+#### Bond Pricing Model II Zero-coupon bonds
 
 Zero-coupon bonds involve calculating the present value of the par value, discounted by the zero-coupon rate.
 
 $$
 \begin{align}
-P &= \frac{F}{(1 + z_T)^T}
+P_0 &= \frac{F}{(1 + z_{0T})^T}
 \end{align}
 $$
 
+Where:
+
+$F$ace value or principal
+$P_0$: current (time 0) bond price
+$Z_{0T}$: zero-coupon rate (p.a.), or “zero coupon rate”, from time 0 to time T
+
+
+```{r}
+# Define values
+par_value <- 1000000  # Par value
+P0 <- 650000          # Price
+T <- 5                # Term to maturity (years)
+
+# Calculate implied zero-coupon rate
+zero_rate <- (par_value / P0)^(1 / T) - 1
+cat("The implied 5-year zero rate is:", round(zero_rate * 100, 2), "% p.a.\n")
+
+# Comparative statics
+new_par_value <- 1200000
+new_P0 <- 700000
+new_T <- 6
+
+# New implied zero rates
+new_zero_rate_par <- (new_par_value / P0)^(1 / T) - 1
+new_zero_rate_P0  <- (par_value     / new_P0)^(1 / T) - 1
+new_zero_rate_T   <- (par_value     / P0)^(1 / new_T) - 1
+
+# Print new zero rates
+cat("With a new par value of", new_par_value, ", the implied zero rate is:", round(new_zero_rate_par * 100, 2), "% p.a.\n")
+cat("With a new price of", new_P0, ", the implied zero rate is:", round(new_zero_rate_P0 * 100, 2), "% p.a.\n")
+cat("With a new term to maturity of", new_T, "years, the implied zero rate is:", round(new_zero_rate_T * 100, 2), "% p.a.\n")
+
+```
+
+### Bond Pricing Model II coupon bond 
+
+Think of a coupon bond as a series of Zero-coupon bonds where the coupon is also a value like face value. 
+
+$$
+P_0 = \frac{C}{(1 + z_{0,1})} + \frac{C}{(1 + z_{0,2})^2} + \frac{C}{(1 + z_{0,3})^3} + \ldots + \frac{C}{(1 + z_{0,(T-1)})^{(T-1)}} + \frac{(C + \text{Par})}{(1 + z_{0,T})^T}
+$$
+
+where:
+
+- $C$ is the coupon payment.
+- $z_{0,t}$ is the zero rate for maturity $t$.
+- $T$ is the total number of periods until maturity.
+- $\text{Par}$ is the par value of the bond.
+
+```{r}
+# Define the parameters
+coupons    <- c(100, 100, 100, 100, 1100)  # Coupon payments (including final par value)
+zero_rates <- c(0.02, 0.025, 0.03, 0.035, 0.04)  # Corresponding zero rates
+T <- length(coupons)  # Total number of periods
+
+# Calculate the present value of each cash flow
+present_values <- coupons / (1 + zero_rates)^(1:T)
+present_values
+
+# Sum the present values to get the bond price
+bond_price <- sum(present_values)
+
+# Print the bond price
+cat("The price of the coupon bond is: $", round(bond_price, 2), "\n")
+```
+
+## Term Structure
+
 ### Yield Curve
+
 The yield curve plots yields-to-maturity for coupon bonds against their terms to maturity. It's crucial to understand forward rates, zero rates, and actual rates.
 
-#### Forward Rate Calculation
+## #Determinants of the Yield Curve Shape
+
+| Factor                     | Description                                                                                      |
+|----------------------------|--------------------------------------------------------------------------------------------------|
+| Expectations Theory        | Influenced by expectations of future interest rates; upward if rates expected to rise.           |
+| Liquidity Preference Theory| Longer-term bonds require a liquidity premium due to higher risk, leading to an upward slope.    |
+| Market Segmentation Theory | Supply and demand in different maturity segments; can cause variations in yield curve shape.     |
+| Inflation Expectations     | Higher expected inflation leads to higher yields on long-term bonds.                             |
+| Central Bank Policies      | Short-term rates influenced by monetary policy; can steepen or flatten the yield curve.          |
+| Economic Conditions        | Strong growth expectations lead to an upward slope; weak conditions can flatten or invert curve. |
+
+### Reasons for Differing Yields by Maturity
+
+| Factor                     | Description                                                                                      |
+|----------------------------|--------------------------------------------------------------------------------------------------|
+| Interest Rate Risk         | Longer-term bonds more sensitive to rate changes, requiring higher yields for compensation.      |
+| Reinvestment Risk          | Short-term bonds face risk of reinvestment at lower rates; higher yields needed for longer terms.|
+| Inflation Risk             | Longer maturities exposed to inflation risk, eroding value of future cash flows.                 |
+| Credit Risk                | Longer-term bonds face more creditworthiness uncertainty; higher yields compensate for this risk. |
+| Supply and Demand Dynamics | Investor preferences and liquidity needs affect demand and yields across maturities.             |
+
+### Forward Rate Calculation
 Forward rates can be derived from zero rates to determine arbitrage-free pricing.
 
 $$
@@ -77,45 +193,53 @@ $$
 f_{n,n+1} &= \left( \frac{(1 + z_{n+1})^{n+1}}{(1 + z_n)^n} \right) - 1
 \end{align}
 $$
+To prevent arbitrage, we require that:
 
+$$
+X (1+z_{03})^3 \cdot (1+f_{35})^2 = X (1+z_{05})^5
+$$
+
+The general formula for the forward rate $f_{tT}$ (for $t < T$) is:
+
+$$
+f_{tT} = \left( \frac{(1+z_{0T})^T}{(1+z_{0t})^t} \right)^{\frac{1}{(T-t)}} - 1
+$$
+
+Where:
+
+- $X$: Principal amount invested or lent.
+- $z_{0t}$: Spot rate for a term ending at time $t$.
+- $z_{0T}$: Spot rate for a term ending at time $T$.
+- $f_{tT}$: Forward rate for the period between time $t$ and time $T$.
+- $(1+z_{03})^3$: Accumulated value after 3 years with the spot rate $z_{03}$.
+- $(1+z_{05})^5$: Accumulated value after 5 years with the spot rate $z_{05}$.
+- $(1+f_{35})^2$: Accumulated value over 2 years with the forward rate $f_{35}$, starting at the end of year 3.
+
+```{r}
+# Define the spot rates and terms
+z_05 <- 0.0725  # Spot rate for term t = 5 years
+t    <- 5       # Term in years for spot rate z_05
+z_08 <- 0.08755 # Spot rate for term T = 8 years
+T    <- 8       # Term in years for spot rate z_08
+
+# Calculate the forward rate f_{58}
+f_58 <- ((1 + z_08)^T / (1 + z_05)^t)^(1 / (T - t)) - 1
+f_58
+```
 ### Term Structure of Interest Rates (TSIR)
-TSIR describes the relationship between interest rates and terms. The yield curve can be influenced by:
+TSIR describes the relationship between interest rates and terms. 
+
+The three most often used interest rate curves are:
+
+- $z$ : zero rate curves;
+- $f$ : forward rate curves (for one-period investments); and
+- $y$ : yield curves.
+
+
+The yield curve can be influenced by:
 
 1. **Expectations Hypothesis**: Investors' expectations about future interest rates.
 2. **Liquidity Preference Theory**: Prefers short-term bonds for liquidity purposes.
 3. **Market Segmentation Theory**: Different investors have different preferred investment horizons.
 4. **Preferred Habitat Theory**: Investors have preferred investment horizons but will deviate for adequate compensation.
 
-### Valuation of Coupon-Bearing Bonds
-To value coupon-bearing bonds, sum the present value of future cash flows (coupons and face value) discounted by the yield to maturity.
-
-$$
-\begin{align}
-P &= \sum_{t=1}^{T} \frac{C}{(1 + YTM)^t} + \frac{F}{(1 + YTM)^T}
-\end{align}
-$$
-
-### Immunization
-Immunization strategies balance exposure to interest rate movements and reinvestment risk. Duration matching is a common immunization strategy.
-
-$$
-\begin{align}
-D &= \sum_{t=1}^{T} \frac{t \cdot PV(C_t)}{P}
-\end{align}
-$$
-
-Where:
-- $D$ = duration
-- $PV(C_t)$ = present value of coupon at time $t$
-
-### Convexity
-Convexity measures the sensitivity of the duration of a bond to changes in interest rates. Bonds with higher convexity are less affected by rate changes.
-
-$$
-\begin{align}
-Convexity &= \sum_{t=1}^{T} \frac{t (t + 1) \cdot PV(C_t)}{(1 + YTM)^{t+2}}
-\end{align}
-$$
-
-### Conclusion
-Understanding bond pricing, valuation, and the factors affecting the yield curve is crucial for fixed-income investment. Key models include the pricing of zero-coupon and coupon-bearing bonds, the yield curve, term structure theories, and strategies for immunization and duration management.

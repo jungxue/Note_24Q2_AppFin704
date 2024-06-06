@@ -88,7 +88,7 @@ Industry classifications are never perfect
 
 ### Asset pricing
 
-The present value ($$ P_0 $$) of an asset can be calculated using the formula:
+The present value ($P_0$) of an asset can be calculated using the formula:
 
 $$ P_0 = \sum_{t=0}^{T} \frac{E(CF_t)}{(1+R_t)^t} $$
 
@@ -414,10 +414,10 @@ calculate_fcfe <- function(fcff, interest_expense, tax_rate, net_debt_increase) 
 
 # Example values
 EBIT         <- 1000000 # Earnings before interest and taxes
-tax_rate     <- 0.30 # Corporate tax rate
-depreciation <- 200000 # Depreciation
-capex        <- 300000 # Capital expenditures
-delta_nwc    <- 50000 # Increase in net working capital
+tax_rate     <- 0.30    # Corporate tax rate
+depreciation <- 200000  # Depreciation
+capex        <- 300000  # Capital expenditures
+delta_nwc    <- 50000   # Increase in net working capital
 
 # Calculate FCFF
 fcff <- calculate_fcff(EBIT, tax_rate, depreciation, capex, delta_nwc)
@@ -431,6 +431,42 @@ net_debt_increase <- 200000 # Increase in net debt
 fcfe <- calculate_fcfe(fcff, interest_expense, tax_rate, net_debt_increase)
 fcfe
 
+```
+```{r}
+# Define the cash flow components and parameters
+EBIT <- c(200, 250, 300)             # Earnings before interest and taxes
+tax_rate <- 0.3                      # Corporate tax rate
+depreciation <- c(30, 35, 40)        # Depreciation
+capex <- c(40, 50, 60)               # Capital expenditures
+change_nwc <- c(-10, -5, 5)          # Change in net working capital
+interest_expense <- c(20, 25, 30)    # Interest expense
+increase_net_debt <- c(10, 15, 20)   # Increase in net debt
+WACC <- 0.1                          # Weighted average cost of capital
+k_E <- 0.12                          # Cost of equity
+g <- 0.05                            # Growth rate
+
+# Calculate FCFF for each period
+FCFF <- EBIT * (1 - tax_rate) + depreciation - capex - change_nwc
+FCFF
+# Calculate FCFE for each period
+FCFE <- FCFF - interest_expense * (1 - tax_rate) + increase_net_debt
+FCFE
+
+# Calculate Terminal Value (V_T) and Equity Terminal Value (E_T)
+V_T <- FCFF[3] / (WACC - g)
+E_T <- FCFE[3] / (k_E - g)
+
+# Calculate the intrinsic value of the firm
+firm_value <- sum(FCFF / (1 + WACC)^(1:3)) + V_T / (1 + WACC)^3
+
+# Calculate the intrinsic value of equity
+equity_value <- sum(FCFE / (1 + k_E)^(1:3)) + E_T / (1 + k_E)^3
+
+# Print the results
+print(paste("FCFF:", FCFF))
+print(paste("FCFE:", FCFE))
+print(paste("Intrinsic Value of the Firm:", firm_value))
+print(paste("Intrinsic Value of Equity:", equity_value))
 ```
 
 ### Summary on Valuation Models:

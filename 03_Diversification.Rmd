@@ -62,6 +62,19 @@ Where:
 
 The variance formula accounts for the individual variances of assets 1 and 2, as well as their **covariance**.
 
+```{r}
+# Define weights, variances, and correlation as vectors
+weights <- c(0.6, 0.4)
+variances <- c(0.15^2, 0.12^2)
+correlation <- 0.5
+
+# Calculate the portfolio variance
+portfolio_variance <- sum(weights^2 * variances) + 2 * weights[1] * weights[2] * correlation * sqrt(variances[1]) * sqrt(variances[2])
+portfolio_variance
+
+```
+
+
 $$Cov(r_1,r_2 )=\rho_{12} 𝜎_1 𝜎_2$$
 
 #### Case I: $ \rho = 1 $

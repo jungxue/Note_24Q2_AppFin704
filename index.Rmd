@@ -1,12 +1,12 @@
 --- 
-title:  "Study Note for 24Q2 AppFin704"
-author: "Author: Jung Xue"
-date:   "Last Updated: `r Sys.Date()`"
-bibliography: references.bib
-description: Study Note for 24Q2 AppFin704 
+title: "Study Note for 24Q2 AppFin704"
+author: 'Author: Jung Xue'
+date: 'Last Updated: `r Sys.Date()`'
+output: pdf_document
+description: Study Note for 24Q2 AppFin704
 documentclass: book
 link-citations: yes
 site: bookdown::bookdown_site
 biblio-style: apalike
+bibliography: references.bib
 ---
-

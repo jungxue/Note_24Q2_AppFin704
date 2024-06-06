@@ -118,7 +118,8 @@ round(r * 100, 4)
 ```
 
 ### Yield Spread
-Yield spread is the difference in yields between two different bonds, often a corporate bond and a government bond.
+
+Yield spread is the difference in yields between two different bonds, often a corporate bond and a government bond (considered risk freeish).
 
 $$
 Yield\ Spread = Yield\ of\ Corporate\ Bond - Yield\ of\ Government\ Bond
@@ -175,13 +176,13 @@ Includes price change and income.
 Useful for comparing investment performance.
 ```{r}
 # Variables
-P0 <- 1000     # Initial price
-P1 <- 1200      # Selling price
+P_0 <- 1000     # Initial price
+P_1 <- 1200      # Selling price
 D <- 50         # Dividends received
 n_years <- 2   # Holding period in years
 
 # Calculate HPR
-HPR <- (P1 + D - P0) / P0
+HPR <- (P_1 + D - P_0) / P0
 HPR
 
 # Annualize HPR

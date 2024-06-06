@@ -37,6 +37,21 @@ $$ \text{Dollar-Weighted Average} = \sum_{t=0}^{N} \frac{C_t}{(1 + r)^t} = 0 $$
 
 Where $C_t$ is the net cash flow at time $t$, and $N$ is the total number of periods.
 
+```{r}
+# Define the cash flows and times
+cash_flows <- c(-1000, 200, 300, 400, 500)
+times      <- c(0, 1, 2, 3, 4)
+
+# Define the function for NPV
+npv_function <- function(r) {
+  sum(cash_flows / (1 + r)^times)
+}
+
+# Use uniroot to find the IRR (dollar-weighted average return)
+irr <- uniroot(npv_function, c(-1, 1))$root
+irr
+
+```
 ### Annualizing Returns
 
 - **Annual Percentage Rate (APR):** Simple annualized interest rate without compounding.
@@ -71,7 +86,15 @@ EAR &= (1+r/n)^n− 1 \\
 &= 4.06\% 
 \end{aligned}
 $$
+```{r}
+r <- 0.04  # 8% annual nominal interest rate
+mn <- 4  # Quarterly compounding
 
+# Calculate the Effective Annual Rate (EAR)
+EAR <- (1 + r / mn)^mn - 1
+EAR
+
+```
 ## Risk and Risk Premiums
 
 ### Expected Return
@@ -218,16 +241,17 @@ x <- 1
 
 # Calculate the probability density function (PDF) of the normal distribution at x
 pdf_value <- dnorm(x, mean = mu, sd = sigma)
+pdf_value
 
 # Calculate the cumulative distribution function (CDF) of the normal distribution at x
 cdf_value <- pnorm(x, mean = mu, sd = sigma)
+cdf_value
 
 # Calculate the quantile for a given probability
 probability <- 0.95
 quantile_value <- qnorm(probability, mean = mu, sd = sigma)
+quantile_value
 
-# Print the results
-list(PDF = pdf_value, CDF = cdf_value, Quantile = quantile_value)
 
 ```
 
@@ -319,7 +343,19 @@ where:
 - $r_f$ risk-free rate = $4\%$
 
 ![](Resources/utilisation.png)
+```{r}
+# Define the expected return, variance, and coefficient of risk aversion
 
+risk_free_rate = 0.04
+expected_return <- 0.08  # Expected return (E(r))
+variance <- 0.06^2         # Variance (σ^2)
+A <- 2                   # Coefficient of risk aversion (A)
+
+# Calculate the utility value (U)
+utility <- expected_return - (1/2) * A * variance
+utility
+
+```
 ### Indifference Curves
 
 These curves connect portfolios providing the same utility level, illustrating an investor's preference for different risk-return combinations.
@@ -330,6 +366,33 @@ Simply above the curve Yes, below the curve no.
 
 ### Capital Allocation Line 
 
+```{r}
+library(ggplot2)
+
+# Define the risk-free rate and the risky portfolio parameters
+risk_free_rate <- 0.03  # 3%
+expected_return_risky <- 0.12  # 12%
+std_dev_risky <- 0.20  # 20%
+
+# Define a range of standard deviations for the CAL
+std_devs <- seq(0, 0.25, by = 0.01)
+
+# Calculate the expected returns for the CAL
+expected_returns <- risk_free_rate + ((expected_return_risky - risk_free_rate) / std_dev_risky) * std_devs
+
+# Create a data frame to store the results
+cal_data <- data.frame(std_dev = std_devs, expected_return = expected_returns)
+
+# Plot the Capital Allocation Line
+ggplot(cal_data, aes(x = std_dev, y = expected_return)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(aes(x = 0, y = risk_free_rate), color = "red", size = 3) +  # Risk-free rate point
+  geom_point(aes(x = std_dev_risky, y = expected_return_risky), color = "green", size = 3) +  # Risky portfolio point
+  labs(title = "Capital Allocation Line (CAL)",
+       x = "Standard Deviation (Risk)",
+       y = "Expected Return") +
+  theme_minimal()
+```
 It’s possible to split investment funds between safe and risky assets. 
 
 1. Risk free asset: proxy = T-bills
@@ -405,7 +468,18 @@ y^* &= \frac{E(r_p) - r_f}{A \sigma_p^2}
 \end{aligned}
 $$
 
-To find the optimal proportion $y^$ to invest in the risky portfolio, we solve for $y_*$:
+where 
+
+- $U$: Utility value.
+- $E(r)$: Expected return.
+- $A$: Coefficient of risk aversion.
+- $\sigma^2$: Variance (of returns).
+- $r_f$: Risk-free rate.
+- $y$: Allocation proportion or weight in the risky portfolio.
+- $E(r_p)$: Expected return of the risky portfolio.
+- $\sigma_p^2$: Variance (of returns) of the risky portfolio.
+
+To find the optimal proportion $y$ to invest in the risky portfolio, we solve for $y$:
 
 **R code**
 
@@ -417,13 +491,14 @@ sigma_p <- 0.25  # Standard deviation of the risky portfolio
 A <- 5           # Degree of risk aversion
 
 # Calculate optimal y
-y_star <- (Erp - rf) / (A * sigma_p^2)
-y_star
+y <- (Erp - rf) / (A * sigma_p^2)
+y
 
 # The Expected Return
 
 ER = rf + (y_star*(Erp - rf))
 ER
+
 sigma_c = y_star*sigma_p
 sigma_c
 
