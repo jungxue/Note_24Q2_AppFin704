@@ -38,6 +38,17 @@ where:
 Investors expect to be compensated for the risk and the time value of money.
 
 For example, in NZ, BKMB is the risk free rate(note it is technically not) and additional basis point on top is the premium. 
+```{R}
+# Define inputs
+risk_free_rate <- 0.03       # Risk-free rate (e.g., 3%)
+beta <- 1.2                  # Beta of the stock
+market_return <- 0.08        # Expected market return (e.g., 8%)
+
+# Calculate the expected return using CAPM
+expected_return <- risk_free_rate + beta * (market_return - risk_free_rate)
+expected_return
+
+```
 
 $$
 \boxed
@@ -62,8 +73,23 @@ $$
 
 \\
 
-\alpha = r_i - E(r_i)  basically \epsilon 
+\alpha = r_i - E(r_i) 
 $$
+```{r}
+cov_ri_rm <- 0.0016   # Covariance between stock returns and market returns
+var_rm <- 0.0025      # Variance of market returns
+cor_ri_rm <- 0.8      # Correlation between stock returns and market returns
+sd_ri <- 0.04         # Standard deviation of stock returns
+sd_rm <- 0.05         # Standard deviation of market returns
+
+# Calculate beta using covariance and variance
+beta <- cov_ri_rm / var_rm
+beta
+
+# Calculate beta using correlation and standard deviations
+beta_alt <- cor_ri_rm * (sd_ri / sd_rm)
+beta_alt
+```
 
 The CAPM calculates the expected return of an investment by adding the risk-free rate to the **beta**-adjusted market risk premium, where beta measures the investment's sensitivity to market risk and **alpha** represents the excess return not explained by beta.
 
@@ -166,6 +192,24 @@ $$
 - $\lambda_j$ is the risk premium associated with factor $j$.
 
 $$ \lambda_j= \beta_1 [E(r_{M1}) - r_f]$$
+
+```{r}
+
+# Given values
+R_f <- 0.03  # Risk-free rate
+beta_factors <- c(1.2, 0.8, 0.5) # Sensitivities to factors
+E_rM <- c(0.08, 0.07, 0.06) # Expected returns of market factors
+
+# Calculate risk premiums
+lambda <- beta_factors * (E_rM - R_f)
+lambda
+
+# Calculate expected return using APT
+expected_return <- R_f + sum(lambda)
+expected_return
+
+```
+
 
 ### Multifactor Generalization
 - Accommodates multiple risk factors.

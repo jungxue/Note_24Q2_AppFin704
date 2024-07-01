@@ -3,7 +3,9 @@
 ## Summary of Lecture 8: Performance Attribution and Appraisal
 
 ### Learning Objectives
+
 The lecture aims to equip students with skills to:
+
 - Compute raw and risk-adjusted rates of return.
 - Evaluate investment performance.
 - Apply style analysis to assess portfolio strategy.
@@ -11,6 +13,7 @@ The lecture aims to equip students with skills to:
 - Assess market-timing ability.
 
 ### Steps in Performance Evaluation
+
 1. **Performance Measurement**:
    - Calculate the return achieved by a portfolio over time.
 2. **Performance Appraisal**:
@@ -19,42 +22,93 @@ The lecture aims to equip students with skills to:
    - Determine the portion of performance due to the manager’s skill in selecting securities.
 
 ### Performance Measurement
+
 Challenges include:
+
 - Mismatched cash flows and measurement frequency.
 - Multiple cash inflows and outflows (e.g., dividends, distributions, new funds).
 - Choice of measurement methodology (Time-weighted vs. Dollar-weighted).
 
-#### Examples
-- **Example 1 & 2**: Calculating rate of return for one stock held over one period without dividends.
-- **Example 3 & 4**: Calculating the rate of return in continuous time and with dividends.
-- **Example 5**: Holding one stock for multiple periods without dividends, calculating arithmetic and logarithmic rates of return.
-- **Example 6**: Holding one stock for multiple periods with reinvested dividends, calculating time-weighted and dollar-weighted rates of return.
-- **Example 7**: Managing an open-ended fund with multiple stocks, dividends, distributions, and new fund inflows, measuring time-weighted and dollar-weighted rates of return.
-
 ### Performance Appraisal
+
 The fundamental question is whether the portfolio's return of x% is good or bad, compared to an opportunity cost with the same risk.
 
 #### Causes of Abnormal Performance
+
 - Asset Allocation.
 - Market Timing.
 - Security Selection.
 - Random influences (luck).
 
 ### Performance Appraisal Measures
-1. **Simple Benchmark Index**:
-   - Compare portfolio performance to a benchmark index with the same risk.
-2. **Sharpe Ratio**:
-   - Measures excess return per unit of total risk.
-3. **Treynor Ratio**:
-   - Measures excess return per unit of non-diversifiable risk.
-   risk prem/beta 
-   
-4. **Jensen’s Alpha**:
-   - Based on CAPM, measures abnormal performance.
-5. **Information Ratio**:
-   - Measures abnormal return per unit of risk (active return-to-risk ratio).
-6. **M^2 Measure**:
-   - Compares a new portfolio combining P and the risk-free asset to the market portfolio.
+
+#### Simple Benchmark Index
+
+**Equation**: $$\text{Difference} = R_P - R_B$$
+
+**Explanation**: Compares the portfolio return to the benchmark return.
+
+| Pros | Cons |
+|------|------|
+| Easy to calculate and understand. | Does not account for risk differences. |
+| Provides a direct comparison to a relevant benchmark. | |
+
+#### Sharpe Ratio
+
+**Equation**: $$S = \frac{R_P - R_f}{\sigma_P}$$
+
+**Explanation**: Measures the excess return per unit of total risk (standard deviation).
+
+| Pros | Cons |
+|------|------|
+| Considers total risk (volatility). | Assumes returns are normally distributed. |
+| Easy to interpret as a higher ratio indicates better risk-adjusted performance. | Does not differentiate between systematic and unsystematic risk. |
+
+#### Treynor Ratio
+
+**Equation**: $$T = \frac{R_P - R_f}{\beta_P}$$
+
+**Explanation**: Measures the excess return per unit of non-diversifiable risk (beta).
+
+| Pros | Cons |
+|------|------|
+| Focuses on systematic risk, which is relevant for well-diversified portfolios. | Requires an accurate estimation of beta. |
+| Useful for comparing portfolios with different levels of market risk. | |
+
+#### Jensen's Alpha
+
+**Equation**: $$\alpha = R_P - \left( R_f + \beta_P (R_M - R_f) \right)$$
+
+**Explanation**: Measures the abnormal return above the expected return predicted by the CAPM.
+
+| Pros | Cons |
+|------|------|
+| Indicates the value added by the portfolio manager. | Assumes CAPM holds true. |
+| Helps in identifying skill in generating excess returns. | Requires accurate estimation of beta and market return. |
+
+#### Information Ratio
+
+**Equation**: $$IR = \frac{R_P - R_B}{\sigma_\alpha}$$
+
+**Explanation**: Measures the abnormal return per unit of risk relative to a benchmark.
+
+| Pros | Cons |
+|------|------|
+| Considers the consistency of excess returns. | Requires a relevant benchmark for comparison. |
+| Useful for evaluating active management. | Tracking error (risk) can be difficult to estimate. |
+
+#### M^2 Measure
+
+**Equation**: $$M^2 = R_f + \frac{R_P - R_f}{\sigma_P} \cdot \sigma_M$$
+
+**Explanation**: Compares the performance of a portfolio adjusted to have the same total risk as the market portfolio.
+
+| Pros | Cons |
+|------|------|
+| Provides an intuitive comparison to the market portfolio. | Assumes the market portfolio is the appropriate benchmark. |
+| Transforms Sharpe Ratio into a measure comparable to market returns. | |
+
 
 ### Conclusion
+
 Effective performance appraisal requires understanding and utilizing various metrics and methods to evaluate and attribute portfolio performance accurately, considering both risk and return`[1]`.

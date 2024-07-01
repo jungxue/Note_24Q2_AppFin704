@@ -20,7 +20,7 @@ $$
 $$
 
 $$
-P_B = C_t \times \text{Annuity Factor} + \text{Par} \times \text{PV Factor}\frac{C_t}{r} \left[ 1 - \frac{1}{(1 + r)^T} \right] + \frac{\text{F}}{(1 + r)^T}
+P_B = C_t \times \text{Annuity Factor} + \text{Par} \times \text{PV Factor} = \frac{C_t}{r} \left[ 1 - \frac{1}{(1 + r)^T} \right] + \frac{\text{F}}{(1 + r)^T}
 $$
 
 Where:
@@ -33,6 +33,12 @@ Where:
 
 ```{r}
 
+# Example usage
+C_t <- 6
+r <- 0.055
+T <- 2
+Par <- 100
+
 calculate_present_value <- function(C_t, r, T, Par) {
   annuity_factor <- (1 - 1 / (1 + r)^T) / r
   pv_factor <- 1 / (1 + r)^T
@@ -40,21 +46,17 @@ calculate_present_value <- function(C_t, r, T, Par) {
   return(P_B)
 }
 
-# Example usage
-C_t <- 1000
-r <- 0.05
-T <- 10
-Par <- 10000
-
 P_B <- calculate_present_value(C_t, r, T, Par)
 P_B
 ```
 ```{r}
+#solve for YTM
+
 # Define the bond characteristics
-par_value <- 10000000
-coupon_rate <- 0.08
+par_value <- 100
+coupon_rate <- 0.00
 coupon <- par_value * coupon_rate
-market_price <- 10302284.43
+market_price <- 100
 n_years <- 3
 
 # Define the function for calculating bond price given a yield (ytm)
@@ -94,7 +96,7 @@ $Z_{0T}$: zero-coupon rate (p.a.), or “zero coupon rate”, from time 0 to tim
 
 ```{r}
 # Define values
-par_value <- 1000000  # Par value
+par_value <- 100  # Par value
 P0 <- 650000          # Price
 T <- 5                # Term to maturity (years)
 

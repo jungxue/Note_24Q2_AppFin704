@@ -568,32 +568,32 @@ $$
 \end{aligned}
 \]</span></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="ch3.html#cb31-1" tabindex="-1"></a><span class="co"># Given values</span></span>
-<span id="cb31-2"><a href="ch3.html#cb31-2" tabindex="-1"></a>w1 <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb31-3"><a href="ch3.html#cb31-3" tabindex="-1"></a>w2 <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
-<span id="cb31-4"><a href="ch3.html#cb31-4" tabindex="-1"></a>sigma1_squared <span class="ot">&lt;-</span> <span class="fl">0.014</span></span>
-<span id="cb31-5"><a href="ch3.html#cb31-5" tabindex="-1"></a>sigma2_squared <span class="ot">&lt;-</span> <span class="fl">0.04</span></span>
-<span id="cb31-6"><a href="ch3.html#cb31-6" tabindex="-1"></a>covariance <span class="ot">&lt;-</span> <span class="fl">0.0072</span></span>
+<span id="cb31-2"><a href="ch3.html#cb31-2" tabindex="-1"></a>w1 <span class="ot">&lt;-</span> <span class="fl">0.9</span></span>
+<span id="cb31-3"><a href="ch3.html#cb31-3" tabindex="-1"></a>w2 <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb31-4"><a href="ch3.html#cb31-4" tabindex="-1"></a>sigma1_squared <span class="ot">&lt;-</span> <span class="fl">0.0237</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb31-5"><a href="ch3.html#cb31-5" tabindex="-1"></a>sigma2_squared <span class="ot">&lt;-</span> <span class="fl">0.0295</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb31-6"><a href="ch3.html#cb31-6" tabindex="-1"></a>covariance <span class="ot">&lt;-</span> <span class="fl">0.40</span></span>
 <span id="cb31-7"><a href="ch3.html#cb31-7" tabindex="-1"></a></span>
 <span id="cb31-8"><a href="ch3.html#cb31-8" tabindex="-1"></a><span class="co"># Calculate correlation coefficient</span></span>
 <span id="cb31-9"><a href="ch3.html#cb31-9" tabindex="-1"></a>rho <span class="ot">&lt;-</span> covariance <span class="sc">/</span> <span class="fu">sqrt</span>(sigma1_squared <span class="sc">*</span> sigma2_squared)</span>
 <span id="cb31-10"><a href="ch3.html#cb31-10" tabindex="-1"></a>rho </span></code></pre></div>
-<pre><code>## [1] 0.3042555</code></pre>
+<pre><code>## [1] 572.1233</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="ch3.html#cb33-1" tabindex="-1"></a><span class="co"># Calculate portfolio variance</span></span>
 <span id="cb33-2"><a href="ch3.html#cb33-2" tabindex="-1"></a>portfolio_variance <span class="ot">&lt;-</span> w1<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma1_squared <span class="sc">+</span> w2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma2_squared <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> w1 <span class="sc">*</span> w2 <span class="sc">*</span> covariance</span>
 <span id="cb33-3"><a href="ch3.html#cb33-3" tabindex="-1"></a>portfolio_variance</span></code></pre></div>
-<pre><code>## [1] 0.020096</code></pre>
+<pre><code>## [1] 0.07246367</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="ch3.html#cb35-1" tabindex="-1"></a><span class="co"># Calculate portfolio standard deviation</span></span>
 <span id="cb35-2"><a href="ch3.html#cb35-2" tabindex="-1"></a>portfolio_sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(portfolio_variance)</span>
 <span id="cb35-3"><a href="ch3.html#cb35-3" tabindex="-1"></a>portfolio_sd</span></code></pre></div>
-<pre><code>## [1] 0.1417604</code></pre>
+<pre><code>## [1] 0.2691908</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="ch3.html#cb37-1" tabindex="-1"></a><span class="co"># Calculate weighted standard deviation</span></span>
 <span id="cb37-2"><a href="ch3.html#cb37-2" tabindex="-1"></a>weighted_sd <span class="ot">&lt;-</span> w1 <span class="sc">*</span> <span class="fu">sqrt</span>(sigma1_squared) <span class="sc">+</span> w2 <span class="sc">*</span> <span class="fu">sqrt</span>(sigma2_squared)</span>
 <span id="cb37-3"><a href="ch3.html#cb37-3" tabindex="-1"></a>weighted_sd</span></code></pre></div>
-<pre><code>## [1] 0.1673286</code></pre>
+<pre><code>## [1] 0.02428</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="ch3.html#cb39-1" tabindex="-1"></a><span class="co"># Calculate diversification benefit</span></span>
 <span id="cb39-2"><a href="ch3.html#cb39-2" tabindex="-1"></a>diversification_benefit <span class="ot">&lt;-</span> weighted_sd <span class="sc">-</span> portfolio_sd</span>
 <span id="cb39-3"><a href="ch3.html#cb39-3" tabindex="-1"></a>diversification_benefit</span></code></pre></div>
-<pre><code>## [1] 0.02556828</code></pre>
+<pre><code>## [1] -0.2449108</code></pre>
 </div>
 </div>
 <div id="risky-and-risk-free-assets" class="section level2 hasAnchor" number="3.3">

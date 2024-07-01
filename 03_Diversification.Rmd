@@ -189,11 +189,11 @@ $$
 $$
 ```{r}
 # Given values
-w1 <- 0.4
-w2 <- 0.6
-sigma1_squared <- 0.014
-sigma2_squared <- 0.04
-covariance <- 0.0072
+w1 <- 0.9
+w2 <- 0.1
+sigma1_squared <- 0.0237^2
+sigma2_squared <- 0.0295^2
+covariance <- 0.40
 
 # Calculate correlation coefficient
 rho <- covariance / sqrt(sigma1_squared * sigma2_squared)

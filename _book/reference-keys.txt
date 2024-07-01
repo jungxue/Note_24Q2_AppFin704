@@ -122,10 +122,15 @@ summary-of-lecture-8-performance-attribution-and-appraisal
 learning-objectives-1
 steps-in-performance-evaluation
 performance-measurement
-examples
 performance-appraisal
 causes-of-abnormal-performance
 performance-appraisal-measures
+simple-benchmark-index
+sharpe-ratio-1
+treynor-ratio
+jensens-alpha
+information-ratio
+m2-measure
 conclusion
 ch9
 esg-investing

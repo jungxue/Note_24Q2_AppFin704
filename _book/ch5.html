@@ -486,6 +486,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(R_t\)</span>: Discount rate at time <span class="math inline">\(t\)</span></li>
 <li><span class="math inline">\(T\)</span>: Last period for which cash flows are considered</li>
 </ul>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ch5.html#cb69-1" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb69-2"><a href="ch5.html#cb69-2" tabindex="-1"></a>E_CF <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>)  <span class="co"># Expected cash flows at time t</span></span>
+<span id="cb69-3"><a href="ch5.html#cb69-3" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.06</span>, <span class="fl">0.07</span>, <span class="fl">0.08</span>) <span class="co"># Discount rates at time t</span></span>
+<span id="cb69-4"><a href="ch5.html#cb69-4" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="fu">length</span>(E_CF) <span class="sc">-</span> <span class="dv">1</span>          <span class="co"># Last period for which cash flows are considered</span></span>
+<span id="cb69-5"><a href="ch5.html#cb69-5" tabindex="-1"></a></span>
+<span id="cb69-6"><a href="ch5.html#cb69-6" tabindex="-1"></a><span class="co"># Calculate present value</span></span>
+<span id="cb69-7"><a href="ch5.html#cb69-7" tabindex="-1"></a>P_0 <span class="ot">&lt;-</span> <span class="fu">sum</span>(E_CF <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> R) <span class="sc">^</span> (<span class="dv">0</span><span class="sc">:</span>T))</span>
+<span id="cb69-8"><a href="ch5.html#cb69-8" tabindex="-1"></a>P_0</span></code></pre></div>
+<pre><code>## [1] 614.6552</code></pre>
 </div>
 <div id="valuation-ratios-in-finance" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Valuation Ratios in Finance<a href="ch5.html#valuation-ratios-in-finance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -716,21 +725,21 @@ P_0 = \frac{E_1 (1 - b)}{k - g} = \frac{D_1}{k - g}
   \text{PVGO} = \frac{E_1 (1 - b)}{k - g} = \frac{\$15 (1 - 0.60)}{0.15 - 0.60 \times 0.20} = \$200
   \]</span></p>
 <p>However, <span class="math inline">\(g\)</span> growth rate of dividend cannot be higher than <span class="math inline">\(k\)</span> required rate of return or equation does not work.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch5.html#cb59-1" tabindex="-1"></a>E1 <span class="ot">&lt;-</span> <span class="dv">15</span>              <span class="co"># Earnings at time 1</span></span>
-<span id="cb59-2"><a href="ch5.html#cb59-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">0.60</span>             <span class="co"># Retention ratio</span></span>
-<span id="cb59-3"><a href="ch5.html#cb59-3" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">0.15</span>             <span class="co"># Discount rate or required rate of return</span></span>
-<span id="cb59-4"><a href="ch5.html#cb59-4" tabindex="-1"></a>ROE <span class="ot">&lt;-</span> <span class="fl">0.20</span>           <span class="co"># Return on equity</span></span>
-<span id="cb59-5"><a href="ch5.html#cb59-5" tabindex="-1"></a>g <span class="ot">&lt;-</span> b <span class="sc">*</span> ROE          <span class="co"># Sustainable growth rate</span></span>
-<span id="cb59-6"><a href="ch5.html#cb59-6" tabindex="-1"></a></span>
-<span id="cb59-7"><a href="ch5.html#cb59-7" tabindex="-1"></a><span class="co"># Calculate stock price</span></span>
-<span id="cb59-8"><a href="ch5.html#cb59-8" tabindex="-1"></a>P0 <span class="ot">&lt;-</span> (E1 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> b)) <span class="sc">/</span> (k <span class="sc">-</span> g)</span>
-<span id="cb59-9"><a href="ch5.html#cb59-9" tabindex="-1"></a>P0</span></code></pre></div>
-<pre><code>## [1] 200</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch5.html#cb61-1" tabindex="-1"></a><span class="co"># Calculate the PVGO</span></span>
-<span id="cb61-2"><a href="ch5.html#cb61-2" tabindex="-1"></a>P0_no_growth <span class="ot">&lt;-</span> E1 <span class="sc">/</span> k</span>
-<span id="cb61-3"><a href="ch5.html#cb61-3" tabindex="-1"></a>PVGO <span class="ot">&lt;-</span> P0 <span class="sc">-</span> P0_no_growth</span>
-<span id="cb61-4"><a href="ch5.html#cb61-4" tabindex="-1"></a>PVGO</span></code></pre></div>
-<pre><code>## [1] 100</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ch5.html#cb71-1" tabindex="-1"></a>E1 <span class="ot">&lt;-</span> <span class="dv">5</span>              <span class="co"># Earnings at time 1</span></span>
+<span id="cb71-2"><a href="ch5.html#cb71-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">0.2</span>             <span class="co"># Retention ratio</span></span>
+<span id="cb71-3"><a href="ch5.html#cb71-3" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">0.15</span>             <span class="co"># Discount rate or required rate of return</span></span>
+<span id="cb71-4"><a href="ch5.html#cb71-4" tabindex="-1"></a>ROE <span class="ot">&lt;-</span> <span class="fl">0.17</span>           <span class="co"># Return on equity</span></span>
+<span id="cb71-5"><a href="ch5.html#cb71-5" tabindex="-1"></a>g <span class="ot">&lt;-</span> b <span class="sc">*</span> ROE          <span class="co"># Sustainable growth rate</span></span>
+<span id="cb71-6"><a href="ch5.html#cb71-6" tabindex="-1"></a></span>
+<span id="cb71-7"><a href="ch5.html#cb71-7" tabindex="-1"></a><span class="co"># Calculate stock price</span></span>
+<span id="cb71-8"><a href="ch5.html#cb71-8" tabindex="-1"></a>P0 <span class="ot">&lt;-</span> (E1 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> b)) <span class="sc">/</span> (k <span class="sc">-</span> g)</span>
+<span id="cb71-9"><a href="ch5.html#cb71-9" tabindex="-1"></a>P0</span></code></pre></div>
+<pre><code>## [1] 34.48276</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ch5.html#cb73-1" tabindex="-1"></a><span class="co"># Calculate the PVGO</span></span>
+<span id="cb73-2"><a href="ch5.html#cb73-2" tabindex="-1"></a>P0_no_growth <span class="ot">&lt;-</span> (E1 <span class="sc">*</span> <span class="dv">1</span>) <span class="sc">/</span> k</span>
+<span id="cb73-3"><a href="ch5.html#cb73-3" tabindex="-1"></a>PVGO <span class="ot">&lt;-</span> P0 <span class="sc">-</span> P0_no_growth</span>
+<span id="cb73-4"><a href="ch5.html#cb73-4" tabindex="-1"></a>PVGO</span></code></pre></div>
+<pre><code>## [1] 1.149425</code></pre>
 </div>
 <div id="pe-ratios-and-growth-scenarios" class="section level3 hasAnchor" number="5.2.10">
 <h3><span class="header-section-number">5.2.10</span> PE Ratios and Growth Scenarios<a href="ch5.html#pe-ratios-and-growth-scenarios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -837,75 +846,75 @@ E_T = \frac{FCFE_{T+1}}{k_E - g}
 <li><span class="math inline">\(k_E\)</span>: Cost of equity.</li>
 <li><span class="math inline">\(E_T\)</span>: Terminal value at time <span class="math inline">\(T\)</span>.</li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ch5.html#cb63-1" tabindex="-1"></a><span class="co"># Function to calculate FCFF</span></span>
-<span id="cb63-2"><a href="ch5.html#cb63-2" tabindex="-1"></a>calculate_fcff <span class="ot">&lt;-</span> <span class="cf">function</span>(EBIT, tax_rate, depreciation, capex, delta_nwc) {</span>
-<span id="cb63-3"><a href="ch5.html#cb63-3" tabindex="-1"></a>  fcff <span class="ot">&lt;-</span> EBIT <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> depreciation <span class="sc">-</span> capex <span class="sc">-</span> delta_nwc</span>
-<span id="cb63-4"><a href="ch5.html#cb63-4" tabindex="-1"></a>  <span class="fu">return</span>(fcff)</span>
-<span id="cb63-5"><a href="ch5.html#cb63-5" tabindex="-1"></a>}</span>
-<span id="cb63-6"><a href="ch5.html#cb63-6" tabindex="-1"></a></span>
-<span id="cb63-7"><a href="ch5.html#cb63-7" tabindex="-1"></a><span class="co"># Function to calculate FCFE</span></span>
-<span id="cb63-8"><a href="ch5.html#cb63-8" tabindex="-1"></a>calculate_fcfe <span class="ot">&lt;-</span> <span class="cf">function</span>(fcff, interest_expense, tax_rate, net_debt_increase) {</span>
-<span id="cb63-9"><a href="ch5.html#cb63-9" tabindex="-1"></a>  fcfe <span class="ot">&lt;-</span> fcff <span class="sc">-</span> interest_expense <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> net_debt_increase</span>
-<span id="cb63-10"><a href="ch5.html#cb63-10" tabindex="-1"></a>  <span class="fu">return</span>(fcfe)</span>
-<span id="cb63-11"><a href="ch5.html#cb63-11" tabindex="-1"></a>}</span>
-<span id="cb63-12"><a href="ch5.html#cb63-12" tabindex="-1"></a></span>
-<span id="cb63-13"><a href="ch5.html#cb63-13" tabindex="-1"></a><span class="co"># Example values</span></span>
-<span id="cb63-14"><a href="ch5.html#cb63-14" tabindex="-1"></a>EBIT         <span class="ot">&lt;-</span> <span class="dv">1000000</span> <span class="co"># Earnings before interest and taxes</span></span>
-<span id="cb63-15"><a href="ch5.html#cb63-15" tabindex="-1"></a>tax_rate     <span class="ot">&lt;-</span> <span class="fl">0.30</span>    <span class="co"># Corporate tax rate</span></span>
-<span id="cb63-16"><a href="ch5.html#cb63-16" tabindex="-1"></a>depreciation <span class="ot">&lt;-</span> <span class="dv">200000</span>  <span class="co"># Depreciation</span></span>
-<span id="cb63-17"><a href="ch5.html#cb63-17" tabindex="-1"></a>capex        <span class="ot">&lt;-</span> <span class="dv">300000</span>  <span class="co"># Capital expenditures</span></span>
-<span id="cb63-18"><a href="ch5.html#cb63-18" tabindex="-1"></a>delta_nwc    <span class="ot">&lt;-</span> <span class="dv">50000</span>   <span class="co"># Increase in net working capital</span></span>
-<span id="cb63-19"><a href="ch5.html#cb63-19" tabindex="-1"></a></span>
-<span id="cb63-20"><a href="ch5.html#cb63-20" tabindex="-1"></a><span class="co"># Calculate FCFF</span></span>
-<span id="cb63-21"><a href="ch5.html#cb63-21" tabindex="-1"></a>fcff <span class="ot">&lt;-</span> <span class="fu">calculate_fcff</span>(EBIT, tax_rate, depreciation, capex, delta_nwc)</span>
-<span id="cb63-22"><a href="ch5.html#cb63-22" tabindex="-1"></a>fcff</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ch5.html#cb75-1" tabindex="-1"></a><span class="co"># Function to calculate FCFF</span></span>
+<span id="cb75-2"><a href="ch5.html#cb75-2" tabindex="-1"></a>calculate_fcff <span class="ot">&lt;-</span> <span class="cf">function</span>(EBIT, tax_rate, depreciation, capex, delta_nwc) {</span>
+<span id="cb75-3"><a href="ch5.html#cb75-3" tabindex="-1"></a>  fcff <span class="ot">&lt;-</span> EBIT <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> depreciation <span class="sc">-</span> capex <span class="sc">-</span> delta_nwc</span>
+<span id="cb75-4"><a href="ch5.html#cb75-4" tabindex="-1"></a>  <span class="fu">return</span>(fcff)</span>
+<span id="cb75-5"><a href="ch5.html#cb75-5" tabindex="-1"></a>}</span>
+<span id="cb75-6"><a href="ch5.html#cb75-6" tabindex="-1"></a></span>
+<span id="cb75-7"><a href="ch5.html#cb75-7" tabindex="-1"></a><span class="co"># Function to calculate FCFE</span></span>
+<span id="cb75-8"><a href="ch5.html#cb75-8" tabindex="-1"></a>calculate_fcfe <span class="ot">&lt;-</span> <span class="cf">function</span>(fcff, interest_expense, tax_rate, net_debt_increase) {</span>
+<span id="cb75-9"><a href="ch5.html#cb75-9" tabindex="-1"></a>  fcfe <span class="ot">&lt;-</span> fcff <span class="sc">-</span> interest_expense <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> net_debt_increase</span>
+<span id="cb75-10"><a href="ch5.html#cb75-10" tabindex="-1"></a>  <span class="fu">return</span>(fcfe)</span>
+<span id="cb75-11"><a href="ch5.html#cb75-11" tabindex="-1"></a>}</span>
+<span id="cb75-12"><a href="ch5.html#cb75-12" tabindex="-1"></a></span>
+<span id="cb75-13"><a href="ch5.html#cb75-13" tabindex="-1"></a><span class="co"># Example values</span></span>
+<span id="cb75-14"><a href="ch5.html#cb75-14" tabindex="-1"></a>EBIT         <span class="ot">&lt;-</span> <span class="dv">1000000</span> <span class="co"># Earnings before interest and taxes</span></span>
+<span id="cb75-15"><a href="ch5.html#cb75-15" tabindex="-1"></a>tax_rate     <span class="ot">&lt;-</span> <span class="fl">0.30</span>    <span class="co"># Corporate tax rate</span></span>
+<span id="cb75-16"><a href="ch5.html#cb75-16" tabindex="-1"></a>depreciation <span class="ot">&lt;-</span> <span class="dv">200000</span>  <span class="co"># Depreciation</span></span>
+<span id="cb75-17"><a href="ch5.html#cb75-17" tabindex="-1"></a>capex        <span class="ot">&lt;-</span> <span class="dv">300000</span>  <span class="co"># Capital expenditures</span></span>
+<span id="cb75-18"><a href="ch5.html#cb75-18" tabindex="-1"></a>delta_nwc    <span class="ot">&lt;-</span> <span class="dv">50000</span>   <span class="co"># Increase in net working capital</span></span>
+<span id="cb75-19"><a href="ch5.html#cb75-19" tabindex="-1"></a></span>
+<span id="cb75-20"><a href="ch5.html#cb75-20" tabindex="-1"></a><span class="co"># Calculate FCFF</span></span>
+<span id="cb75-21"><a href="ch5.html#cb75-21" tabindex="-1"></a>fcff <span class="ot">&lt;-</span> <span class="fu">calculate_fcff</span>(EBIT, tax_rate, depreciation, capex, delta_nwc)</span>
+<span id="cb75-22"><a href="ch5.html#cb75-22" tabindex="-1"></a>fcff</span></code></pre></div>
 <pre><code>## [1] 550000</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ch5.html#cb65-1" tabindex="-1"></a><span class="co"># Additional values for FCFE calculation</span></span>
-<span id="cb65-2"><a href="ch5.html#cb65-2" tabindex="-1"></a>interest_expense  <span class="ot">&lt;-</span> <span class="dv">100000</span> <span class="co"># Interest expense</span></span>
-<span id="cb65-3"><a href="ch5.html#cb65-3" tabindex="-1"></a>net_debt_increase <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="co"># Increase in net debt</span></span>
-<span id="cb65-4"><a href="ch5.html#cb65-4" tabindex="-1"></a></span>
-<span id="cb65-5"><a href="ch5.html#cb65-5" tabindex="-1"></a><span class="co"># Calculate FCFE</span></span>
-<span id="cb65-6"><a href="ch5.html#cb65-6" tabindex="-1"></a>fcfe <span class="ot">&lt;-</span> <span class="fu">calculate_fcfe</span>(fcff, interest_expense, tax_rate, net_debt_increase)</span>
-<span id="cb65-7"><a href="ch5.html#cb65-7" tabindex="-1"></a>fcfe</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ch5.html#cb77-1" tabindex="-1"></a><span class="co"># Additional values for FCFE calculation</span></span>
+<span id="cb77-2"><a href="ch5.html#cb77-2" tabindex="-1"></a>interest_expense  <span class="ot">&lt;-</span> <span class="dv">100000</span> <span class="co"># Interest expense</span></span>
+<span id="cb77-3"><a href="ch5.html#cb77-3" tabindex="-1"></a>net_debt_increase <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="co"># Increase in net debt</span></span>
+<span id="cb77-4"><a href="ch5.html#cb77-4" tabindex="-1"></a></span>
+<span id="cb77-5"><a href="ch5.html#cb77-5" tabindex="-1"></a><span class="co"># Calculate FCFE</span></span>
+<span id="cb77-6"><a href="ch5.html#cb77-6" tabindex="-1"></a>fcfe <span class="ot">&lt;-</span> <span class="fu">calculate_fcfe</span>(fcff, interest_expense, tax_rate, net_debt_increase)</span>
+<span id="cb77-7"><a href="ch5.html#cb77-7" tabindex="-1"></a>fcfe</span></code></pre></div>
 <pre><code>## [1] 680000</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="ch5.html#cb67-1" tabindex="-1"></a><span class="co"># Define the cash flow components and parameters</span></span>
-<span id="cb67-2"><a href="ch5.html#cb67-2" tabindex="-1"></a>EBIT <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>)             <span class="co"># Earnings before interest and taxes</span></span>
-<span id="cb67-3"><a href="ch5.html#cb67-3" tabindex="-1"></a>tax_rate <span class="ot">&lt;-</span> <span class="fl">0.3</span>                      <span class="co"># Corporate tax rate</span></span>
-<span id="cb67-4"><a href="ch5.html#cb67-4" tabindex="-1"></a>depreciation <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>)        <span class="co"># Depreciation</span></span>
-<span id="cb67-5"><a href="ch5.html#cb67-5" tabindex="-1"></a>capex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>)               <span class="co"># Capital expenditures</span></span>
-<span id="cb67-6"><a href="ch5.html#cb67-6" tabindex="-1"></a>change_nwc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)          <span class="co"># Change in net working capital</span></span>
-<span id="cb67-7"><a href="ch5.html#cb67-7" tabindex="-1"></a>interest_expense <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>)    <span class="co"># Interest expense</span></span>
-<span id="cb67-8"><a href="ch5.html#cb67-8" tabindex="-1"></a>increase_net_debt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>)   <span class="co"># Increase in net debt</span></span>
-<span id="cb67-9"><a href="ch5.html#cb67-9" tabindex="-1"></a>WACC <span class="ot">&lt;-</span> <span class="fl">0.1</span>                          <span class="co"># Weighted average cost of capital</span></span>
-<span id="cb67-10"><a href="ch5.html#cb67-10" tabindex="-1"></a>k_E <span class="ot">&lt;-</span> <span class="fl">0.12</span>                          <span class="co"># Cost of equity</span></span>
-<span id="cb67-11"><a href="ch5.html#cb67-11" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">0.05</span>                            <span class="co"># Growth rate</span></span>
-<span id="cb67-12"><a href="ch5.html#cb67-12" tabindex="-1"></a></span>
-<span id="cb67-13"><a href="ch5.html#cb67-13" tabindex="-1"></a><span class="co"># Calculate FCFF for each period</span></span>
-<span id="cb67-14"><a href="ch5.html#cb67-14" tabindex="-1"></a>FCFF <span class="ot">&lt;-</span> EBIT <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> depreciation <span class="sc">-</span> capex <span class="sc">-</span> change_nwc</span>
-<span id="cb67-15"><a href="ch5.html#cb67-15" tabindex="-1"></a>FCFF</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ch5.html#cb79-1" tabindex="-1"></a><span class="co"># Define the cash flow components and parameters</span></span>
+<span id="cb79-2"><a href="ch5.html#cb79-2" tabindex="-1"></a>EBIT <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>)             <span class="co"># Earnings before interest and taxes</span></span>
+<span id="cb79-3"><a href="ch5.html#cb79-3" tabindex="-1"></a>tax_rate <span class="ot">&lt;-</span> <span class="fl">0.3</span>                      <span class="co"># Corporate tax rate</span></span>
+<span id="cb79-4"><a href="ch5.html#cb79-4" tabindex="-1"></a>depreciation <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>)        <span class="co"># Depreciation</span></span>
+<span id="cb79-5"><a href="ch5.html#cb79-5" tabindex="-1"></a>capex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>)               <span class="co"># Capital expenditures</span></span>
+<span id="cb79-6"><a href="ch5.html#cb79-6" tabindex="-1"></a>change_nwc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)          <span class="co"># Change in net working capital</span></span>
+<span id="cb79-7"><a href="ch5.html#cb79-7" tabindex="-1"></a>interest_expense <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>)    <span class="co"># Interest expense</span></span>
+<span id="cb79-8"><a href="ch5.html#cb79-8" tabindex="-1"></a>increase_net_debt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>)   <span class="co"># Increase in net debt</span></span>
+<span id="cb79-9"><a href="ch5.html#cb79-9" tabindex="-1"></a>WACC <span class="ot">&lt;-</span> <span class="fl">0.1</span>                          <span class="co"># Weighted average cost of capital</span></span>
+<span id="cb79-10"><a href="ch5.html#cb79-10" tabindex="-1"></a>k_E <span class="ot">&lt;-</span> <span class="fl">0.12</span>                          <span class="co"># Cost of equity</span></span>
+<span id="cb79-11"><a href="ch5.html#cb79-11" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">0.05</span>                            <span class="co"># Growth rate</span></span>
+<span id="cb79-12"><a href="ch5.html#cb79-12" tabindex="-1"></a></span>
+<span id="cb79-13"><a href="ch5.html#cb79-13" tabindex="-1"></a><span class="co"># Calculate FCFF for each period</span></span>
+<span id="cb79-14"><a href="ch5.html#cb79-14" tabindex="-1"></a>FCFF <span class="ot">&lt;-</span> EBIT <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> depreciation <span class="sc">-</span> capex <span class="sc">-</span> change_nwc</span>
+<span id="cb79-15"><a href="ch5.html#cb79-15" tabindex="-1"></a>FCFF</span></code></pre></div>
 <pre><code>## [1] 140 165 185</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ch5.html#cb69-1" tabindex="-1"></a><span class="co"># Calculate FCFE for each period</span></span>
-<span id="cb69-2"><a href="ch5.html#cb69-2" tabindex="-1"></a>FCFE <span class="ot">&lt;-</span> FCFF <span class="sc">-</span> interest_expense <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> increase_net_debt</span>
-<span id="cb69-3"><a href="ch5.html#cb69-3" tabindex="-1"></a>FCFE</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ch5.html#cb81-1" tabindex="-1"></a><span class="co"># Calculate FCFE for each period</span></span>
+<span id="cb81-2"><a href="ch5.html#cb81-2" tabindex="-1"></a>FCFE <span class="ot">&lt;-</span> FCFF <span class="sc">-</span> interest_expense <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> tax_rate) <span class="sc">+</span> increase_net_debt</span>
+<span id="cb81-3"><a href="ch5.html#cb81-3" tabindex="-1"></a>FCFE</span></code></pre></div>
 <pre><code>## [1] 136.0 162.5 184.0</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ch5.html#cb71-1" tabindex="-1"></a><span class="co"># Calculate Terminal Value (V_T) and Equity Terminal Value (E_T)</span></span>
-<span id="cb71-2"><a href="ch5.html#cb71-2" tabindex="-1"></a>V_T <span class="ot">&lt;-</span> FCFF[<span class="dv">3</span>] <span class="sc">/</span> (WACC <span class="sc">-</span> g)</span>
-<span id="cb71-3"><a href="ch5.html#cb71-3" tabindex="-1"></a>E_T <span class="ot">&lt;-</span> FCFE[<span class="dv">3</span>] <span class="sc">/</span> (k_E <span class="sc">-</span> g)</span>
-<span id="cb71-4"><a href="ch5.html#cb71-4" tabindex="-1"></a></span>
-<span id="cb71-5"><a href="ch5.html#cb71-5" tabindex="-1"></a><span class="co"># Calculate the intrinsic value of the firm</span></span>
-<span id="cb71-6"><a href="ch5.html#cb71-6" tabindex="-1"></a>firm_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(FCFF <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> WACC)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">+</span> V_T <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> WACC)<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb71-7"><a href="ch5.html#cb71-7" tabindex="-1"></a></span>
-<span id="cb71-8"><a href="ch5.html#cb71-8" tabindex="-1"></a><span class="co"># Calculate the intrinsic value of equity</span></span>
-<span id="cb71-9"><a href="ch5.html#cb71-9" tabindex="-1"></a>equity_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(FCFE <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> k_E)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">+</span> E_T <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> k_E)<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb71-10"><a href="ch5.html#cb71-10" tabindex="-1"></a></span>
-<span id="cb71-11"><a href="ch5.html#cb71-11" tabindex="-1"></a><span class="co"># Print the results</span></span>
-<span id="cb71-12"><a href="ch5.html#cb71-12" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;FCFF:&quot;</span>, FCFF))</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ch5.html#cb83-1" tabindex="-1"></a><span class="co"># Calculate Terminal Value (V_T) and Equity Terminal Value (E_T)</span></span>
+<span id="cb83-2"><a href="ch5.html#cb83-2" tabindex="-1"></a>V_T <span class="ot">&lt;-</span> FCFF[<span class="dv">3</span>] <span class="sc">/</span> (WACC <span class="sc">-</span> g)</span>
+<span id="cb83-3"><a href="ch5.html#cb83-3" tabindex="-1"></a>E_T <span class="ot">&lt;-</span> FCFE[<span class="dv">3</span>] <span class="sc">/</span> (k_E <span class="sc">-</span> g)</span>
+<span id="cb83-4"><a href="ch5.html#cb83-4" tabindex="-1"></a></span>
+<span id="cb83-5"><a href="ch5.html#cb83-5" tabindex="-1"></a><span class="co"># Calculate the intrinsic value of the firm</span></span>
+<span id="cb83-6"><a href="ch5.html#cb83-6" tabindex="-1"></a>firm_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(FCFF <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> WACC)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">+</span> V_T <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> WACC)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb83-7"><a href="ch5.html#cb83-7" tabindex="-1"></a></span>
+<span id="cb83-8"><a href="ch5.html#cb83-8" tabindex="-1"></a><span class="co"># Calculate the intrinsic value of equity</span></span>
+<span id="cb83-9"><a href="ch5.html#cb83-9" tabindex="-1"></a>equity_value <span class="ot">&lt;-</span> <span class="fu">sum</span>(FCFE <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> k_E)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">+</span> E_T <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> k_E)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb83-10"><a href="ch5.html#cb83-10" tabindex="-1"></a></span>
+<span id="cb83-11"><a href="ch5.html#cb83-11" tabindex="-1"></a><span class="co"># Print the results</span></span>
+<span id="cb83-12"><a href="ch5.html#cb83-12" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;FCFF:&quot;</span>, FCFF))</span></code></pre></div>
 <pre><code>## [1] &quot;FCFF: 140&quot; &quot;FCFF: 165&quot; &quot;FCFF: 185&quot;</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ch5.html#cb73-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;FCFE:&quot;</span>, FCFE))</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch5.html#cb85-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;FCFE:&quot;</span>, FCFE))</span></code></pre></div>
 <pre><code>## [1] &quot;FCFE: 136&quot;   &quot;FCFE: 162.5&quot; &quot;FCFE: 184&quot;</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ch5.html#cb75-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Intrinsic Value of the Firm:&quot;</span>, firm_value))</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ch5.html#cb87-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Intrinsic Value of the Firm:&quot;</span>, firm_value))</span></code></pre></div>
 <pre><code>## [1] &quot;Intrinsic Value of the Firm: 3182.49436513899&quot;</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ch5.html#cb77-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Intrinsic Value of Equity:&quot;</span>, equity_value))</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="ch5.html#cb89-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Intrinsic Value of Equity:&quot;</span>, equity_value))</span></code></pre></div>
 <pre><code>## [1] &quot;Intrinsic Value of Equity: 2252.9053649521&quot;</code></pre>
 </div>
 <div id="summary-on-valuation-models" class="section level3 hasAnchor" number="5.2.14">

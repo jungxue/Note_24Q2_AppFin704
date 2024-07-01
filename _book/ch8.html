@@ -365,12 +365,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.1</span> Summary of Lecture 8: Performance Attribution and Appraisal<a href="ch8.html#summary-of-lecture-8-performance-attribution-and-appraisal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="learning-objectives-1" class="section level3 hasAnchor" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Learning Objectives<a href="ch8.html#learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The lecture aims to equip students with skills to:
-- Compute raw and risk-adjusted rates of return.
-- Evaluate investment performance.
-- Apply style analysis to assess portfolio strategy.
-- Decompose portfolio returns into asset allocation and security selection components.
-- Assess market-timing ability.</p>
+<p>The lecture aims to equip students with skills to:</p>
+<ul>
+<li>Compute raw and risk-adjusted rates of return.</li>
+<li>Evaluate investment performance.</li>
+<li>Apply style analysis to assess portfolio strategy.</li>
+<li>Decompose portfolio returns into asset allocation and security selection components.</li>
+<li>Assess market-timing ability.</li>
+</ul>
 </div>
 <div id="steps-in-performance-evaluation" class="section level3 hasAnchor" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Steps in Performance Evaluation<a href="ch8.html#steps-in-performance-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -391,20 +393,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="performance-measurement" class="section level3 hasAnchor" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Performance Measurement<a href="ch8.html#performance-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Challenges include:
-- Mismatched cash flows and measurement frequency.
-- Multiple cash inflows and outflows (e.g., dividends, distributions, new funds).
-- Choice of measurement methodology (Time-weighted vs. Dollar-weighted).</p>
-<div id="examples" class="section level4 hasAnchor" number="8.1.3.1">
-<h4><span class="header-section-number">8.1.3.1</span> Examples<a href="ch8.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Challenges include:</p>
 <ul>
-<li><strong>Example 1 &amp; 2</strong>: Calculating rate of return for one stock held over one period without dividends.</li>
-<li><strong>Example 3 &amp; 4</strong>: Calculating the rate of return in continuous time and with dividends.</li>
-<li><strong>Example 5</strong>: Holding one stock for multiple periods without dividends, calculating arithmetic and logarithmic rates of return.</li>
-<li><strong>Example 6</strong>: Holding one stock for multiple periods with reinvested dividends, calculating time-weighted and dollar-weighted rates of return.</li>
-<li><strong>Example 7</strong>: Managing an open-ended fund with multiple stocks, dividends, distributions, and new fund inflows, measuring time-weighted and dollar-weighted rates of return.</li>
+<li>Mismatched cash flows and measurement frequency.</li>
+<li>Multiple cash inflows and outflows (e.g., dividends, distributions, new funds).</li>
+<li>Choice of measurement methodology (Time-weighted vs. Dollar-weighted).</li>
 </ul>
-</div>
 </div>
 <div id="performance-appraisal" class="section level3 hasAnchor" number="8.1.4">
 <h3><span class="header-section-number">8.1.4</span> Performance Appraisal<a href="ch8.html#performance-appraisal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -421,32 +415,168 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="performance-appraisal-measures" class="section level3 hasAnchor" number="8.1.5">
 <h3><span class="header-section-number">8.1.5</span> Performance Appraisal Measures<a href="ch8.html#performance-appraisal-measures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li><strong>Simple Benchmark Index</strong>:
-<ul>
-<li>Compare portfolio performance to a benchmark index with the same risk.</li>
-</ul></li>
-<li><strong>Sharpe Ratio</strong>:
-<ul>
-<li>Measures excess return per unit of total risk.</li>
-</ul></li>
-<li><strong>Treynor Ratio</strong>:
-<ul>
-<li>Measures excess return per unit of non-diversifiable risk.</li>
-</ul></li>
-<li><strong>Jensen’s Alpha</strong>:
-<ul>
-<li>Based on CAPM, measures abnormal performance.</li>
-</ul></li>
-<li><strong>Information Ratio</strong>:
-<ul>
-<li>Measures abnormal return per unit of risk (active return-to-risk ratio).</li>
-</ul></li>
-<li><strong>M^2 Measure</strong>:
-<ul>
-<li>Compares a new portfolio combining P and the risk-free asset to the market portfolio.</li>
-</ul></li>
-</ol>
+<div id="simple-benchmark-index" class="section level4 hasAnchor" number="8.1.5.1">
+<h4><span class="header-section-number">8.1.5.1</span> Simple Benchmark Index<a href="ch8.html#simple-benchmark-index" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Equation</strong>: <span class="math display">\[\text{Difference} = R_P - R_B\]</span></p>
+<p><strong>Explanation</strong>: Compares the portfolio return to the benchmark return.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Easy to calculate and understand.</td>
+<td>Does not account for risk differences.</td>
+</tr>
+<tr class="even">
+<td>Provides a direct comparison to a relevant benchmark.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sharpe-ratio-1" class="section level4 hasAnchor" number="8.1.5.2">
+<h4><span class="header-section-number">8.1.5.2</span> Sharpe Ratio<a href="ch8.html#sharpe-ratio-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Equation</strong>: <span class="math display">\[S = \frac{R_P - R_f}{\sigma_P}\]</span></p>
+<p><strong>Explanation</strong>: Measures the excess return per unit of total risk (standard deviation).</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Considers total risk (volatility).</td>
+<td>Assumes returns are normally distributed.</td>
+</tr>
+<tr class="even">
+<td>Easy to interpret as a higher ratio indicates better risk-adjusted performance.</td>
+<td>Does not differentiate between systematic and unsystematic risk.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="treynor-ratio" class="section level4 hasAnchor" number="8.1.5.3">
+<h4><span class="header-section-number">8.1.5.3</span> Treynor Ratio<a href="ch8.html#treynor-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Equation</strong>: <span class="math display">\[T = \frac{R_P - R_f}{\beta_P}\]</span></p>
+<p><strong>Explanation</strong>: Measures the excess return per unit of non-diversifiable risk (beta).</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Focuses on systematic risk, which is relevant for well-diversified portfolios.</td>
+<td>Requires an accurate estimation of beta.</td>
+</tr>
+<tr class="even">
+<td>Useful for comparing portfolios with different levels of market risk.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="jensens-alpha" class="section level4 hasAnchor" number="8.1.5.4">
+<h4><span class="header-section-number">8.1.5.4</span> Jensen’s Alpha<a href="ch8.html#jensens-alpha" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Equation</strong>: <span class="math display">\[\alpha = R_P - \left( R_f + \beta_P (R_M - R_f) \right)\]</span></p>
+<p><strong>Explanation</strong>: Measures the abnormal return above the expected return predicted by the CAPM.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indicates the value added by the portfolio manager.</td>
+<td>Assumes CAPM holds true.</td>
+</tr>
+<tr class="even">
+<td>Helps in identifying skill in generating excess returns.</td>
+<td>Requires accurate estimation of beta and market return.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="information-ratio" class="section level4 hasAnchor" number="8.1.5.5">
+<h4><span class="header-section-number">8.1.5.5</span> Information Ratio<a href="ch8.html#information-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Equation</strong>: <span class="math display">\[IR = \frac{R_P - R_B}{\sigma_\alpha}\]</span></p>
+<p><strong>Explanation</strong>: Measures the abnormal return per unit of risk relative to a benchmark.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Considers the consistency of excess returns.</td>
+<td>Requires a relevant benchmark for comparison.</td>
+</tr>
+<tr class="even">
+<td>Useful for evaluating active management.</td>
+<td>Tracking error (risk) can be difficult to estimate.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="m2-measure" class="section level4 hasAnchor" number="8.1.5.6">
+<h4><span class="header-section-number">8.1.5.6</span> M^2 Measure<a href="ch8.html#m2-measure" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Equation</strong>: <span class="math display">\[M^2 = R_f + \frac{R_P - R_f}{\sigma_P} \cdot \sigma_M\]</span></p>
+<p><strong>Explanation</strong>: Compares the performance of a portfolio adjusted to have the same total risk as the market portfolio.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Provides an intuitive comparison to the market portfolio.</td>
+<td>Assumes the market portfolio is the appropriate benchmark.</td>
+</tr>
+<tr class="even">
+<td>Transforms Sharpe Ratio into a measure comparable to market returns.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="conclusion" class="section level3 hasAnchor" number="8.1.6">
 <h3><span class="header-section-number">8.1.6</span> Conclusion<a href="ch8.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h3>

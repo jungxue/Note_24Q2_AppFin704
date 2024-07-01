@@ -396,6 +396,15 @@ E(R_i) = R_f + \beta_i (E(R_m) - R_f)
 </ul>
 <p>Investors expect to be compensated for the risk and the time value of money.</p>
 <p>For example, in NZ, BKMB is the risk free rate(note it is technically not) and additional basis point on top is the premium.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch4.html#cb59-1" tabindex="-1"></a><span class="co"># Define inputs</span></span>
+<span id="cb59-2"><a href="ch4.html#cb59-2" tabindex="-1"></a>risk_free_rate <span class="ot">&lt;-</span> <span class="fl">0.03</span>       <span class="co"># Risk-free rate (e.g., 3%)</span></span>
+<span id="cb59-3"><a href="ch4.html#cb59-3" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">1.2</span>                  <span class="co"># Beta of the stock</span></span>
+<span id="cb59-4"><a href="ch4.html#cb59-4" tabindex="-1"></a>market_return <span class="ot">&lt;-</span> <span class="fl">0.08</span>        <span class="co"># Expected market return (e.g., 8%)</span></span>
+<span id="cb59-5"><a href="ch4.html#cb59-5" tabindex="-1"></a></span>
+<span id="cb59-6"><a href="ch4.html#cb59-6" tabindex="-1"></a><span class="co"># Calculate the expected return using CAPM</span></span>
+<span id="cb59-7"><a href="ch4.html#cb59-7" tabindex="-1"></a>expected_return <span class="ot">&lt;-</span> risk_free_rate <span class="sc">+</span> beta <span class="sc">*</span> (market_return <span class="sc">-</span> risk_free_rate)</span>
+<span id="cb59-8"><a href="ch4.html#cb59-8" tabindex="-1"></a>expected_return</span></code></pre></div>
+<pre><code>## [1] 0.09</code></pre>
 <p><span class="math display">\[
 \boxed
 {
@@ -414,6 +423,20 @@ _i = =
 <p>\</p>
 <p>= r_i - E(r_i)
 $$</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch4.html#cb61-1" tabindex="-1"></a>cov_ri_rm <span class="ot">&lt;-</span> <span class="fl">0.0016</span>   <span class="co"># Covariance between stock returns and market returns</span></span>
+<span id="cb61-2"><a href="ch4.html#cb61-2" tabindex="-1"></a>var_rm <span class="ot">&lt;-</span> <span class="fl">0.0025</span>      <span class="co"># Variance of market returns</span></span>
+<span id="cb61-3"><a href="ch4.html#cb61-3" tabindex="-1"></a>cor_ri_rm <span class="ot">&lt;-</span> <span class="fl">0.8</span>      <span class="co"># Correlation between stock returns and market returns</span></span>
+<span id="cb61-4"><a href="ch4.html#cb61-4" tabindex="-1"></a>sd_ri <span class="ot">&lt;-</span> <span class="fl">0.04</span>         <span class="co"># Standard deviation of stock returns</span></span>
+<span id="cb61-5"><a href="ch4.html#cb61-5" tabindex="-1"></a>sd_rm <span class="ot">&lt;-</span> <span class="fl">0.05</span>         <span class="co"># Standard deviation of market returns</span></span>
+<span id="cb61-6"><a href="ch4.html#cb61-6" tabindex="-1"></a></span>
+<span id="cb61-7"><a href="ch4.html#cb61-7" tabindex="-1"></a><span class="co"># Calculate beta using covariance and variance</span></span>
+<span id="cb61-8"><a href="ch4.html#cb61-8" tabindex="-1"></a>beta <span class="ot">&lt;-</span> cov_ri_rm <span class="sc">/</span> var_rm</span>
+<span id="cb61-9"><a href="ch4.html#cb61-9" tabindex="-1"></a>beta</span></code></pre></div>
+<pre><code>## [1] 0.64</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ch4.html#cb63-1" tabindex="-1"></a><span class="co"># Calculate beta using correlation and standard deviations</span></span>
+<span id="cb63-2"><a href="ch4.html#cb63-2" tabindex="-1"></a>beta_alt <span class="ot">&lt;-</span> cor_ri_rm <span class="sc">*</span> (sd_ri <span class="sc">/</span> sd_rm)</span>
+<span id="cb63-3"><a href="ch4.html#cb63-3" tabindex="-1"></a>beta_alt</span></code></pre></div>
+<pre><code>## [1] 0.64</code></pre>
 <p>The CAPM calculates the expected return of an investment by adding the risk-free rate to the <strong>beta</strong>-adjusted market risk premium, where beta measures the investment’s sensitivity to market risk and <strong>alpha</strong> represents the excess return not explained by beta.</p>
 </div>
 <div id="security-market-line-sml" class="section level3 hasAnchor" number="4.1.2">
@@ -564,6 +587,19 @@ E(R_A) = R_f + \sum_{j=1}^{k} \beta_{Aj} \lambda_j
 <li><span class="math inline">\(\lambda_j\)</span> is the risk premium associated with factor <span class="math inline">\(j\)</span>.</li>
 </ul>
 <p><span class="math display">\[ \lambda_j= \beta_1 [E(r_{M1}) - r_f]\]</span></p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ch4.html#cb65-1" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb65-2"><a href="ch4.html#cb65-2" tabindex="-1"></a>R_f <span class="ot">&lt;-</span> <span class="fl">0.03</span>  <span class="co"># Risk-free rate</span></span>
+<span id="cb65-3"><a href="ch4.html#cb65-3" tabindex="-1"></a>beta_factors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.2</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>) <span class="co"># Sensitivities to factors</span></span>
+<span id="cb65-4"><a href="ch4.html#cb65-4" tabindex="-1"></a>E_rM <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="fl">0.07</span>, <span class="fl">0.06</span>) <span class="co"># Expected returns of market factors</span></span>
+<span id="cb65-5"><a href="ch4.html#cb65-5" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="ch4.html#cb65-6" tabindex="-1"></a><span class="co"># Calculate risk premiums</span></span>
+<span id="cb65-7"><a href="ch4.html#cb65-7" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> beta_factors <span class="sc">*</span> (E_rM <span class="sc">-</span> R_f)</span>
+<span id="cb65-8"><a href="ch4.html#cb65-8" tabindex="-1"></a>lambda</span></code></pre></div>
+<pre><code>## [1] 0.060 0.032 0.015</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="ch4.html#cb67-1" tabindex="-1"></a><span class="co"># Calculate expected return using APT</span></span>
+<span id="cb67-2"><a href="ch4.html#cb67-2" tabindex="-1"></a>expected_return <span class="ot">&lt;-</span> R_f <span class="sc">+</span> <span class="fu">sum</span>(lambda)</span>
+<span id="cb67-3"><a href="ch4.html#cb67-3" tabindex="-1"></a>expected_return</span></code></pre></div>
+<pre><code>## [1] 0.137</code></pre>
 </div>
 <div id="multifactor-generalization" class="section level3 hasAnchor" number="4.3.4">
 <h3><span class="header-section-number">4.3.4</span> Multifactor Generalization<a href="ch4.html#multifactor-generalization" class="anchor-section" aria-label="Anchor link to header"></a></h3>

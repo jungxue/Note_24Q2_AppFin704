@@ -95,6 +95,7 @@ EAR <- (1 + r / mn)^mn - 1
 EAR
 
 ```
+
 ## Risk and Risk Premiums
 
 ### Expected Return
@@ -307,7 +308,7 @@ We call the overall portfolio composed of the risk-free asset and the risky port
 
 **Influence of the trade-off decisions:**
 
-- Risk appetite (strong financial position and stable income may have higher appitite)
+- Risk appetite (strong financial position and stable income may have higher appetite)
 - proportion of the investor’s total wealth. (psychological risk aversion) 
 - Financial Goals/liquidity needs (set when they need cash flow) 
 - Investment Horizon (longer horizon takes more risk)

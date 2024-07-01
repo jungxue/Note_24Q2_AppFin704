@@ -488,6 +488,94 @@ Where:</p>
 <li><span class="math inline">\(C_p\)</span> = Call price</li>
 </ul>
 <p><img src="Resources/callbond.png" /></p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="ch6.html#cb91-1" tabindex="-1"></a><span class="co"># Function to calculate current yield</span></span>
+<span id="cb91-2"><a href="ch6.html#cb91-2" tabindex="-1"></a>current_yield <span class="ot">&lt;-</span> <span class="cf">function</span>(coupon_payment, market_price) {</span>
+<span id="cb91-3"><a href="ch6.html#cb91-3" tabindex="-1"></a>  <span class="fu">return</span>(coupon_payment <span class="sc">/</span> market_price)</span>
+<span id="cb91-4"><a href="ch6.html#cb91-4" tabindex="-1"></a>}</span>
+<span id="cb91-5"><a href="ch6.html#cb91-5" tabindex="-1"></a></span>
+<span id="cb91-6"><a href="ch6.html#cb91-6" tabindex="-1"></a><span class="co"># Function to calculate yield to maturity (YTM)</span></span>
+<span id="cb91-7"><a href="ch6.html#cb91-7" tabindex="-1"></a>ytm <span class="ot">&lt;-</span> <span class="cf">function</span>(coupon_payment, face_value, market_price, years_to_maturity) {</span>
+<span id="cb91-8"><a href="ch6.html#cb91-8" tabindex="-1"></a>  coupon_payments <span class="ot">&lt;-</span> <span class="fu">rep</span>(coupon_payment, years_to_maturity)  <span class="co"># Vector of coupon payments</span></span>
+<span id="cb91-9"><a href="ch6.html#cb91-9" tabindex="-1"></a>  cash_flows <span class="ot">&lt;-</span> <span class="fu">c</span>(coupon_payments, face_value)  <span class="co"># Cash flows including face value</span></span>
+<span id="cb91-10"><a href="ch6.html#cb91-10" tabindex="-1"></a>  rate <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(rate) <span class="fu">sum</span>(cash_flows <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> rate)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span>years_to_maturity)) <span class="sc">-</span> market_price, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">$</span>root</span>
+<span id="cb91-11"><a href="ch6.html#cb91-11" tabindex="-1"></a>  <span class="fu">return</span>(rate)</span>
+<span id="cb91-12"><a href="ch6.html#cb91-12" tabindex="-1"></a>}</span>
+<span id="cb91-13"><a href="ch6.html#cb91-13" tabindex="-1"></a></span>
+<span id="cb91-14"><a href="ch6.html#cb91-14" tabindex="-1"></a><span class="co"># Function to calculate yield to call (YTC)</span></span>
+<span id="cb91-15"><a href="ch6.html#cb91-15" tabindex="-1"></a>ytc <span class="ot">&lt;-</span> <span class="cf">function</span>(coupon_payment, call_price, market_price, call_date) {</span>
+<span id="cb91-16"><a href="ch6.html#cb91-16" tabindex="-1"></a>  coupon_payments <span class="ot">&lt;-</span> <span class="fu">rep</span>(coupon_payment, call_date)  <span class="co"># Vector of coupon payments until call date</span></span>
+<span id="cb91-17"><a href="ch6.html#cb91-17" tabindex="-1"></a>  cash_flows <span class="ot">&lt;-</span> <span class="fu">c</span>(coupon_payments, call_price)  <span class="co"># Cash flows including call price</span></span>
+<span id="cb91-18"><a href="ch6.html#cb91-18" tabindex="-1"></a>  rate <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(rate) <span class="fu">sum</span>(cash_flows <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> rate)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span>call_date)) <span class="sc">-</span> market_price, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">$</span>root</span>
+<span id="cb91-19"><a href="ch6.html#cb91-19" tabindex="-1"></a>  <span class="fu">return</span>(rate)</span>
+<span id="cb91-20"><a href="ch6.html#cb91-20" tabindex="-1"></a>}</span>
+<span id="cb91-21"><a href="ch6.html#cb91-21" tabindex="-1"></a></span>
+<span id="cb91-22"><a href="ch6.html#cb91-22" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb91-23"><a href="ch6.html#cb91-23" tabindex="-1"></a>coupon_payment <span class="ot">&lt;-</span> <span class="dv">50</span>  <span class="co"># Annual coupon payment</span></span>
+<span id="cb91-24"><a href="ch6.html#cb91-24" tabindex="-1"></a>face_value <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Face value of the bond</span></span>
+<span id="cb91-25"><a href="ch6.html#cb91-25" tabindex="-1"></a>market_price <span class="ot">&lt;-</span> <span class="dv">950</span>  <span class="co"># Current market price</span></span>
+<span id="cb91-26"><a href="ch6.html#cb91-26" tabindex="-1"></a>years_to_maturity <span class="ot">&lt;-</span> <span class="dv">5</span>  <span class="co"># Years to maturity</span></span>
+<span id="cb91-27"><a href="ch6.html#cb91-27" tabindex="-1"></a>call_price <span class="ot">&lt;-</span> <span class="dv">1050</span>  <span class="co"># Call price</span></span>
+<span id="cb91-28"><a href="ch6.html#cb91-28" tabindex="-1"></a>call_date <span class="ot">&lt;-</span> <span class="dv">3</span>  <span class="co"># Call date</span></span>
+<span id="cb91-29"><a href="ch6.html#cb91-29" tabindex="-1"></a></span>
+<span id="cb91-30"><a href="ch6.html#cb91-30" tabindex="-1"></a><span class="co"># Calculate yields</span></span>
+<span id="cb91-31"><a href="ch6.html#cb91-31" tabindex="-1"></a>current_yield_value <span class="ot">&lt;-</span> <span class="fu">current_yield</span>(coupon_payment, market_price)</span>
+<span id="cb91-32"><a href="ch6.html#cb91-32" tabindex="-1"></a>ytm_value <span class="ot">&lt;-</span> <span class="fu">ytm</span>(coupon_payment, face_value, market_price, years_to_maturity)</span></code></pre></div>
+<pre><code>## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:years_to_maturity): longer object length is
+## not a multiple of shorter object length</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="ch6.html#cb93-1" tabindex="-1"></a>ytc_value <span class="ot">&lt;-</span> <span class="fu">ytc</span>(coupon_payment, call_price, market_price, call_date)</span></code></pre></div>
+<pre><code>## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length</code></pre>
+<pre><code>## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length
+
+## Warning in cash_flows/(1 + rate)^(1:call_date): longer object length is not a
+## multiple of shorter object length</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch6.html#cb96-1" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb96-2"><a href="ch6.html#cb96-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Current Yield:&quot;</span>, current_yield_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Current Yield: 0.05263158</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="ch6.html#cb98-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Yield to Maturity:&quot;</span>, ytm_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Yield to Maturity: 0.233339</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="ch6.html#cb100-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Yield to Call:&quot;</span>, ytc_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Yield to Call: 0.2349876</code></pre>
 </div>
 </div>
 <div id="realized-compound-return" class="section level2 hasAnchor" number="6.4">
@@ -500,14 +588,14 @@ Where:</p>
 <p><span class="math display">\[
 r = \left(\frac{1{,}210}{1{,}000}\right)^{\frac{1}{2}} - 1 = 0.10 \quad \text{or} \quad 10\%
 \]</span></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ch6.html#cb79-1" tabindex="-1"></a><span class="co"># Variables</span></span>
-<span id="cb79-2"><a href="ch6.html#cb79-2" tabindex="-1"></a>initial_investment <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb79-3"><a href="ch6.html#cb79-3" tabindex="-1"></a>final_value <span class="ot">&lt;-</span> <span class="dv">1210</span></span>
-<span id="cb79-4"><a href="ch6.html#cb79-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb79-5"><a href="ch6.html#cb79-5" tabindex="-1"></a></span>
-<span id="cb79-6"><a href="ch6.html#cb79-6" tabindex="-1"></a><span class="co"># Calculate and print the realized compound return</span></span>
-<span id="cb79-7"><a href="ch6.html#cb79-7" tabindex="-1"></a>r <span class="ot">&lt;-</span> (final_value <span class="sc">/</span> initial_investment)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> n) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb79-8"><a href="ch6.html#cb79-8" tabindex="-1"></a><span class="fu">round</span>(r <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="ch6.html#cb102-1" tabindex="-1"></a><span class="co"># Variables</span></span>
+<span id="cb102-2"><a href="ch6.html#cb102-2" tabindex="-1"></a>initial_investment <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb102-3"><a href="ch6.html#cb102-3" tabindex="-1"></a>final_value <span class="ot">&lt;-</span> <span class="dv">1210</span></span>
+<span id="cb102-4"><a href="ch6.html#cb102-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb102-5"><a href="ch6.html#cb102-5" tabindex="-1"></a></span>
+<span id="cb102-6"><a href="ch6.html#cb102-6" tabindex="-1"></a><span class="co"># Calculate and print the realized compound return</span></span>
+<span id="cb102-7"><a href="ch6.html#cb102-7" tabindex="-1"></a>r <span class="ot">&lt;-</span> (final_value <span class="sc">/</span> initial_investment)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> n) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb102-8"><a href="ch6.html#cb102-8" tabindex="-1"></a><span class="fu">round</span>(r <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <div id="yield-spread" class="section level3 hasAnchor" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> Yield Spread<a href="ch6.html#yield-spread" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -518,7 +606,7 @@ Yield\ Spread = Yield\ of\ Corporate\ Bond - Yield\ of\ Government\ Bond
 </div>
 <div id="bond-equivalent-yield-bey" class="section level3 hasAnchor" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> Bond Equivalent Yield (BEY)<a href="ch6.html#bond-equivalent-yield-bey" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span class="math inline">\(BEY = \frac{2 \cdot (FV - P)}{P \cdot (T)}\)</span></p>
+<p><span class="math display">\[BEY = \frac{2 \cdot (FV - P)}{P \cdot (T)}\]</span></p>
 <p>Where:
 - <span class="math inline">\(FV\)</span> = Face value
 - <span class="math inline">\(P\)</span> = Purchase price
@@ -555,27 +643,27 @@ Yield\ Spread = Yield\ of\ Corporate\ Bond - Yield\ of\ Government\ Bond
 <div id="holding-period-return-hpr" class="section level3 hasAnchor" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> Holding Period Return (HPR)<a href="ch6.html#holding-period-return-hpr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[
-HPR = \frac{P_1 + (D - P_0)}{P_0}
+HPR = \frac{P_1 + D - P_0}{P_0}
 \]</span>
 - <span class="math inline">\(P_0\)</span>: Initial price
 - <span class="math inline">\(P_1\)</span>: Selling price
 - <span class="math inline">\(D\)</span>: Income received (e.g., dividends)</p>
 <p>Includes price change and income.</p>
 <p>Useful for comparing investment performance.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ch6.html#cb81-1" tabindex="-1"></a><span class="co"># Variables</span></span>
-<span id="cb81-2"><a href="ch6.html#cb81-2" tabindex="-1"></a>P_0 <span class="ot">&lt;-</span> <span class="dv">1000</span>     <span class="co"># Initial price</span></span>
-<span id="cb81-3"><a href="ch6.html#cb81-3" tabindex="-1"></a>P_1 <span class="ot">&lt;-</span> <span class="dv">1200</span>      <span class="co"># Selling price</span></span>
-<span id="cb81-4"><a href="ch6.html#cb81-4" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="dv">50</span>         <span class="co"># Dividends received</span></span>
-<span id="cb81-5"><a href="ch6.html#cb81-5" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">2</span>   <span class="co"># Holding period in years</span></span>
-<span id="cb81-6"><a href="ch6.html#cb81-6" tabindex="-1"></a></span>
-<span id="cb81-7"><a href="ch6.html#cb81-7" tabindex="-1"></a><span class="co"># Calculate HPR</span></span>
-<span id="cb81-8"><a href="ch6.html#cb81-8" tabindex="-1"></a>HPR <span class="ot">&lt;-</span> (P_1 <span class="sc">+</span> D <span class="sc">-</span> P_0) <span class="sc">/</span> P0</span>
-<span id="cb81-9"><a href="ch6.html#cb81-9" tabindex="-1"></a>HPR</span></code></pre></div>
-<pre><code>## [1] 1.25</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ch6.html#cb83-1" tabindex="-1"></a><span class="co"># Annualize HPR</span></span>
-<span id="cb83-2"><a href="ch6.html#cb83-2" tabindex="-1"></a>annualized_HPR <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">+</span> HPR)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> n_years) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb83-3"><a href="ch6.html#cb83-3" tabindex="-1"></a>annualized_HPR</span></code></pre></div>
-<pre><code>## [1] 0.5</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch6.html#cb104-1" tabindex="-1"></a><span class="co"># Variables</span></span>
+<span id="cb104-2"><a href="ch6.html#cb104-2" tabindex="-1"></a>P_0 <span class="ot">&lt;-</span> <span class="dv">1000</span>     <span class="co"># Initial price</span></span>
+<span id="cb104-3"><a href="ch6.html#cb104-3" tabindex="-1"></a>P_1 <span class="ot">&lt;-</span> <span class="dv">1200</span>      <span class="co"># Selling price</span></span>
+<span id="cb104-4"><a href="ch6.html#cb104-4" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="dv">50</span>         <span class="co"># Dividends received</span></span>
+<span id="cb104-5"><a href="ch6.html#cb104-5" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">2</span>   <span class="co"># Holding period in years</span></span>
+<span id="cb104-6"><a href="ch6.html#cb104-6" tabindex="-1"></a></span>
+<span id="cb104-7"><a href="ch6.html#cb104-7" tabindex="-1"></a><span class="co"># Calculate HPR</span></span>
+<span id="cb104-8"><a href="ch6.html#cb104-8" tabindex="-1"></a>HPR <span class="ot">&lt;-</span> (P_1 <span class="sc">+</span> D <span class="sc">-</span> P_0) <span class="sc">/</span> P0</span>
+<span id="cb104-9"><a href="ch6.html#cb104-9" tabindex="-1"></a>HPR</span></code></pre></div>
+<pre><code>## [1] 7.25</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="ch6.html#cb106-1" tabindex="-1"></a><span class="co"># Annualize HPR</span></span>
+<span id="cb106-2"><a href="ch6.html#cb106-2" tabindex="-1"></a>annualized_HPR <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">+</span> HPR)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> n_years) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb106-3"><a href="ch6.html#cb106-3" tabindex="-1"></a>annualized_HPR</span></code></pre></div>
+<pre><code>## [1] 1.872281</code></pre>
 </div>
 </div>
 <div id="risk-and-protection" class="section level2 hasAnchor" number="6.6">

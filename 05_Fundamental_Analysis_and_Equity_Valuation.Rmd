@@ -99,6 +99,18 @@ Where:
 - $R_t$: Discount rate at time $t$
 - $T$: Last period for which cash flows are considered
 
+```{r}
+# Given values
+E_CF <- c(100, 150, 200, 250)  # Expected cash flows at time t
+R <- c(0.05, 0.06, 0.07, 0.08) # Discount rates at time t
+T <- length(E_CF) - 1          # Last period for which cash flows are considered
+
+# Calculate present value
+P_0 <- sum(E_CF / (1 + R) ^ (0:T))
+P_0
+
+```
+
 ### Valuation Ratios in Finance
 
   - Key ratios: PE, PB, PS
@@ -285,10 +297,10 @@ Growth stock Co. initially has the same earnings of $15 as No growth Co., but re
 However, $g$ growth rate of dividend cannot be higher than $k$ required rate of return or equation does not work. 
 
 ```{r}
-E1 <- 15              # Earnings at time 1
-b <- 0.60             # Retention ratio
+E1 <- 5              # Earnings at time 1
+b <- 0.2             # Retention ratio
 k <- 0.15             # Discount rate or required rate of return
-ROE <- 0.20           # Return on equity
+ROE <- 0.17           # Return on equity
 g <- b * ROE          # Sustainable growth rate
 
 # Calculate stock price

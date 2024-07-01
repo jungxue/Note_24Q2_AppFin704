@@ -92,6 +92,48 @@ Where:
 
 ![](Resources/callbond.png)
 
+```{r}
+# Function to calculate current yield
+current_yield <- function(coupon_payment, market_price) {
+  return(coupon_payment / market_price)
+}
+
+# Function to calculate yield to maturity (YTM)
+ytm <- function(coupon_payment, face_value, market_price, years_to_maturity) {
+  coupon_payments <- rep(coupon_payment, years_to_maturity)  # Vector of coupon payments
+  cash_flows <- c(coupon_payments, face_value)  # Cash flows including face value
+  rate <- uniroot(function(rate) sum(cash_flows / (1 + rate)^(1:years_to_maturity)) - market_price, c(0, 1))$root
+  return(rate)
+}
+
+# Function to calculate yield to call (YTC)
+ytc <- function(coupon_payment, call_price, market_price, call_date) {
+  coupon_payments <- rep(coupon_payment, call_date)  # Vector of coupon payments until call date
+  cash_flows <- c(coupon_payments, call_price)  # Cash flows including call price
+  rate <- uniroot(function(rate) sum(cash_flows / (1 + rate)^(1:call_date)) - market_price, c(0, 1))$root
+  return(rate)
+}
+
+# Example usage
+coupon_payment <- 50  # Annual coupon payment
+face_value <- 1000  # Face value of the bond
+market_price <- 950  # Current market price
+years_to_maturity <- 5  # Years to maturity
+call_price <- 1050  # Call price
+call_date <- 3  # Call date
+
+# Calculate yields
+current_yield_value <- current_yield(coupon_payment, market_price)
+ytm_value <- ytm(coupon_payment, face_value, market_price, years_to_maturity)
+ytc_value <- ytc(coupon_payment, call_price, market_price, call_date)
+
+# Print results
+cat("Current Yield:", current_yield_value, "\n")
+cat("Yield to Maturity:", ytm_value, "\n")
+cat("Yield to Call:", ytc_value, "\n")
+
+```
+
 ## Realized Compound Return
 
 To find the realized compound return $r$ for investment A:
@@ -126,7 +168,7 @@ Yield\ Spread = Yield\ of\ Corporate\ Bond - Yield\ of\ Government\ Bond
 $$
 
 ### Bond Equivalent Yield (BEY)
-$BEY = \frac{2 \cdot (FV - P)}{P \cdot (T)}$
+$$BEY = \frac{2 \cdot (FV - P)}{P \cdot (T)}$$
 
 Where:
 - $FV$ = Face value
@@ -165,7 +207,7 @@ assuming the price will shift toward par.
 ### Holding Period Return (HPR)
 
 $$
-HPR = \frac{P_1 + (D - P_0)}{P_0}
+HPR = \frac{P_1 + D - P_0}{P_0}
 $$
 - $P_0$: Initial price
 - $P_1$: Selling price
